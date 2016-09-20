@@ -1,7 +1,7 @@
+package suPropiedadRaiz.inmuebles;
+
 public class Torre {
 	String Cant_de_ApartamentosXpiso;
-	int Cant_pisos;
+	int Total_Pisos;
 	boolean Ascensor;
-	
-
 }

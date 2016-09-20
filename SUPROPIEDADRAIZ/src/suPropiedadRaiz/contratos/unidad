@@ -1,8 +1,0 @@
-public class Unidad {
-	String Nombre;
-	String Direccion;
-	String Tipo;
-	Short Numero_de_torres;
-	
-
-}
