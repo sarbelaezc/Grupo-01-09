@@ -1,0 +1,19 @@
+public class Unidad {
+	int Id;
+	String Nombre;
+	String Direccion;
+	int Estrato;
+	int Numero_de_torres;
+	int num_apartamentosXtorre;
+	boolean conjunto_cerrado;
+	boolean Vigilancia;
+	boolean Aseo;
+	boolean Piscina;
+	boolean Gimnacio;
+	boolean Salon_social;
+	boolean Parque_recreativo;
+	boolean Zona_verde;
+	
+	
+
+}
