@@ -1,0 +1,15 @@
+public class Casa extends Unidad {
+	int Area_total;
+	String Cuartos;
+	int cantidad_de_baños;
+	boolean Garaje;
+	boolean Terraza;
+	boolean balcon;
+	int numero_de_pisos;
+	boolean En_Venta;
+	boolean A_Arrendar;
+	boolean puerta_electrica;
+	
+	
+
+}
