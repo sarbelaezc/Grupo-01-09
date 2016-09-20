@@ -1,12 +1,9 @@
+package suPropiedadRaiz.inmuebles;
+
 public class Apartamento extends Unidad {
 	String Direccion;
 	int Area_total;
 	String Cuartos;
 	int Cantidad_de_baños;
-	boolean Garaje;
-	boolean Terraza;
-	boolean balcon;
-	boolean En_Venta;
-	boolean A_Arrendar;
-
+	boolean garaje, terraza, balcon, enVenta, aArrendar;
 }
