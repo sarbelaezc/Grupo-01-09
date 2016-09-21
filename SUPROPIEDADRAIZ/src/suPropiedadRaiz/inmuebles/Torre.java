@@ -1,7 +1,10 @@
 package suPropiedadRaiz.inmuebles;
 
+import java.util.ArrayList;
+
 public class Torre {
-	String Cant_de_ApartamentosXpiso;
-	int Total_Pisos;
+	String numApartamentosPiso;
+	int numPisos, codigo;
 	boolean Ascensor;
+	ArrayList<Apartamento> Aptos = new ArrayList<Apartamento>();
 }

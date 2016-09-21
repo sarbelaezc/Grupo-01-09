@@ -1,5 +1,5 @@
 package suPropiedadRaiz.inmuebles;
 
-public class Bano {
-	int area;
+public class Bano extends Cuarto {
+	boolean banera, ducha, enchapado, puerta;
 }

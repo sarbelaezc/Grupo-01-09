@@ -1,6 +1,5 @@
 package suPropiedadRaiz.inmuebles;
 
-public class Cuarto {
-	String tipo;
-	int area;
+public abstract class Cuarto {
+	int area, codigo;
 }
