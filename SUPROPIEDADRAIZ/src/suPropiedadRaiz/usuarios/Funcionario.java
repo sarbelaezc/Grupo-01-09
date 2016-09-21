@@ -1,5 +1,6 @@
 package suPropiedadRaiz.usuarios;
 
-public class Funcionario extends Persona {
-	long salario;
+public class Funcionario {
+	long cedula, salario;
+	String nombre;
 }

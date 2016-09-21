@@ -1,6 +1,6 @@
 package suPropiedadRaiz.usuarios;
 
-public class ClienteRegistrado extends Persona {
+public class ClienteRegistrado extends Cliente {
 	long telefono;
 	String direccion;
 	
