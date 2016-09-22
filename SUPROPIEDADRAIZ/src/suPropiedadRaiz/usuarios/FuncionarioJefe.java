@@ -24,5 +24,6 @@ public class FuncionarioJefe extends Funcionario {
 	    for(int i = 0; i<ClientesList.size; i++){
 	      ClienteRegistrado Clt = ClienteRegistrado.get(i);
 	      return Clt;
+	    }
 	  }
 }
