@@ -1,14 +1,22 @@
 package suPropiedadRaiz.contratos;
 
+import suPropiedadRaiz.inmuebles.Apartamento;
+import suPropiedadRaiz.inmuebles.Casa;
+import suPropiedadRaiz.usuarios.Cliente;
+
 public class Arrendamiento {
-	int ID;
-	boolean casa, apartamento;
-	String Cliente_Oferente;
-	String Cliente_Arrendatario;
-	String Fecha_de_Inicio;
-	int Valor_Mensual;
 	
-
-
-
+	int codigo, tarifa;
+	Casa casa;
+	Apartamento apartamento;
+	Cliente clienteOferente, clienteArrendatario;
+	String fechaInicio;
+	
+	public int getTarifa() {
+		return tarifa;
+	}
+	
+	public void setTarifa(int tarifa) {
+		this.tarifa = tarifa;
+	}
 }
