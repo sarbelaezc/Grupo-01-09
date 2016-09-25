@@ -15,8 +15,8 @@ public class OpcionesAdministrador extends OpcionDeMenu {
 		
 		MenuDeConsola.anadirOpcion(new OpcionVerUsuario());
 		MenuDeConsola.anadirOpcion(new OpcionesExistentes());
-		MenuDeConsola.anadirOpcion(new OpcionNuevaUsuario);
-		MenuDeConsola.anadirOpcion(new OpcionEliminarDeUsuario);
+		MenuDeConsola.anadirOpcion(new OpcionNuevaUsuario());
+		MenuDeConsola.anadirOpcion(new OpcionEliminarDeUsuario());
 		
 		MenuDeConsola.lanzarMenu();
 	}
