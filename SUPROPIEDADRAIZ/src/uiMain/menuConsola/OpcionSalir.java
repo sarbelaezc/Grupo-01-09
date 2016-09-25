@@ -1,4 +1,4 @@
-package uiMain;
+package uiMain.menuConsola;
 
 public class OpcionSalir extends OpcionDeMenu {
 	
