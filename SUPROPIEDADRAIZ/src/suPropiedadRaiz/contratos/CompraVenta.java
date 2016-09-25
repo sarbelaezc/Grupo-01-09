@@ -10,7 +10,7 @@ public class CompraVenta {
 	Apartamento apartamento;
 	Cliente clienteOferente, clienteComprador;
 	
-	public int getValor() {
+	public long getValor() {
 		return valor;
 	}
 	
