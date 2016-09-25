@@ -9,6 +9,7 @@ public class MenuDeConsola {
 	
 	public MenuDeConsola(){
 		opciones = new ArrayList<OpcionDeMenu>();
+		opciones.add(new OpcionesAdministrador());
 	}
 	
 	public static void anadirOpcion(OpcionDeMenu op){
