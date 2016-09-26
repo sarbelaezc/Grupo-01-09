@@ -10,6 +10,7 @@ public class OpcionVerUsuario extends OpcionDeMenu {
 		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		long cedula = entrada.nextLong();
+		
 	}
 
 	@Override

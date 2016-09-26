@@ -10,6 +10,10 @@ public class MenuDeConsola {
 	public MenuDeConsola(){
 		opciones = new ArrayList<OpcionDeMenu>();
 		opciones.add(new OpcionesAdministrador());
+		opciones.add(new OpcionesClienteRegistrado());
+		opciones.add(new OpcionesClienteInvitado());
+		opciones.add(new OpcionesFuncionario());
+		opciones.add(new OpcionesFuncionarioJefe());
 	}
 	
 	public static void anadirOpcion(OpcionDeMenu op){
