@@ -1,11 +1,14 @@
 package uiMain.menuConsola;
 
-public class OpcionesClienteInvitado extends OpcionDeMenu {
+import java.util.Scanner;
 
+import suPropiedadRaiz.usuarios.ClienteAnonimo;
+
+public class OpcionesClienteInvitado extends OpcionDeMenu {
+	
 	@Override
 	public void ejecutar() {
-		// TODO Auto-generated method stub
-
+		ClienteAnonimo clienteInvitado = new ClienteAnonimo();
 	}
 
 	@Override

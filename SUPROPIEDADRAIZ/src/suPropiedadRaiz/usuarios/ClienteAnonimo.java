@@ -6,10 +6,12 @@ public class ClienteAnonimo extends Cliente {
 	
 	String motivo;
 	
-	public ClienteAnonimo(long cedula,String nombre, String motivo){
+	public ClienteAnonimo(){
 		this.cedula = ingresarCedula();
 		this.nombre = ingresarNombre();
 		this.motivo = ingresarMotivo();
+		System.out.println("Usted ha sido registrado con exito.");
+		System.out.print("Su cita ha sido asignada para: ");
 	}
 	
 	private String ingresarMotivo() {

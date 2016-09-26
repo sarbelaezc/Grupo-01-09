@@ -11,6 +11,7 @@ public class OpcionesAdministrador extends OpcionDeMenu {
 	}
 
 	public void ejecutar() {
+		
 		MenuDeConsola.limpiarLista();
 		
 		MenuDeConsola.anadirOpcion(new OpcionVerUsuario());
