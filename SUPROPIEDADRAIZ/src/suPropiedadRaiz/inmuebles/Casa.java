@@ -10,4 +10,9 @@ public class Casa extends Inmuebles {
 	ArrayList<Garaje> garajes = new ArrayList<Garaje>();
 	Terraza terraza;
 	Balcon balcon;
+	
+	Casa(){
+		AreaTotal = ingresarArea();
+		estrato = ingresarValor();
+	}
 }
