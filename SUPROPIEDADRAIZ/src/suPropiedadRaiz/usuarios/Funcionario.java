@@ -1,5 +1,5 @@
 package suPropiedadRaiz.usuarios;
-
+import suPropiedadRaiz.contratos.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
