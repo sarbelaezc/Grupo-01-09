@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class FuncionarioJefe extends Funcionario {
 	
 	ArrayList <Funcionario> FuncionarioList = new ArrayList<Funcionario>();
-	ArrayList <ClienteRegistrado> ClienteList = new ArrayList<ClienteRegistrado>();
+	
 	
 	public void registrarFuncionario(String nombre, long cedula, long salario){
 	      Funcionario Func = new Funcionario(nombre, cedula, salario);
