@@ -26,5 +26,14 @@ public class Funcionario {
 		nombre = entrada.nextLine();
 		return nombre;
 	}
+	
+	public void Arrendar(){
+		Arrendamiento Arren = new Arrendamiento();
+	}
+	
+	public void CompraVen(){
+		CompraVenta ComVen = new CompraVenta();
+	}
+
 
 }
