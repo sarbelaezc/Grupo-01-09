@@ -23,7 +23,7 @@ public class FuncionarioJefe extends Funcionario {
 	  
 	  public ClienteRegistrado ListaClientes(){
 	    for(int i = 0; i<clientesList.size(); i++){
-	      ClienteRegistrado Clt = ClienteRegistradoList.get(i);
+	      ClienteRegistrado Clt = ClienteList.get(i);
 	      return Clt;
 	    }
 	  }
