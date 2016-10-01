@@ -2,7 +2,7 @@ package suPropiedadRaiz.usuarios;
 
 import java.util.Scanner;
 
-public abstract class Cliente {
+public class Cliente {
 	long cedula;
 	String nombre, motivo;
 	
@@ -10,6 +10,10 @@ public abstract class Cliente {
 		this.cedula = ingresarCedula();
 		this.nombre = ingresarNombre();
 		this.motivo = ingresarMotivo();
+	}
+	
+	public Cliente(long cedula){
+		this.cedula = cedula;
 	}
 	
 	public String ingresarMotivo() {

@@ -8,9 +8,7 @@ public class ClienteRegistrado extends Cliente {
 		super();
 		this.estrato = ingresarEstrato();
 	}
-	public ClienteRegistrado(long cedula){
-		this.cedula = cedula;
-	}
+
 	public long ingresarEstrato(){
 		Scanner entrada = new Scanner(System.in);
 		System.out.print("Ingrese estrato de preferencia: ");

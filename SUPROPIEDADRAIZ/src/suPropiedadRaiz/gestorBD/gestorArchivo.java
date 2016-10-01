@@ -68,7 +68,7 @@ public class gestorArchivo {
 			    while ((a=br.readLine())!=null) {			       
 			    	texto=a.split(" ");
 			    	if (aux.equals(texto[0])){
-			    		cliente = new ClienteRegistrado(Long.parseLong(texto[0]));
+			    		cliente = new Cliente(Long.parseLong(texto[0]));
 			    		return cliente;
 			    	}
 			     }
