@@ -16,8 +16,8 @@ public class OpcionNuevaUsuario extends OpcionDeMenu {
 		
 		MenuDeConsola.limpiarLista();
 		/**
-		 * Codigo para leer el usuario
-		 */
+		Codigo para leer usuario
+		*/
 		MenuDeConsola.lanzarMenu();
 	}
 

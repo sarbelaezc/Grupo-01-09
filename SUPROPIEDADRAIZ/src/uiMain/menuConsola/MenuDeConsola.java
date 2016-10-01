@@ -24,8 +24,8 @@ public class MenuDeConsola {
 		
 		opciones.add(new OpcionSalir());
 	
-		for( int i = 0 ; i < opciones.size(); i ++ ){
-			System.out.println(i + " " + opciones.get(i).toString());
+		for(int i = 1; i<=opciones.size(); i++){
+			System.out.println(i+" "+opciones.get(i-1).toString());
 		}
 		
 		@SuppressWarnings("resource")
@@ -35,8 +35,19 @@ public class MenuDeConsola {
 		
 		int selec = eo.nextInt();
 		
-		opciones.get(selec).ejecutar();
-		
+		opciones.get(selec).ejecutar();	
+	}
+	
+	public static void lanzarMenuAnterior() {
+		System.out.println("/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/");
+		for(int i = 1; i<=opciones.size(); i++){
+			System.out.println(i+" "+opciones.get(i-1).toString());
+		}
+		@SuppressWarnings("resource")
+		Scanner br = new Scanner(System.in);
+		System.out.print("Escoja una opcion: ");
+		int op =br.nextInt();
+		opciones.get((op)-1).ejecutar();
 	}
 	
 	public static void limpiarLista(){

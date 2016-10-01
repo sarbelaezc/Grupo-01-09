@@ -7,10 +7,11 @@ public abstract class Cliente {
 	String nombre, motivo;
 	
 	Cliente(){
-		cedula = ingresarCedula();
-		nombre = ingresarNombre();
-		motivo = ingresarMotivo();
+		this.cedula = ingresarCedula();
+		this.nombre = ingresarNombre();
+		this.motivo = ingresarMotivo();
 	}
+	
 	public String ingresarMotivo() {
 		Scanner entrada = new Scanner(System.in);
 		System.out.print("Ingrese el motivo de la cita: ");

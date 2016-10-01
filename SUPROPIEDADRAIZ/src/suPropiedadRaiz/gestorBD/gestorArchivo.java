@@ -8,15 +8,23 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class gestorArchivo {
+import suPropiedadRaiz.usuarios.Cliente;
+import suPropiedadRaiz.usuarios.ClienteRegistrado;
 
-	File archivo = new File("Clientes.txt");
+public class gestorArchivo {
+	
 	BufferedWriter bw;
 	BufferedReader br;
+	File archivo;
 	
+	Cliente cliente;
+	
+	@SuppressWarnings("unused")
+	public static void crear(){
+		File archivo = new File("./Clientes.txt");
+	}	
 	
 	public void nuevocliente(Integer cedulaC,String nombreC,Integer edadC){
-		
 		
 		String texto = "";
 		try{
@@ -40,45 +48,36 @@ public class gestorArchivo {
 			    System.out.println("Acabo de crear el fichero de texto.");
 			    bw.write(cedulaC+" "+nombreC+" "+edadC+"\n");
 			}
-			
-			
 			bw.close();
-			
 		}
 		catch (Exception e)
 		{
 			e.printStackTrace();
-			
 		}
-		
 	}
 	
-	public boolean buscarCliente(int cedula, String cliente) {
+	public Cliente buscarCliente(long cedula) {
 		if(archivo.exists()){
 			try {
+				
 				br = new BufferedReader(new FileReader(archivo));
-				
-				
 				String aux = String.valueOf(cedula);
-				 String a;
-				 String[] texto;
-			     while ((a=br.readLine())!=null) {
-			       
-			    	 texto=a.split(" ");
-			    	 if (aux.equals(texto[0])){
-			    		 return true;
-			    	 }
+				String a;
+				String[] texto;
+				
+			    while ((a=br.readLine())!=null) {			       
+			    	texto=a.split(" ");
+			    	if (aux.equals(texto[0])){
+			    		cliente = new ClienteRegistrado(Long.parseLong(texto[0]));
+			    		return cliente;
+			    	}
 			     }
-			     return false;
-				
-				
-			} catch (Exception e) {
-				
+			     return null;				
+			} catch (Exception e) {				
 				e.printStackTrace();
-			}
-				
-			}
-		return false;
+			}				
+		}
+		return null;
 	}
 	
 	
