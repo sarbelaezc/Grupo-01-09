@@ -9,11 +9,14 @@ public class MenuDeConsola {
 	
 	public MenuDeConsola(){
 		opciones = new ArrayList<OpcionDeMenu>();
+		
 		opciones.add(new OpcionesAdministrador());
 		opciones.add(new OpcionesClienteRegistrado());
 		opciones.add(new OpcionesClienteInvitado());
 		opciones.add(new OpcionesFuncionario());
 		opciones.add(new OpcionesFuncionarioJefe());
+
+		MenuDeConsola.lanzarMenu();
 	}
 	
 	public static void anadirOpcion(OpcionDeMenu op){
@@ -35,7 +38,7 @@ public class MenuDeConsola {
 		
 		int selec = eo.nextInt();
 		
-		opciones.get(selec).ejecutar();	
+		opciones.get(selec-1).ejecutar();	
 	}
 	
 	public static void lanzarMenuAnterior() {
