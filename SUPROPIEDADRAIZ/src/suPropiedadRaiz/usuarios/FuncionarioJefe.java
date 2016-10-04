@@ -1,20 +1,22 @@
 package suPropiedadRaiz.usuarios;
 
 import java.util.ArrayList;
+import uiMain.menuConsola.*;
 
 public class FuncionarioJefe extends Funcionario {
 	
 	ArrayList <Funcionario> FuncionarioList = new ArrayList<Funcionario>();
+	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
-	public FuncionarioJefe() {
-		super();
+	public FuncionarioJefe(String nombre, long cedula, long salario) {
+		super(nombre, cedula, salario);
 	}
 
-	public void registrarFuncionario(){
-	    Funcionario Func = new Funcionario();
+	public void registrarFuncionario(String nombre, long cedula, long salario){
+	    Funcionario Func = new Funcionario(nombre, cedula, salario);
 	    FuncionarioList.add(Func);
 	 }
-	  
+	/*
 	 public Funcionario ListaFuncionarios(){
 	    for(int i = 0; i<FuncionarioList.size(); i++){
 	      Funcionario Func = FuncionarioList.get(i);
@@ -28,4 +30,5 @@ public class FuncionarioJefe extends Funcionario {
 	      return Clt;
 	    }
 	  }
+	  */
 }

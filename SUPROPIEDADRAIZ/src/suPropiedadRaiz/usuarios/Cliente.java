@@ -1,39 +1,46 @@
 package suPropiedadRaiz.usuarios;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import uiMain.menuConsola.*;
 
 public class Cliente {
-	long cedula;
-	String nombre, motivo;
+	long cedula, telefono, estrato;
+	String nombre, motivo, direccion;
+	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
-	Cliente(){
-		this.cedula = ingresarCedula();
-		this.nombre = ingresarNombre();
-		this.motivo = ingresarMotivo();
+	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
+		ingresarCedula(cedula);
+		ingresarNombre(nombre);
+		ingresarMotivo(motivo);
+		ingresarTelefono(telefono);
+		ingresarDireccion(direccion);
 	}
 	
-	public Cliente(long cedula){
+	public Cliente(long cedula, String nombre, String motivo){
+		ingresarCedula(cedula);
+		ingresarNombre(nombre);
+		ingresarMotivo(motivo);
+	}
+	
+	public void ingresarMotivo(String motivo) {
+		this.motivo = motivo;	
+	}
+	
+	public void ingresarDireccion(String direccion) {
+		this.direccion = direccion;	
+		
+	}
+	
+	public void ingresarNombre(String nombre){
+		this.nombre = nombre;
+	}
+
+	public void ingresarCedula (long cedula){
 		this.cedula = cedula;
 	}
 	
-	public String ingresarMotivo() {
-		Scanner entrada = new Scanner(System.in);
-		System.out.print("Ingrese el motivo de la cita: ");
-		motivo = entrada.nextLine();	
-		return motivo;
-	}
-
-	public long ingresarCedula (){
-		Scanner entrada = new Scanner(System.in);
-		System.out.print("Ingrese su número de cedula: ");
-		cedula = entrada.nextLong();
-		return cedula;
-	}
-	
-	public String ingresarNombre(){
-		Scanner entrada = new Scanner(System.in);
-		System.out.print("Ingrese su nombre: ");
-		nombre = entrada.nextLine();
-		return nombre;
+	public void ingresarTelefono(long telefono){
+		this.telefono = telefono;
 	}
 }
