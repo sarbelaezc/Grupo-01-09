@@ -9,15 +9,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import suPropiedadRaiz.usuarios.Cliente;
-import suPropiedadRaiz.usuarios.ClienteRegistrado;
 
 public class gestorArchivo {
 	
 	BufferedWriter bw;
-	BufferedReader br;
-	File archivo;
+	static BufferedReader br;
+	static File archivo;
 	
-	Cliente cliente;
+	static Cliente cliente;
 	
 	@SuppressWarnings("unused")
 	public static void crear(){
@@ -56,7 +55,7 @@ public class gestorArchivo {
 		}
 	}
 	
-	public Cliente buscarCliente(long cedula) {
+	public static Cliente buscarCliente(long cedula) {
 		if(archivo.exists()){
 			try {
 				
@@ -68,7 +67,7 @@ public class gestorArchivo {
 			    while ((a=br.readLine())!=null) {			       
 			    	texto=a.split(" ");
 			    	if (aux.equals(texto[0])){
-			    		cliente = new Cliente(Long.parseLong(texto[0]));
+			    		cliente = new Cliente();
 			    		return cliente;
 			    	}
 			     }
