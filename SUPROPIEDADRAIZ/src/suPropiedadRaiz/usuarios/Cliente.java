@@ -23,6 +23,10 @@ public class Cliente {
 		ingresarMotivo(motivo);
 	}
 	
+	public Cliente() {
+		System.out.println("Se creo un cliente nulo, revisar este constructor");
+	}
+
 	public void ingresarMotivo(String motivo) {
 		this.motivo = motivo;	
 	}
