@@ -3,11 +3,26 @@ package uiMain.menuConsola;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import suPropiedadRaiz.gestorBD.gestorArchivo;
+import suPropiedadRaiz.usuarios.Cliente;
+
 public class MenuDeConsola {
 	
 	static ArrayList<OpcionDeMenu> opciones;
+	Cliente cliente;
 	
 	public MenuDeConsola(){
+		
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.print("Ingrese su nombre: ");
+		String nombre = entrada.nextLine();
+		
+		System.out.print("Ingrese su cedula: ");
+		long cedula = entrada.nextLong();
+		
+		cliente = gestorArchivo.buscarCliente(cedula);
+		
 		opciones = new ArrayList<OpcionDeMenu>();
 		
 		opciones.add(new OpcionesAdministrador());

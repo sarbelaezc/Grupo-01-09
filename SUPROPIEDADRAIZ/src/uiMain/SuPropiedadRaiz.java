@@ -11,5 +11,4 @@ public class SuPropiedadRaiz {
 		@SuppressWarnings("unused")
 		MenuDeConsola menu = new MenuDeConsola();
 	}
-
 }
