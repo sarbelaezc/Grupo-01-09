@@ -1,16 +1,20 @@
 package suPropiedadRaiz.contratos;
 
-import suPropiedadRaiz.inmuebles.Apartamento;
-import suPropiedadRaiz.inmuebles.Casa;
-import suPropiedadRaiz.usuarios.Cliente;
+import java.io.Serializable;
 
-public class Arrendamiento {
+public class Arrendamiento implements Serializable {
 	
-	int codigo, tarifa;
-	Casa casa;
-	Apartamento apartamento;
-	Cliente clienteOferente, clienteArrendatario;
+	private static final long serialVersionUID = -7214924795934539004L;
+	int tarifa;
 	String fechaInicio;
+	
+	public String getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public void setFechaInicio(String fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
 	
 	public int getTarifa() {
 		return tarifa;
