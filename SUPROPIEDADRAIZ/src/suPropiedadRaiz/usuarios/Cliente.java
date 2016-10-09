@@ -1,13 +1,15 @@
 package suPropiedadRaiz.usuarios;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Scanner;
 import uiMain.menuConsola.*;
 
-public class Cliente {
+public class Cliente implements Serializable {
+	
+	private static final long serialVersionUID = -8985406422251618852L;
 	long cedula, telefono, estrato;
 	String nombre, motivo, direccion;
-	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
 		ingresarCedula(cedula);
