@@ -1,15 +1,22 @@
 package suPropiedadRaiz.contratos;
-import suPropiedadRaiz.inmuebles.Apartamento;
-import suPropiedadRaiz.inmuebles.Casa;
-import suPropiedadRaiz.usuarios.Cliente;
 
-public class CompraVenta {
-	long codigo, valor;
+import java.io.Serializable;
+
+public class CompraVenta implements Serializable{
+
+	private static final long serialVersionUID = 205373569062991690L;
+	long valor;
 	String fecha;
-	Casa casa;
-	Apartamento apartamento;
-	Cliente clienteOferente, clienteComprador;
 	
+	
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
 	public long getValor() {
 		return valor;
 	}
