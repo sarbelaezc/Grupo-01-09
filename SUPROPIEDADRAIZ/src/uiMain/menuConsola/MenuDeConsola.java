@@ -23,7 +23,7 @@ public class MenuDeConsola {
 		
 		cliente = gestorArchivo.buscarCliente(cedula);
 		
-		opciones = new ArrayList<OpcionDeMenu>();
+		opciones = cliente.opciones;
 		
 		opciones.add(new OpcionesAdministrador());
 		opciones.add(new OpcionesClienteRegistrado());
