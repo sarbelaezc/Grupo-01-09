@@ -3,7 +3,7 @@ package suPropiedadRaiz.usuarios;
 import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
-public class Administrador {
+public class Administrador extends Persona {
 	
 	String nombre;
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();

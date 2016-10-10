@@ -2,10 +2,9 @@ package suPropiedadRaiz.usuarios;
 
 import suPropiedadRaiz.contratos.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 import uiMain.menuConsola.*;
 
-public class Funcionario {
+public class Funcionario extends Persona{
 	
 	long cedula, salario, clientes;
 	String nombre;
@@ -28,6 +27,11 @@ public class Funcionario {
 	
 	public void ingresarSalario(long salario){
 		this.salario = salario;
+	}
+	
+	public void registrarCliente(long cedula, String nombre,  String motivo){
+		    Cliente Clt = new Cliente(cedula, nombre, motivo);
+		    clientesList.add(Clt);
 	}
 	
 	public void Arrendar(){

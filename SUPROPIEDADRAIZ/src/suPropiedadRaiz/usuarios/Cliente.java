@@ -4,14 +4,20 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
-public class Cliente implements Serializable {
+public class Cliente extends Persona implements Serializable {
 	
 	private static final long serialVersionUID = -8985406422251618852L;
-	long cedula, telefono, estrato;
+	long cedula, telefono, celular;
 	private String nombre;
 	String motivo;
 	String direccion;
 	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	
+	public Cliente(long cedula, String nombre, String motivo){
+		ingresarCedula(cedula);
+		ingresarNombre(nombre);
+		ingresarMotivo(motivo);
+	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
 		ingresarCedula(cedula);
@@ -21,16 +27,19 @@ public class Cliente implements Serializable {
 		ingresarDireccion(direccion);
 	}
 	
-	public Cliente(long cedula, String nombre, String motivo){
+	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, long celular){
 		ingresarCedula(cedula);
 		ingresarNombre(nombre);
 		ingresarMotivo(motivo);
+		ingresarTelefono(telefono);
+		ingresarDireccion(direccion);
+		ingresarCelular(celular);
 	}
 	
 	public Cliente() {
 		System.out.println("Se creo un cliente nulo, revisar este constructor");
 	}
-
+	
 	public void ingresarMotivo(String motivo) {
 		this.motivo = motivo;	
 	}
@@ -51,7 +60,11 @@ public class Cliente implements Serializable {
 	public void ingresarTelefono(long telefono){
 		this.telefono = telefono;
 	}
-
+	
+	public void ingresarCelular(long celular){
+		this.celular = celular;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
