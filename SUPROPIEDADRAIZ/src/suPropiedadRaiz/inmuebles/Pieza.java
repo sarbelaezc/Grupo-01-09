@@ -3,11 +3,6 @@ package suPropiedadRaiz.inmuebles;
 public class Pieza extends Cuarto {
 	
 	
-	Pieza(){
-		area = Inmuebles.ingresarArea();
-		uso = Cuarto.ingresarUso();
-	}
-	
 	public String getUso() {
 		return uso;
 	}

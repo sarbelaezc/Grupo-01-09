@@ -1,16 +1,12 @@
 package suPropiedadRaiz.inmuebles;
 
-import java.util.Scanner;
+import java.io.Serializable;
 
-public abstract class Cuarto {
-	
-	int area, codigo;
+public abstract class Cuarto implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3943277537164824255L;
+	int area = 0, codigo;
 	String uso;
-	
-	public static String ingresarUso(){
-		Scanner entrada = new Scanner(System.in);
-		System.out.print("Ingrese el uso: ");
-		String uso = entrada.nextLine();
-		return uso;
-	}
 }

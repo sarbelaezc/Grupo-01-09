@@ -1,7 +1,12 @@
 package suPropiedadRaiz.inmuebles;
 
-public class Garaje {
-	
+import java.io.Serializable;
+
+public class Garaje implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5609853935063512889L;
 	boolean puertaElectrica;
 	int codigo, area, altura;
 	
@@ -19,5 +24,13 @@ public class Garaje {
 	
 	public void setAltura(int altura) {
 		this.altura = altura;
+	}
+	
+	public boolean getPuertaE() {
+		return puertaElectrica;
+	}
+	
+	public void setPuertaE(boolean puerta) {
+		puertaElectrica = puerta;
 	}
 }
