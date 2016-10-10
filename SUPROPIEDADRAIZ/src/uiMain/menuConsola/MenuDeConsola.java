@@ -26,8 +26,7 @@ public class MenuDeConsola {
 		opciones = cliente.opciones;
 		
 		opciones.add(new OpcionesAdministrador());
-		opciones.add(new OpcionesClienteRegistrado());
-		opciones.add(new OpcionesClienteInvitado());
+		opciones.add(new OpcionesCliente());
 		opciones.add(new OpcionesFuncionario());
 		opciones.add(new OpcionesFuncionarioJefe());
 
