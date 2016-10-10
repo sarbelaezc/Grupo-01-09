@@ -8,7 +8,9 @@ public class Cliente implements Serializable {
 	
 	private static final long serialVersionUID = -8985406422251618852L;
 	long cedula, telefono, estrato;
-	String nombre, motivo, direccion;
+	private String nombre;
+	String motivo;
+	String direccion;
 	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
@@ -39,7 +41,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public void ingresarNombre(String nombre){
-		this.nombre = nombre;
+		this.setNombre(nombre);
 	}
 
 	public void ingresarCedula (long cedula){
@@ -48,5 +50,13 @@ public class Cliente implements Serializable {
 	
 	public void ingresarTelefono(long telefono){
 		this.telefono = telefono;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 }
