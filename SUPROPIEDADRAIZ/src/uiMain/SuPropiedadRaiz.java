@@ -6,8 +6,8 @@ import uiMain.menuConsola.MenuDeConsola;
 
 public class SuPropiedadRaiz {
 
-	public static void main(String[] args) {
-		GestorArchivos.crear();
+	public static void main(String[] args) throws ClassNotFoundException {
+		GestorArchivos.leer();
 		System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");
 		@SuppressWarnings("unused")
 		MenuDeConsola menu = new MenuDeConsola();
