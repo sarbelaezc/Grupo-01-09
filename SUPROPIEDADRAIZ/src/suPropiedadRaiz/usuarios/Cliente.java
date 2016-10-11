@@ -7,69 +7,87 @@ import uiMain.menuConsola.*;
 public class Cliente extends Persona implements Serializable {
 	
 	private static final long serialVersionUID = -8985406422251618852L;
-	long cedula, telefono, celular;
+	long cedula, telefono;
 	private String nombre;
-	String motivo;
-	String direccion;
+	String motivo, direccion, celular;
 	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
 	public Cliente(long cedula, String nombre, String motivo){
-		ingresarCedula(cedula);
-		ingresarNombre(nombre);
-		ingresarMotivo(motivo);
+		this.setCedula(cedula);
+		this.setNombre(nombre);
+		this.setMotivo(motivo);
 	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
-		ingresarCedula(cedula);
-		ingresarNombre(nombre);
-		ingresarMotivo(motivo);
-		ingresarTelefono(telefono);
-		ingresarDireccion(direccion);
+		this.setCedula(cedula);
+		this.setNombre(nombre);
+		this.setMotivo(motivo);
+		this.setTelefono(telefono);
+		this.setDireccion(direccion);
 	}
 	
-	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, long celular){
-		ingresarCedula(cedula);
-		ingresarNombre(nombre);
-		ingresarMotivo(motivo);
-		ingresarTelefono(telefono);
-		ingresarDireccion(direccion);
-		ingresarCelular(celular);
+	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, String celular){
+		this.setCedula(cedula);
+		this.setNombre(nombre);
+		this.setMotivo(motivo);
+		this.setTelefono(telefono);
+		this.setDireccion(direccion);
+		this.setCelular(celular);
 	}
 	
 	public Cliente() {
 		System.out.println("Se creo un cliente nulo, revisar este constructor");
 	}
-	
-	public void ingresarMotivo(String motivo) {
-		this.motivo = motivo;	
-	}
-	
-	public void ingresarDireccion(String direccion) {
-		this.direccion = direccion;	
-		
-	}
-	
-	public void ingresarNombre(String nombre){
-		this.setNombre(nombre);
-	}
 
-	public void ingresarCedula (long cedula){
-		this.cedula = cedula;
-	}
-	
-	public void ingresarTelefono(long telefono){
-		this.telefono = telefono;
-	}
-	
-	public void ingresarCelular(long celular){
-		this.celular = celular;
-	}
-	
 	public String getNombre() {
 		return nombre;
 	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public long getCedula() {
+		return cedula;
+	}
+	
+	public void setCedula(long cedula) {
+		this.cedula = cedula;
+	}
+
+	public String getMotivo() {
+		return motivo;
+	}
+
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
+	}
+	
+
+	public long getTelefono() {
+		return telefono;
+	}
+	
+
+	public void setTelefono(long telefono) {
+		this.telefono = telefono;
+	}
+
+	
+	public String getDireccion() {
+		return direccion;
+	}
+
+	
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
 	}
 }
