@@ -1,24 +1,18 @@
 package suPropiedadRaiz.usuarios;
 
-public class Demandador{
-	long codigo, presupuesto;
+import java.io.Serializable;
+
+public class Demandador implements Serializable{
+
+	private static final long serialVersionUID = -4965502740288019833L;
+	long presupuesto;
 	String preferencia;
-	
-	public Demandador(long codigo){
-		ingresarCodigo(codigo);
-	}
-	
-	public Demandador(long codigo, long presupuesto){
-		ingresarCodigo(codigo);
+
+	public Demandador(long presupuesto){
 		ingresarPresupuesto(presupuesto);
 	}
 
 	public void ingresarPresupuesto(long presupuesto) {
 		this.presupuesto = presupuesto;
 	}
-
-	public void ingresarCodigo(long codigo) {
-		this.codigo = codigo;
-	}
-	
 }
