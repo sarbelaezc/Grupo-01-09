@@ -5,6 +5,7 @@ import uiMain.menuConsola.*;
 
 public class FuncionarioJefe extends Funcionario {
 	
+	private static final long serialVersionUID = 7210150202792519097L;
 	ArrayList <Funcionario> FuncionarioList = new ArrayList<Funcionario>();
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
