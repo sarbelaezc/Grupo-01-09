@@ -1,43 +1,41 @@
 package uiMain.menuConsola;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import suPropiedadRaiz.gestorBD.gestorArchivo;
-import suPropiedadRaiz.usuarios.Cliente;
+import suPropiedadRaiz.gestorBD.GestorArchivos;
+import suPropiedadRaiz.usuarios.Persona;
 
 public class MenuDeConsola {
 	
 	static ArrayList<OpcionDeMenu> opciones;
-	Cliente cliente;
+	Persona persona;
 	
-	public MenuDeConsola(){
+	public MenuDeConsola() throws ClassNotFoundException, IOException{
 		
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		
 		System.out.print("Ingrese su nombre: ");
+		@SuppressWarnings("unused")
 		String nombre = entrada.nextLine();
 		
 		System.out.print("Ingrese su cedula: ");
 		long cedula = entrada.nextLong();
 		
-		cliente = gestorArchivo.buscarCliente(cedula);
+		persona = GestorArchivos.buscar(cedula);
 		
-		opciones = cliente.opciones;
-		
-		opciones.add(new OpcionesAdministrador());
-		opciones.add(new OpcionesCliente());
-		opciones.add(new OpcionesFuncionario());
-		opciones.add(new OpcionesFuncionarioJefe());
+		opciones = persona.opciones;
 
-		MenuDeConsola.lanzarMenu();
+		MenuDeConsola.lanzarMenu(opciones);
 	}
 	
 	public static void anadirOpcion(OpcionDeMenu op){
 		opciones.add(op);
 	}
 	
-	public static void lanzarMenu(){
+	public static void lanzarMenu(ArrayList<OpcionDeMenu> opciones){
 		
 		opciones.add(new OpcionSalir());
 	
