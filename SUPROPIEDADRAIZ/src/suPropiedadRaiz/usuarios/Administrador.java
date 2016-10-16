@@ -8,11 +8,15 @@ public class Administrador extends Persona {
 	private static final long serialVersionUID = 6885455392745744589L;
 	String nombre;
 	long cedula;
-	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
 	public Administrador(String nombre, long cedula){
 		this.nombre = nombre;
 		this.cedula = cedula;
+		opciones.add(new OpcionVerUsuario());
+		opciones.add(new OpcionNuevaUsuario());
+		opciones.add(new OpcionEliminarDeUsuario());
+		opciones.add(new OpcionSalir());
 	}
 
 	@Override

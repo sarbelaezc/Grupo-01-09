@@ -26,13 +26,14 @@ public class MenuDeConsola {
 		
 		persona = GestorArchivos.buscar(cedula);
 		
+		System.out.println(persona.opciones.get(0));
 		opciones = persona.opciones;
 
 		MenuDeConsola.lanzarMenu(opciones);
 	}
 	
-	public static void anadirOpcion(OpcionDeMenu op){
-		opciones.add(op);
+	public void anadirOpcion(OpcionDeMenu op){
+		MenuDeConsola.opciones.add(op);
 	}
 	
 	public static void lanzarMenu(ArrayList<OpcionDeMenu> opciones){
