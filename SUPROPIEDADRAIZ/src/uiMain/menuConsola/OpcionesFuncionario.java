@@ -4,6 +4,7 @@ import suPropiedadRaiz.usuarios.Funcionario;
 
 public class OpcionesFuncionario extends OpcionDeMenu {
 
+	private static final long serialVersionUID = -2262331482623924870L;
 	Funcionario funcionario;
 	
 	public OpcionesFuncionario(){

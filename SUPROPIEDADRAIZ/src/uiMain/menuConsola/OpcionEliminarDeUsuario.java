@@ -8,6 +8,7 @@ import suPropiedadRaiz.usuarios.Persona;
 
 public class OpcionEliminarDeUsuario extends OpcionDeMenu {
 
+	private static final long serialVersionUID = 9011229442548444687L;
 	Persona persona;
 	
 	@Override

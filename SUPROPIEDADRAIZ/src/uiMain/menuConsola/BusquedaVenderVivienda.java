@@ -1,7 +1,10 @@
 package uiMain.menuConsola;
 
 public class BusquedaVenderVivienda extends OpcionDeMenu {
-    public void ejecutar(){
+
+	private static final long serialVersionUID = -4717492227780203187L;
+
+	public void ejecutar(){
     	
     }
 	
