@@ -42,14 +42,12 @@ public class MenuDeConsola {
 		for(int i = 1; i<=opciones.size(); i++){
 			System.out.println(i+" "+opciones.get(i-1).toString());
 		}
-		
 		@SuppressWarnings("resource")
 		Scanner eo = new Scanner(System.in);
 		
 		System.out.print("Elija una opción: ");
 		
 		int selec = eo.nextInt();
-		
 		opciones.get(selec-1).ejecutar();	
 	}
 	
@@ -60,9 +58,11 @@ public class MenuDeConsola {
 		}
 		@SuppressWarnings("resource")
 		Scanner br = new Scanner(System.in);
+		
 		System.out.print("Escoja una opcion: ");
-		int op =br.nextInt();
-		opciones.get((op)-1).ejecutar();
+		
+		int selec =br.nextInt();
+		opciones.get((selec)-1).ejecutar();
 	}
 	
 	public static void limpiarLista(){

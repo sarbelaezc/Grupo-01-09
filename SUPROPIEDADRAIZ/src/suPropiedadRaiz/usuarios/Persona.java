@@ -13,4 +13,6 @@ public abstract class Persona implements Serializable {
 	public ArrayList<OpcionDeMenu> opciones;
 	
 	public abstract long getCedula();
+
+	public abstract String getNombre();
 }
