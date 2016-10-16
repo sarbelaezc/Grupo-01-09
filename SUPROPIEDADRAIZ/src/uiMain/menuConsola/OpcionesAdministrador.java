@@ -1,14 +1,6 @@
 package uiMain.menuConsola;
 
-import suPropiedadRaiz.usuarios.Administrador;
-
 public class OpcionesAdministrador extends OpcionDeMenu {
-
-	Administrador Admin;
-	
-	public OpcionesAdministrador() {
-		Admin = new Administrador();
-	}
 
 	public void ejecutar() {
 		
