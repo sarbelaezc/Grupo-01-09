@@ -34,10 +34,6 @@ public class Cliente extends Persona implements Serializable {
 		this.setDireccion(direccion);
 		this.setCelular(celular);
 	}
-	
-	public Cliente() {
-		System.out.println("Se creo un cliente nulo, revisar este constructor");
-	}
 
 	public String getNombre() {
 		return nombre;
