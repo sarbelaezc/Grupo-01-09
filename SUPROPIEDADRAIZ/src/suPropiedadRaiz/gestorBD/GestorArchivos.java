@@ -105,10 +105,11 @@ public class GestorArchivos {
 		 
 		 Persona persona;
 		 Persona personaEncontrada = null;
+		 
 		 for (int i = 0; i<personas.size(); i++){
 			persona = personas.get(i);
 			if(persona.getCedula() == cedula){
-				persona = personaEncontrada;
+				personaEncontrada = persona;
 			} 
 		 }
 		 return personaEncontrada;
