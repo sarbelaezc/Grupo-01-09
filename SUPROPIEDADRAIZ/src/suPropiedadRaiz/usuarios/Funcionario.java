@@ -1,32 +1,47 @@
 package suPropiedadRaiz.usuarios;
 
 import suPropiedadRaiz.contratos.*;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
-public class Funcionario extends Persona{
+public class Funcionario extends Persona implements Serializable{
 	
+	private static final long serialVersionUID = -1499008267571669186L;
 	long cedula, salario, clientes;
 	String nombre;
 	ArrayList<Cliente> clientesList = new ArrayList<Cliente>();
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
 	public Funcionario(String nombre, long cedula, long salario) {
-		ingresarNombre(nombre);
-		ingresarCedula(cedula);
-		ingresarSalario(salario);
+		this.setNombre(nombre);
+		this.setCedula(cedula);
+		this.setSalario(salario);
 	}
 	
-	public void ingresarCedula(long cedula){
+	public long getCedula() {
+		return cedula;
+	}
+
+	public void setCedula(long cedula) {
 		this.cedula = cedula;
 	}
-	
-	public void ingresarNombre(String nombre){
-		this.nombre = nombre;
+
+	public long getSalario() {
+		return salario;
 	}
-	
-	public void ingresarSalario(long salario){
+
+	public void setSalario(long salario) {
 		this.salario = salario;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 	public void registrarCliente(long cedula, String nombre,  String motivo){
