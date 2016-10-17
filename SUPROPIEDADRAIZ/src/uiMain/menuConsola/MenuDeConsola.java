@@ -1,44 +1,35 @@
 package uiMain.menuConsola;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Persona;
 
-public class MenuDeConsola {
+/**
+ * Esta clase implementa un menu de consola en formato DOS
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
+public class MenuDeConsola implements Serializable{
 	
+	private static final long serialVersionUID = 3755786809174840531L;
 	static ArrayList<OpcionDeMenu> opciones;
-	Persona persona;
-	
-	public MenuDeConsola() throws ClassNotFoundException, IOException{
 		
-		@SuppressWarnings("resource")
-		Scanner entrada = new Scanner(System.in);
-		
-		System.out.print("Ingrese su nombre: ");
-		@SuppressWarnings("unused")
-		String nombre = entrada.nextLine();
-		
-		System.out.print("Ingrese su cedula: ");
-		long cedula = entrada.nextLong();
-		
-		persona = GestorArchivos.buscar(cedula);
-		
-		System.out.println(persona.opciones.get(0));
-		opciones = persona.opciones;
-
-		MenuDeConsola.lanzarMenu(opciones);
-	}
-	
+	/**
+	 * Metodo que le añade una opcion al menu existente
+	 * @param op
+	 */
 	public void anadirOpcion(OpcionDeMenu op){
 		MenuDeConsola.opciones.add(op);
 	}
 	
-	public static void lanzarMenu(ArrayList<OpcionDeMenu> opciones){
+	public void lanzarMenu(){
 		
-		opciones.add(new OpcionSalir());
+		anadirOpcion(new OpcionSalir());
 	
 		for(int i = 1; i<=opciones.size(); i++){
 			System.out.println(i+" "+opciones.get(i-1).toString());
@@ -68,5 +59,29 @@ public class MenuDeConsola {
 	
 	public static void limpiarLista(){
 		opciones.clear();
+	}
+	
+	public static Persona logIn(){
+		@SuppressWarnings("resource")
+		Scanner entrada = new Scanner(System.in);
+		
+		System.out.print("Ingrese su nombre: ");
+		@SuppressWarnings("unused")
+		String nombre = entrada.nextLine();
+		
+		System.out.print("Ingrese su cedula: ");
+		long cedula = entrada.nextLong();
+		
+		Persona persona = null;
+		try {
+			persona = GestorArchivos.buscar(cedula);
+		} catch (ClassNotFoundException e) {
+			System.out.println("Persona no encontrada");
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return persona;
 	}
 }
