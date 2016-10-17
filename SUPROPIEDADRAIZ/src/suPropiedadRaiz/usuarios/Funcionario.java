@@ -13,11 +13,13 @@ public class Funcionario extends Persona implements Serializable{
 	String nombre;
 	ArrayList<Cliente> clientesList = new ArrayList<Cliente>();
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	MenuDeConsola menu;
 	
 	public Funcionario(String nombre, long cedula, long salario) {
 		this.setNombre(nombre);
 		this.setCedula(cedula);
 		this.setSalario(salario);
+		menu = new MenuDeConsola();
 	}
 	
 	public long getCedula() {

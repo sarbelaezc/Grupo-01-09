@@ -1,16 +1,17 @@
 package suPropiedadRaiz.usuarios;
 
 import java.util.ArrayList;
-import uiMain.menuConsola.*;
+
+import uiMain.menuConsola.MenuDeConsola;
 
 public class FuncionarioJefe extends Funcionario {
 	
 	private static final long serialVersionUID = 7210150202792519097L;
 	ArrayList <Funcionario> FuncionarioList = new ArrayList<Funcionario>();
-	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	
 	public FuncionarioJefe(String nombre, long cedula, long salario) {
 		super(nombre, cedula, salario);
+		menu = new MenuDeConsola();
 	}
 
 	public void registrarFuncionario(String nombre, long cedula, long salario){

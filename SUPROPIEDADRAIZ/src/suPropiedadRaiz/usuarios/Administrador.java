@@ -1,6 +1,5 @@
 package suPropiedadRaiz.usuarios;
 
-import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
 public class Administrador extends Persona {
@@ -8,15 +7,12 @@ public class Administrador extends Persona {
 	private static final long serialVersionUID = 6885455392745744589L;
 	String nombre;
 	long cedula;
-	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	MenuDeConsola menu;
 	
 	public Administrador(String nombre, long cedula){
 		this.nombre = nombre;
 		this.cedula = cedula;
-		opciones.add(new OpcionVerUsuario());
-		opciones.add(new OpcionNuevaUsuario());
-		opciones.add(new OpcionEliminarDeUsuario());
-		opciones.add(new OpcionSalir());
+		menu = new MenuDeConsola();
 	}
 
 	@Override

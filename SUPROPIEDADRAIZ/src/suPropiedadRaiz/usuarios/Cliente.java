@@ -1,7 +1,6 @@
 package suPropiedadRaiz.usuarios;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
 public class Cliente extends Persona implements Serializable {
@@ -10,12 +9,13 @@ public class Cliente extends Persona implements Serializable {
 	long cedula, telefono;
 	private String nombre;
 	String motivo, direccion, celular;
-	public ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
+	MenuDeConsola menu;
 	
 	public Cliente(long cedula, String nombre, String motivo){
 		this.setCedula(cedula);
 		this.setNombre(nombre);
 		this.setMotivo(motivo);
+		menu = new MenuDeConsola();
 	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
@@ -24,6 +24,7 @@ public class Cliente extends Persona implements Serializable {
 		this.setMotivo(motivo);
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
+		menu = new MenuDeConsola();
 	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, String celular){
@@ -33,6 +34,7 @@ public class Cliente extends Persona implements Serializable {
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
 		this.setCelular(celular);
+		menu = new MenuDeConsola();
 	}
 
 	public String getNombre() {
