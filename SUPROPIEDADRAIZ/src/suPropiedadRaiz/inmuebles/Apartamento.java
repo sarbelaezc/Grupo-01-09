@@ -77,7 +77,7 @@ public class Apartamento extends Inmuebles implements Serializable {
 	public boolean getaArrendar(){
 		return aArrendar;
 	}
-	public void setaArrendar(boolean arrendar){
+	public void setArrendar(boolean arrendar){
 		aArrendar = arrendar;
 	}
 	
@@ -94,7 +94,4 @@ public class Apartamento extends Inmuebles implements Serializable {
 	public void agregarbano(){
 		Banos.add(new Bano());
 	}
-	
-	
-	
 }

@@ -1,8 +1,12 @@
 package suPropiedadRaiz.inmuebles;
 
-import java.util.Scanner;
-
 public abstract class Inmuebles {
+
+public abstract void setenVenta(boolean b);
+
+public abstract void setArrendar(boolean b);
+	
+
 	
 	
 }

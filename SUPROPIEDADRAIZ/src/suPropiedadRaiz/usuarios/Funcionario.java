@@ -67,7 +67,7 @@ public class Funcionario extends Persona implements Serializable{
 	}
 	
 	public void setRolCliente(String rol){
-		Cliente.motivo = rol;
+		
 	}
 	
 	public void VenderCasa(Inmuebles inm){
@@ -104,15 +104,15 @@ public class Funcionario extends Persona implements Serializable{
 
 	public void Arrendar(Cliente clienteOf, Cliente clienteDe){
 		Arrendamiento Arren = new Arrendamiento();
-		Arren.ClienteOf = clienteOf;
-		Arren.ClienteDe = clienteDe;
+		Arren.setClienteOf(clienteOf);
+		Arren.setClienteDe(clienteDe);
 		ArrendamientoList.add(Arren);
 	}
 	
 	public void ComVe(Cliente clienteOf, Cliente clienteDe){
 		CompraVenta CompraVe = new CompraVenta();
-		CompraVe.ClienteOf = clienteOf;
-		CompraVe.clienteDe = clienteDe;
+		CompraVe.setClienteOf(clienteOf);
+		CompraVe.setClienteDe(clienteDe);
 		CompraVentaList.add(CompraVe);
 	}
 	
