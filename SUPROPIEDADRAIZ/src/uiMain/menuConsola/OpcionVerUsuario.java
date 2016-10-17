@@ -30,7 +30,7 @@ public class OpcionVerUsuario extends OpcionDeMenu {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		MenuDeConsola.lanzarMenu(persona.opciones);
+		persona.menu.lanzarMenu();
 	}
 
 	@Override

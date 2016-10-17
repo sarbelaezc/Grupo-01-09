@@ -6,7 +6,7 @@ public class OpcionesExistentes extends OpcionDeMenu {
 
 	@Override
 	public void ejecutar() {
-		MenuDeConsola.lanzarMenu(MenuDeConsola.opciones);
+		
 	}
 
 	@Override

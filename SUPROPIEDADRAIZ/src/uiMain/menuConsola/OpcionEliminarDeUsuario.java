@@ -25,8 +25,8 @@ public class OpcionEliminarDeUsuario extends OpcionDeMenu {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		for(int i = 1; i<=persona.opciones.size(); i++){
-			System.out.println(i+" "+persona.opciones.get(i-1).toString());
+		for(int i = 1; i<=MenuDeConsola.opciones.size(); i++){
+			System.out.println(i+" "+MenuDeConsola.opciones.get(i-1).toString());
 		}
 		@SuppressWarnings("resource")
 		Scanner eo = new Scanner(System.in);
@@ -35,7 +35,7 @@ public class OpcionEliminarDeUsuario extends OpcionDeMenu {
 		
 		int selec = eo.nextInt();
 		
-		persona.opciones.remove(selec-1);
+		MenuDeConsola.opciones.remove(selec-1);
 		System.out.println("Se ha eliminado la opcion " + selec + " de " + persona.getNombre());
 	}
 

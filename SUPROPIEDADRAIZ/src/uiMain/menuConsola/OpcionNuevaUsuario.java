@@ -32,7 +32,7 @@ public class OpcionNuevaUsuario extends OpcionDeMenu {
 		
 		MenuDeConsola.limpiarLista();
 		
-		MenuDeConsola.lanzarMenu(persona.opciones);
+		persona.menu.lanzarMenu();
 	}
 
 	@Override
