@@ -14,13 +14,21 @@ import suPropiedadRaiz.usuarios.Funcionario;
 import suPropiedadRaiz.usuarios.FuncionarioJefe;
 import suPropiedadRaiz.usuarios.Persona;
 
+/**
+ * Esta Clase representa la accion guardar objetos del programa
+ * @author Santiago Arbelaez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class GestorArchivos {
 	
 	 static ArrayList<Persona> personas = new ArrayList<Persona>();
-	 static ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
-	 static ArrayList<Funcionario> listaFuncionarios = new ArrayList<Funcionario>();
-	 static ArrayList<FuncionarioJefe> listaFuncionariosJefes = new ArrayList<FuncionarioJefe>();
 	 
+	 /**
+	 * Esta funcion representa la capacidad de la clase GestorArchivos para crear una lista con personas para ser agregada al archivo .obj
+	 * @return ArrayList<Persona>
+	 * @throws ExceptionFileNotFoundException, IOException
+	 */
 	 public static ArrayList<Persona> crearListaPersonas() throws FileNotFoundException, IOException{
 		
 		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Datos.obj"));
@@ -39,7 +47,11 @@ public class GestorArchivos {
 		 return personas;
 	 }
 	 
-	 public static void crear() throws IOException{
+	 /**
+	 * Esta funcion representa la capacidad de la clase GestorArchivos de crear un archivo Datos.obj
+	 * @throws IOException
+	 */
+	public static void crear() throws IOException{
 		 
 		ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Datos.obj"));
 		
@@ -49,7 +61,12 @@ public class GestorArchivos {
 		System.out.println("Se ha creado Clientes.obj");
 	 }
 	 
-	 public static void leer() throws ClassNotFoundException, IOException{
+	 /**
+	 * Esta funcion se encarga de leer el archivo Datos.obj y cerciorarse de que se guardan los archivos correctamente
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 */
+	public static void leer() throws ClassNotFoundException, IOException{
 				
 		ObjectInputStream entrada = null;
 		 
@@ -84,16 +101,6 @@ public class GestorArchivos {
 					System.out.println( ((Administrador) obj).getNombre());
 					System.out.println( ((Administrador) obj).getCedula());
 				}
-				
-				/**
-				if(obj instanceof Cliente){
-					listaClientes.add((Cliente) obj);
-				}else if(obj instanceof FuncionarioJefe){
-					listaFuncionariosJefes.add((FuncionarioJefe) obj);
-				}else if(obj instanceof Funcionario){
-					listaFuncionarios.add((Funcionario) obj);
-				}
-				*/	
 			}
 		}catch(IOException io){
 			System.out.println("--------------fin-------------");
@@ -101,7 +108,15 @@ public class GestorArchivos {
 			entrada.close();
 		}
 	 }
-	 public static Persona buscar(long cedula) throws ClassNotFoundException, IOException{
+	
+	 /**
+	 * Esta funcion es la encargada de buscar por la cedula una persona entre todas las presentes en el archivo Datos.obj y devolverla al ser encontrada
+	 * @param cedula
+	 * @return
+	 * @throws ClassNotFoundException
+	 * @throws IOException
+	 */
+	public static Persona buscar(long cedula) throws ClassNotFoundException, IOException{
 		 
 		 Persona persona;
 		 Persona personaEncontrada = null;
