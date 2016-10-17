@@ -27,6 +27,9 @@ public class MenuDeConsola implements Serializable{
 		MenuDeConsola.opciones.add(op);
 	}
 	
+	/**
+	 * Este metodo se encarga de lanzar el menu de consola para el usuario
+	 */
 	public void lanzarMenu(){
 		
 		anadirOpcion(new OpcionSalir());
@@ -57,10 +60,17 @@ public class MenuDeConsola implements Serializable{
 		opciones.get((selec)-1).ejecutar();
 	}
 	
+	/**
+	 * Este metodo limpia la lista de opciones para poder pasar al siguiente paso
+	 */
 	public static void limpiarLista(){
 		opciones.clear();
 	}
 	
+	/**
+	 * Este metodo se encarga de iniciar una sesion para un usuario
+	 * @return Persona
+	 */
 	public static Persona logIn(){
 		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
