@@ -1,6 +1,8 @@
 package suPropiedadRaiz.inmuebles;
 
 public class Bano extends Cuarto {
+	
+	private static final long serialVersionUID = 5211070822684513671L;
 	boolean banera = false, ducha = false, enchapado = false, puerta = false;
 	
 /////////////////////////////////////////get y set de area

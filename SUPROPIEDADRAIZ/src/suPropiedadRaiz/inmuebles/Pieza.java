@@ -2,7 +2,8 @@ package suPropiedadRaiz.inmuebles;
 
 public class Pieza extends Cuarto {
 	
-	
+	private static final long serialVersionUID = 7973907635557393320L;
+
 	public String getUso() {
 		return uso;
 	}
