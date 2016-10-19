@@ -6,6 +6,12 @@ import java.util.Scanner;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Persona;
 
+/**
+ * Esta clase representa la opcion del administrador de agregarle una opcion existente a un usuario
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class OpcionNuevaUsuario extends OpcionDeMenu {
 
 	private static final long serialVersionUID = -5057806560207948430L;
@@ -30,7 +36,7 @@ public class OpcionNuevaUsuario extends OpcionDeMenu {
 		
 		System.out.print("Ingrese la opcion que se agregará: ");
 		
-		MenuDeConsola.limpiarLista();
+		persona.menu.limpiarLista();
 		
 		persona.menu.lanzarMenu();
 	}
