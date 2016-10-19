@@ -33,13 +33,6 @@ public class GestorArchivos {
 	 public static ArrayList<Persona> crearListaPersonas() throws FileNotFoundException, IOException{
 		
 		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Datos.obj"));
-		 
-		 //personas.add(new Cliente(1037650446, "Santiago", "Venta", 2641578, "Mi Casa", "3102955586"));
-		 //personas.add(new Cliente(1037650447, "Sebastian", "Venta", 4444444, "Su Casa"));
-	 	 //personas.add(new Cliente(1045, "Santiago", "Arrendamiento"));
-	 	 //personas.add(new Funcionario("Juan", 111112222, 360000));
-	 	 //personas.add(new FuncionarioJefe("Jaime", 5556555, 5000000));
-	 	 personas.add(new Administrador("Administrador", 1));
 		
 		 for (int i=0; i<personas.size(); i++){
 			 oos.writeObject(personas.get(i));
@@ -59,9 +52,17 @@ public class GestorArchivos {
 		if (fichero.exists()){
 			
 		}else{
-			  crearListaPersonas();
+			
+			personas.add(new Cliente(1037650446, "Santiago", "Venta", 2641578, "Mi Casa", "3102955586"));
+			//personas.add(new Cliente(1037650447, "Sebastian", "Venta", 4444444, "Su Casa"));
+		 	//personas.add(new Cliente(1045, "Santiago", "Arrendamiento"));
+		 	//personas.add(new Funcionario("Juan", 111112222, 360000));
+		 	//personas.add(new FuncionarioJefe("Jaime", 5556555, 5000000));
+		 	personas.add(new Administrador("Administrador", 1));
+			crearListaPersonas();
+			
+			System.out.println("Se ha creado Clientes.obj");
 		}
-		System.out.println("Se ha creado Clientes.obj");
 	 }
 	 
 	 /**
