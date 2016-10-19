@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -22,7 +23,7 @@ import suPropiedadRaiz.usuarios.Persona;
  */
 public class GestorArchivos {
 	
-	 static ArrayList<Persona> personas = new ArrayList<Persona>();
+	 public static ArrayList<Persona> personas = new ArrayList<Persona>();
 	 
 	 /**
 	 * Esta funcion representa la capacidad de la clase GestorArchivos para crear una lista con personas para ser agregada al archivo .obj
@@ -33,12 +34,12 @@ public class GestorArchivos {
 		
 		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Datos.obj"));
 		 
-		 personas.add(new Cliente(1037650446, "Santiago", "Venta", 2641578, "Mi Casa", "3102955586"));
-		 personas.add(new Cliente(1037650447, "Sebastian", "Venta", 4444444, "Su Casa"));
-	 	 personas.add(new Cliente(1045, "Santiago", "Arrendamiento"));
-	 	 personas.add(new Funcionario("Juan", 111112222, 360000));
-	 	 personas.add(new FuncionarioJefe("Jaime", 5556555, 5000000));
-	 	 personas.add(new Administrador("Administrador1", 1037650445));
+		 //personas.add(new Cliente(1037650446, "Santiago", "Venta", 2641578, "Mi Casa", "3102955586"));
+		 //personas.add(new Cliente(1037650447, "Sebastian", "Venta", 4444444, "Su Casa"));
+	 	 //personas.add(new Cliente(1045, "Santiago", "Arrendamiento"));
+	 	 //personas.add(new Funcionario("Juan", 111112222, 360000));
+	 	 //personas.add(new FuncionarioJefe("Jaime", 5556555, 5000000));
+	 	 personas.add(new Administrador("Administrador", 1));
 		
 		 for (int i=0; i<personas.size(); i++){
 			 oos.writeObject(personas.get(i));
@@ -53,11 +54,13 @@ public class GestorArchivos {
 	 */
 	public static void crear() throws IOException{
 		 
-		ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream("Datos.obj"));
+		File fichero = new File("Datos.obj");
 		
-		salida.writeObject(personas);
-		salida.close();
-		
+		if (fichero.exists()){
+			
+		}else{
+			  crearListaPersonas();
+		}
 		System.out.println("Se ha creado Clientes.obj");
 	 }
 	 
@@ -77,33 +80,48 @@ public class GestorArchivos {
 			while(true){
 				
 				Object obj = entrada.readObject();
-				
+								
 				if(obj instanceof Cliente){
+					
+					personas.add((Cliente) obj);
+					
 					System.out.println("----------------C--------------");
-					System.out.println( ((Cliente) obj).getNombre());
+					System.out.println(((Cliente) obj).getNombre());
 					System.out.println(((Cliente) obj).getCedula());
 					System.out.println(((Cliente) obj).getMotivo());
 					System.out.println(((Cliente) obj).getTelefono());
 					System.out.println(((Cliente) obj).getDireccion());
 					System.out.println(((Cliente) obj).getCelular());
+					
 				}else if(obj instanceof FuncionarioJefe){
+					
+					personas.add((FuncionarioJefe) obj);
+					
 					System.out.println("----------------FJ-------------");
 					System.out.println( ((FuncionarioJefe) obj).getNombre());
 					System.out.println( ((FuncionarioJefe) obj).getCedula());
 					System.out.println( ((FuncionarioJefe) obj).getSalario());
+					
 				}else if(obj instanceof Funcionario){
+					
+					personas.add((Funcionario) obj);
+					
 					System.out.println("----------------F--------------");
 					System.out.println( ((Funcionario) obj).getNombre());
 					System.out.println( ((Funcionario) obj).getCedula());
 					System.out.println( ((Funcionario) obj).getSalario());
+					
 				}else if(obj instanceof Administrador){
+					
+					personas.add((Administrador) obj);
+					
 					System.out.println("----------------A--------------");
 					System.out.println( ((Administrador) obj).getNombre());
 					System.out.println( ((Administrador) obj).getCedula());
 				}
 			}
 		}catch(IOException io){
-			System.out.println("--------------fin-------------");
+			System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");
 		}finally{
 			entrada.close();
 		}
@@ -118,15 +136,15 @@ public class GestorArchivos {
 	 */
 	public static Persona buscar(long cedula) throws ClassNotFoundException, IOException{
 		 
-		 Persona persona;
-		 Persona personaEncontrada = null;
+		Persona persona;
+		Persona personaEncontrada = null;
 		 
-		 for (int i = 0; i<personas.size(); i++){
+		for (int i = 0; i<personas.size(); i++){
 			persona = personas.get(i);
 			if(persona.getCedula() == cedula){
 				personaEncontrada = persona;
 			} 
-		 }
-		 return personaEncontrada;
-	 }
+		}
+		return personaEncontrada;
+	}
 }
