@@ -1,5 +1,7 @@
 package uiMain.menuConsola;
 
+import suPropiedadRaiz.usuarios.OpcionNuevoFuncionarioJ;
+
 /**
  * Esta clase es la encargada de mostrar y alojar las opciones existentes en el sistema sin importar el usuario
  * @author Santiago Arbeláez Cataño
@@ -20,6 +22,7 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionUsuarioInvitado());
 		menu.anadirOpcion(new OpcionUsuarioRegistrado());
 		menu.anadirOpcion(new OpcionVerUsuario());	
+		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
 	}
 	
 	@Override
@@ -31,7 +34,8 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionSalir());
 		menu.anadirOpcion(new OpcionUsuarioInvitado());
 		menu.anadirOpcion(new OpcionUsuarioRegistrado());
-		menu.anadirOpcion(new OpcionVerUsuario());	
+		menu.anadirOpcion(new OpcionVerUsuario());
+		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
 		
 		menu.lanzarMenu();
 	}

@@ -17,6 +17,7 @@ public class Administrador extends Persona {
 		menu.anadirOpcion(new OpcionesExistentes());
 		menu.anadirOpcion(new OpcionNuevaUsuario());
 		menu.anadirOpcion(new OpcionEliminarDeUsuario());
+		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
 	}
 
 	@Override
