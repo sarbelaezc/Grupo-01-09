@@ -13,6 +13,7 @@ public class Cliente extends Persona implements Serializable {
 	public Cliente(){
 		menu = new MenuDeConsola();
 		menu.logIn();
+		menu.anadirOpcion(new OpcionSalir());
 	}
 
 	public Cliente(long cedula, String nombre, String motivo){
@@ -20,6 +21,7 @@ public class Cliente extends Persona implements Serializable {
 		this.setNombre(nombre);
 		this.setMotivo(motivo);
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionSalir());
 	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
@@ -29,6 +31,7 @@ public class Cliente extends Persona implements Serializable {
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionSalir());
 	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, String celular){
@@ -39,6 +42,7 @@ public class Cliente extends Persona implements Serializable {
 		this.setDireccion(direccion);
 		this.setCelular(celular);
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionSalir());
 	}
 
 	public String getNombre() {

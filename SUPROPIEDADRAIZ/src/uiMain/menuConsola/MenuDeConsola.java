@@ -27,8 +27,6 @@ public class MenuDeConsola implements Serializable{
 	 * Este metodo se encarga de lanzar el menu de consola para el usuario
 	 */
 	public void lanzarMenu(){
-		
-		anadirOpcion(new OpcionSalir());
 	
 		for(int i = 1; i<=opciones.size(); i++){
 			System.out.println(i+" "+opciones.get(i-1).toString());
