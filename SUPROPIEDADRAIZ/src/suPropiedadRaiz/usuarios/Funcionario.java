@@ -17,7 +17,6 @@ public class Funcionario extends Persona implements Serializable{
 	ArrayList<Arrendamiento> ArrendamientoList = new ArrayList<Arrendamiento>();
 	ArrayList<CompraVenta> CompraVentaList = new ArrayList<CompraVenta>();
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
-	MenuDeConsola menu;
 	
 	public Funcionario(String nombre, long cedula, long salario) {
 		this.setNombre(nombre);
