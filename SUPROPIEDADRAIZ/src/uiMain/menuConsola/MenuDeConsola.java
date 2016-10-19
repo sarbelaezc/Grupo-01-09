@@ -1,12 +1,8 @@
 package uiMain.menuConsola;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import suPropiedadRaiz.gestorBD.GestorArchivos;
-import suPropiedadRaiz.usuarios.Persona;
 
 /**
  * Esta clase implementa un menu de consola en formato DOS
@@ -17,14 +13,14 @@ import suPropiedadRaiz.usuarios.Persona;
 public class MenuDeConsola implements Serializable{
 	
 	private static final long serialVersionUID = 3755786809174840531L;
-	static ArrayList<OpcionDeMenu> opciones;
+	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 		
 	/**
 	 * Metodo que le añade una opcion al menu existente
 	 * @param op
 	 */
 	public void anadirOpcion(OpcionDeMenu op){
-		MenuDeConsola.opciones.add(op);
+		this.opciones.add(op);
 	}
 	
 	/**
@@ -46,7 +42,7 @@ public class MenuDeConsola implements Serializable{
 		opciones.get(selec-1).ejecutar();	
 	}
 	
-	public static void lanzarMenuAnterior() {
+	public void lanzarMenuAnterior() {
 		System.out.println("/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/");
 		for(int i = 1; i<=opciones.size(); i++){
 			System.out.println(i+" "+opciones.get(i-1).toString());
@@ -63,35 +59,23 @@ public class MenuDeConsola implements Serializable{
 	/**
 	 * Este metodo limpia la lista de opciones para poder pasar al siguiente paso
 	 */
-	public static void limpiarLista(){
+	public void limpiarLista(){
 		opciones.clear();
 	}
 	
 	/**
 	 * Este metodo se encarga de iniciar una sesion para un usuario
-	 * @return Persona
 	 */
-	public static Persona logIn(){
-		@SuppressWarnings("resource")
-		Scanner entrada = new Scanner(System.in);
+	public void logIn(){
 		
-		System.out.print("Ingrese su nombre: ");
-		@SuppressWarnings("unused")
-		String nombre = entrada.nextLine();
+		System.out.println("¿Que tipo de Usuario es usted?");
 		
-		System.out.print("Ingrese su cedula: ");
-		long cedula = entrada.nextLong();
+		this.limpiarLista();
 		
-		Persona persona = null;
-		try {
-			persona = GestorArchivos.buscar(cedula);
-		} catch (ClassNotFoundException e) {
-			System.out.println("Persona no encontrada");
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		anadirOpcion(new OpcionUsuarioInvitado());
+		anadirOpcion(new OpcionUsuarioRegistrado());
 		
-		return persona;
+		this.lanzarMenu();
+		
 	}
 }
