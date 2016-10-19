@@ -6,6 +6,12 @@ import java.util.Scanner;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Persona;
 
+/**
+ * Esta clase representa el login de un usuario registrado
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class OpcionUsuarioRegistrado extends OpcionDeMenu {
 	
 	private static final long serialVersionUID = -6317444120487933639L;
