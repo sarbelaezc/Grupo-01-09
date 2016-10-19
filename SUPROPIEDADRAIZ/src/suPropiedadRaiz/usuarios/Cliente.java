@@ -9,7 +9,11 @@ public class Cliente extends Persona implements Serializable {
 	long cedula, telefono;
 	private String nombre;
 	String motivo, direccion, celular;
-	MenuDeConsola menu;
+	
+	public Cliente(){
+		menu = new MenuDeConsola();
+		menu.logIn();
+	}
 
 	public Cliente(long cedula, String nombre, String motivo){
 		this.setCedula(cedula);
