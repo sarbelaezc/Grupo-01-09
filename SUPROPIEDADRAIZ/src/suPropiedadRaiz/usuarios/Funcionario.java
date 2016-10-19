@@ -11,9 +11,9 @@ public class Funcionario extends Persona implements Serializable{
 	private static final long serialVersionUID = -1499008267571669186L;
 	long salario, clientes;
 	ArrayList<Cliente> clientesList = new ArrayList<Cliente>();
-	ArrayList<Casa> casaList = new ArrayList<Casa>();
-	ArrayList<Apartamento> apartamentoList = new ArrayList<Apartamento>();
-	ArrayList<Arrendamiento> ArrendamientoList = new ArrayList<Arrendamiento>();
+	static ArrayList<Casa> casaList = new ArrayList<Casa>();
+	static ArrayList<Apartamento> apartamentoList = new ArrayList<Apartamento>();
+	static ArrayList<Arrendamiento> ArrendamientoList = new ArrayList<Arrendamiento>();
 	ArrayList<CompraVenta> CompraVentaList = new ArrayList<CompraVenta>();
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	MenuDeConsola menu;
@@ -50,9 +50,14 @@ public class Funcionario extends Persona implements Serializable{
 	}
 	
 //empiezan funciones de este usuario
-	public void registrarCliente(long cedula, String nombre,  String motivo){
-		    Cliente Clt = new Cliente(cedula, nombre, motivo);
+	public void registrarCliente(long cedula, String nombre, String motivo, long telefono, 
+									String direccion, String celular){
+		    Cliente Clt = new Cliente(cedula, nombre, motivo, telefono, direccion, celular);
 		    clientesList.add(Clt);
+	}
+	
+	public void rolCliente(Cliente clt, String motivo){
+		clt.setMotivo(motivo);
 	}
 	
 	public void registrarApar(){
@@ -65,51 +70,27 @@ public class Funcionario extends Persona implements Serializable{
 	    casaList.add(Cas);
 	}
 	
-	public void rolClienteOf(Cliente clt, String Oferente){
-		clt.setMotivo(Oferente);
+	public void rolVenderCasa(Inmuebles inm, boolean v){
+		inm.setenVenta(v);
 	}
 	
-	public void rolClienteDe(Cliente clt, String Demandante){
-		clt.setMotivo(Demandante);
-	}
-	
-	public void VenderCasa(Inmuebles inm){
-		inm.setenVenta(true);
-	}
-	
-	public void NoVenderCasa(Inmuebles inm){
-		inm.setenVenta(false);
-	}
-	
-	public void ArrCasa(Inmuebles inm){
-		inm.setArrendar(true);
-	}
-	
-	public void NoArrCasa(Inmuebles inm){
-		inm.setArrendar(false);
+	public void rolArrCasa(Inmuebles inm, boolean v){
+		inm.setArrendar(v);
 	}
 
-	public void VenderApar(Inmuebles inm){
-		inm.setenVenta(true);
+	public void rolVenderApar(Inmuebles inm, boolean v){
+		inm.setenVenta(v);
 	}
 	
-	public void NoVenderApar(Inmuebles inm){
-		inm.setenVenta(false) ;
-	}
-	
-	public void ArrApar(Inmuebles inm){
-		inm.setArrendar(true);
-	}
-	
-	public void NoArrApar(Inmuebles inm){
-		inm.setArrendar(false);
+	public void ArrApar(Inmuebles inm, boolean v){
+		inm.setArrendar(v);
 	}
 
 	public void Arrendar(Cliente clienteOf, Cliente clienteDe, Inmuebles inm){
 		Arrendamiento Arren = new Arrendamiento();
 		Arren.setClienteOf(clienteOf);
 		Arren.setClienteDe(clienteDe);
-		Arren.Inmueble = inm;
+		Arren.inmueble = inm;
 		ArrendamientoList.add(Arren);
 	}
 	
@@ -117,7 +98,7 @@ public class Funcionario extends Persona implements Serializable{
 		CompraVenta CompraVe = new CompraVenta();
 		CompraVe.setClienteOf(clienteOf);
 		CompraVe.setClienteDe(clienteDe);
-		CompraVe.Inmueble = inm;
+		CompraVe.inmueble = inm;
 		CompraVentaList.add(CompraVe);
 	}
 	
