@@ -16,9 +16,12 @@ public class OpcionNuevaUsuario extends OpcionDeMenu {
 
 	private static final long serialVersionUID = -5057806560207948430L;
 	Persona persona;
+	OpcionesExistentes ope;
 	
 	@Override
 	public void ejecutar() {
+		
+		ope = new OpcionesExistentes();
 		
 		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
@@ -34,11 +37,17 @@ public class OpcionNuevaUsuario extends OpcionDeMenu {
 			e.printStackTrace();
 		}
 		
+		for(int i = 1; i<=ope.menu.opciones.size(); i++){
+			System.out.println(i + " " + ope.menu.opciones.get(i-1).toString());
+		}
+		
+		@SuppressWarnings("resource")
+		Scanner eo = new Scanner(System.in);
+		
 		System.out.print("Ingrese la opcion que se agregará: ");
 		
-		persona.menu.limpiarLista();
-		
-		persona.menu.lanzarMenu();
+		int selec = eo.nextInt();
+		persona.menu.anadirOpcion(ope.menu.opciones.get(selec-1));
 	}
 
 	@Override
