@@ -3,7 +3,8 @@ package uiMain;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
-import uiMain.menuConsola.MenuDeConsola;
+import suPropiedadRaiz.usuarios.Cliente;
+import suPropiedadRaiz.usuarios.Persona;
 
 /**
  * Esta clase es la clase principal del programa
@@ -21,9 +22,11 @@ public class SuPropiedadRaiz {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-		System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");
+		
+		GestorArchivos.crear();	
+		GestorArchivos.leer();	
+		@SuppressWarnings("unused")
+		Persona p = new Cliente();
 		GestorArchivos.crearListaPersonas();
-		GestorArchivos.leer();
-		MenuDeConsola.logIn().menu.lanzarMenu();
 	}
 }
