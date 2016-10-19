@@ -7,12 +7,16 @@ public class Administrador extends Persona {
 	private static final long serialVersionUID = 6885455392745744589L;
 	String nombre;
 	long cedula;
-	MenuDeConsola menu;
 	
 	public Administrador(String nombre, long cedula){
 		this.nombre = nombre;
 		this.cedula = cedula;
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionSalir());
+		menu.anadirOpcion(new OpcionVerUsuario());
+		menu.anadirOpcion(new OpcionesExistentes());
+		menu.anadirOpcion(new OpcionNuevaUsuario());
+		menu.anadirOpcion(new OpcionEliminarDeUsuario());
 	}
 
 	@Override
