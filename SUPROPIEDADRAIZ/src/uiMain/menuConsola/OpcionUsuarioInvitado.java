@@ -35,7 +35,7 @@ public class OpcionUsuarioInvitado extends OpcionDeMenu {
 
 	@Override
 	public String toString() {
-		return "Usuario Invitado";
+		return "Cliente Invitado";
 	}
 
 }
