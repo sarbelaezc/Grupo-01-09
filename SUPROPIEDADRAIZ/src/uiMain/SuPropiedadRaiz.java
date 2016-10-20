@@ -24,7 +24,6 @@ public class SuPropiedadRaiz {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		
 		GestorArchivos.crear();	
-		GestorArchivos.leer();	
 		@SuppressWarnings("unused")
 		Persona p = new Cliente();
 		GestorArchivos.crearListaPersonas();
