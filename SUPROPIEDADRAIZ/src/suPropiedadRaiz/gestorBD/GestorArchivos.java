@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
+import suPropiedadRaiz.inmuebles.Inmuebles;
 import suPropiedadRaiz.usuarios.Administrador;
 import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Funcionario;
@@ -147,5 +148,10 @@ public class GestorArchivos {
 			} 
 		}
 		return personaEncontrada;
+	}
+	
+	public static Inmuebles buscarInmuebles(int codigo){
+		
+		return null;
 	}
 }
