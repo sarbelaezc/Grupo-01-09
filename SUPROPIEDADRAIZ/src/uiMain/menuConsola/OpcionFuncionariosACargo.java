@@ -39,7 +39,7 @@ public class OpcionFuncionariosACargo extends OpcionDeMenu {
 		// TODO Auto-generated method stub
 		for(int i=0; i<listaFunc.size(); i++){
 			Funcionario f = listaFunc.get(i);
-			System.out.print("Funcionario : C.C." + f.getCedula() + " Nombre: " + f.getNombre() + " Salario neto: " + f.getSalario());
+			System.out.println("Funcionario : C.C." + f.getCedula() + " Nombre: " + f.getNombre() + " Salario neto: " + f.getSalario());
 		}
 	}
 
