@@ -194,6 +194,11 @@ public class Cliente extends Persona implements Serializable {
 		this.celular = celular;
 	}
 	
+	/**
+	 * Hace una busqueda de los inmuebles que tiene arrendados y devuelve una lista con los mismos
+	 * @param clt
+	 * @return BuscasaList
+	 */
 	public ArrayList<Inmuebles> Dema_Arr(Cliente clt){
 		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
 		for(int i=0; i <ArrenList.size(); i++){
@@ -210,6 +215,11 @@ public class Cliente extends Persona implements Serializable {
 		return BuscasaList;
 	}
 	
+	/**
+	 * Es un cliente oferente que busca inmuebles que tiene consignados para arrendar y devuelve lista
+	 * @param clt
+	 * @return BuscasaList
+	 */
 	public ArrayList<Inmuebles> CltOfertarArr(Cliente clt){
 		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
 		for(int i=0; i <CaList.size(); i++){
@@ -235,6 +245,11 @@ public class Cliente extends Persona implements Serializable {
 		}
 		return BuscasaList;
 	}
+	/**
+	 * Es un oferente que busca inmubles que tiene para la venta y tambien le devuelve su lista
+	 * @param clt
+	 * @return BuscasaList
+	 */
 	public ArrayList<Inmuebles> CltOfertarVenta(Cliente clt){
 		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
 		for(int i=0; i <CaList.size(); i++){
