@@ -1,7 +1,7 @@
 package suPropiedadRaiz.usuarios;
 
 import java.util.ArrayList;
-import uiMain.menuConsola.MenuDeConsola;
+import uiMain.menuConsola.*;
 
 public class FuncionarioJefe extends Funcionario {
 	

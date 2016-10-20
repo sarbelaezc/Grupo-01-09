@@ -39,6 +39,13 @@ public class Cliente extends Persona implements Serializable {
 		this.setDireccion(direccion);
 		menu = new MenuDeConsola();
 		menu.anadirOpcion(new OpcionSalir());
+		
+		if((this.getMotivo() == "Demandador")){
+			menu.anadirOpcion(new OpcionBuscarInmueblesArrendados());
+		}else if(this.getMotivo() == "Oferente"){
+			menu.anadirOpcion(new OpcionConsignarInmuebleArrenda());
+			menu.anadirOpcion(new OpcionConsignarInmuebleVenta());
+		}
 	}
 	
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, String celular){
@@ -50,6 +57,13 @@ public class Cliente extends Persona implements Serializable {
 		this.setCelular(celular);
 		menu = new MenuDeConsola();
 		menu.anadirOpcion(new OpcionSalir());
+		
+		if((this.getMotivo() == "Demandador")){
+			menu.anadirOpcion(new OpcionBuscarInmueblesArrendados());
+		}else if(this.getMotivo() == "Oferente"){
+			menu.anadirOpcion(new OpcionConsignarInmuebleArrenda());
+			menu.anadirOpcion(new OpcionConsignarInmuebleVenta());
+		}
 	}
 
 	public String getNombre() {

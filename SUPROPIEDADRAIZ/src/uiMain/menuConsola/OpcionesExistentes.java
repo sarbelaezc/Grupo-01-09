@@ -39,6 +39,9 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionFuncionariosACargo());
 		menu.anadirOpcion(new OpcionClientesDeFuncinario());
 		menu.anadirOpcion(new OpcionNuevoFuncionario());
+		menu.anadirOpcion(new OpcionBuscarInmueblesArrendados());
+		menu.anadirOpcion(new OpcionConsignarInmuebleArrenda());
+		menu.anadirOpcion(new OpcionConsignarInmuebleVenta());
 	}
 	
 	@Override
@@ -73,6 +76,9 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionFuncionariosACargo());
 		menu.anadirOpcion(new OpcionClientesDeFuncinario());
 		menu.anadirOpcion(new OpcionNuevoFuncionario());
+		menu.anadirOpcion(new OpcionBuscarInmueblesArrendados());
+		menu.anadirOpcion(new OpcionConsignarInmuebleArrenda());
+		menu.anadirOpcion(new OpcionConsignarInmuebleVenta());
 		
 		menu.lanzarMenu();
 	}
