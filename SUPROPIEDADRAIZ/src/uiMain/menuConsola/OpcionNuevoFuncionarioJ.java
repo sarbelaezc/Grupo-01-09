@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.FuncionarioJefe;
+import suPropiedadRaiz.usuarios.Persona;
 
 public class OpcionNuevoFuncionarioJ extends OpcionDeMenu {
 
@@ -25,7 +26,8 @@ public class OpcionNuevoFuncionarioJ extends OpcionDeMenu {
 		System.out.print("Ingrese salario del nuevo funcioanrio jefe: ");
 		long salario = entrada.nextLong();
 
-		GestorArchivos.personas.add(new FuncionarioJefe(nombre, cedula, salario));
+		Persona p = new FuncionarioJefe(nombre, cedula, salario);
+		GestorArchivos.personas.add(p);
 	}
 
 	@Override
