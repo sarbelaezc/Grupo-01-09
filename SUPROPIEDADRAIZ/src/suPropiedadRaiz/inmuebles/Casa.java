@@ -32,6 +32,10 @@ public class Casa extends Inmuebles implements Serializable {
 		unidad = new Unidad();
 		unidad.setNombre(unidad2);
 	}
+	public Casa() {
+		
+	}
+
 	public void setenVenta(boolean b){
 		enVenta = b;
 	}
@@ -51,5 +55,10 @@ public class Casa extends Inmuebles implements Serializable {
 	}
 	public Unidad getUnidad() {
 		return unidad;
+	}
+
+	public boolean getenVenta() {
+		
+		return enVenta;
 	}
 }

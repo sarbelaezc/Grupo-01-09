@@ -21,12 +21,24 @@ public class Apartamento extends Inmuebles implements Serializable {
 	Unidad unidad;
 	
 	
-	public void terraza(Terraza Terr){
-		terraza = Terr;
+	public Apartamento(int codigo2, String direccion2, String unidad2) {
+		codigo = codigo2;
+		direccion = direccion2;
+		unidad = new Unidad();
+		unidad.setNombre(unidad2);
+		
+	}
+
+	public Apartamento() {
+		
+	}
+
+	public void AgregarTerraza(){
+		terraza = new Terraza();
 	}
 	
-	public void balcon(Balcon Bal){
-		balcon = Bal;
+	public void AgregarBalcon(){
+		balcon = new Balcon();
 	}
 	
 	////////////////////////////////////get y set de direccion
@@ -106,8 +118,5 @@ public class Apartamento extends Inmuebles implements Serializable {
 		return unidad;
 	}
 
-	public Torre getTorre() {
-		
-		return torre;
-	}
+	
 }

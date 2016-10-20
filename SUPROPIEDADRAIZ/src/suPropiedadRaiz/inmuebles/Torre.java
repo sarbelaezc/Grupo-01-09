@@ -49,4 +49,7 @@ public class Torre implements Serializable{
 	public void setAscensor(boolean Ascensor){
 		this.Ascensor = Ascensor;
 	}
+	public int getNumeroDeTorre() {
+		return numeroDeTorre;
+	}
 }

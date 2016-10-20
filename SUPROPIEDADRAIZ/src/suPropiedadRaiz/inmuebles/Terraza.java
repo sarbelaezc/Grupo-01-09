@@ -17,7 +17,7 @@ public class Terraza {
 			return "Terraza de area:" + area;
 		}
 		else {
-			return "No Tiene terraza o no se ha especificado";
+			return "No se ha especificado el área de la Terraza";
 		}
 	}
 }
