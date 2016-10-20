@@ -12,7 +12,7 @@ public class FuncionarioJefe extends Funcionario {
 		super(nombre, cedula, salario);
 		menu = new MenuDeConsola();
 		menu.anadirOpcion(new OpcionSalir());
-		menu.anadirOpcion(new OpcionFuncionariosACargo());
+		menu.anadirOpcion(new OpcionFuncionariosACargo(this.cedula));
 		menu.anadirOpcion(new OpcionClientesDeFuncinario(this.cedula));
 		menu.anadirOpcion(new OpcionNuevoFuncionario());
 	}

@@ -15,6 +15,10 @@ public class OpcionClientesDeFuncinario extends OpcionDeMenu {
 	ArrayList<Funcionario> listaFunc;
 	ArrayList<Cliente> listaClientes;
 	
+	public OpcionClientesDeFuncinario(){
+		
+	}
+	
 	public OpcionClientesDeFuncinario(long cedula) {
 		// TODO Auto-generated constructor stub
 		try {
