@@ -39,7 +39,7 @@ public class Funcionario extends Persona implements Serializable{
 		menu.anadirOpcion(new OpcionComisionArriendos());
 		menu.anadirOpcion(new OpcionComisionVentas());
 		menu.anadirOpcion(new OpcionSalarioNeto());
-		menu.anadirOpcion(new OpcionVerListaClientes());
+		menu.anadirOpcion(new OpcionVerListaClientes(this));
 	}
 	
 	public long getCedula() {
