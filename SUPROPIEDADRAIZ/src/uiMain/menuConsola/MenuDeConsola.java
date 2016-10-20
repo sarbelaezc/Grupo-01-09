@@ -70,6 +70,7 @@ public class MenuDeConsola implements Serializable{
 		
 		this.limpiarLista();
 		
+		anadirOpcion(new OpcionSalir());
 		anadirOpcion(new OpcionUsuarioInvitado());
 		anadirOpcion(new OpcionUsuarioRegistrado());
 		
