@@ -144,12 +144,12 @@ public class Cliente extends Persona implements Serializable {
 		}
 		for(int i=0; i <ApList.size(); i++){
 			Apartamento A = ApList.get(i);
-			if (A.getDueno().getCedula() == clt.cedula && A.getaArrendar() == true){
+			if (A.getDueno().getCedula() == clt.getCedula() && A.getaArrendar() == true){
 				int codigo = A.getCodigo();
 				String direccion = A.getDireccion();
 				String unidad = A.getUnidad().getNombre();
-				int torre = A.getTorre().getNumeroDeTorre();
-				Apartamento A2 = new Apartamento(codigo, direccion, unidad, torre);
+				
+				Apartamento A2 = new Apartamento(codigo, direccion, unidad);
 				BuscasaList.add(A2);
 			}
 		}
@@ -159,22 +159,22 @@ public class Cliente extends Persona implements Serializable {
 		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
 		for(int i=0; i <CaList.size(); i++){
 			Casa A = CaList.get(i);
-			if (A.dueno.cedula == clt.cedula && A.getenVenta() == true){
+			if (A.getDueno().getCedula() == clt.getCedula() && A.getenVenta() == true){
 				int codigo = A.getCodigo();
 				String direccion = A.getDireccion();
-				String unidad = A.getUnidad();
+				String unidad = A.getUnidad().getNombre();
 				Casa A2 = new Casa(codigo, direccion, unidad);
 				BuscasaList.add(A2);
 			}
 		}
 		for(int i=0; i <ApList.size(); i++){
 			Apartamento A = ApList.get(i);
-			if (A.dueno.cedula == clt.cedula && A.getenVenta() == true){
+			if (A.getDueno().getCedula() == clt.getCedula() && A.getenVenta() == true){
 				int codigo = A.getCodigo();
 				String direccion = A.getDireccion();
-				String unidad = A.getUnidad();
-				int torre = A.getTorre();
-				Apartamento A2 = new Apartamento(codigo, direccion, unidad, torre);
+				String unidad = A.getUnidad().getNombre();
+				
+				Apartamento A2 = new Apartamento(codigo, direccion, unidad);
 				BuscasaList.add(A2);
 			}
 		}
