@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Cliente;
+import suPropiedadRaiz.usuarios.Persona;
 
 /**
  * Esta clase representa al usuario anonimo o invitado, pregunta lso datos, lo crea y lo almacena para el gestor de archivos
@@ -30,7 +31,9 @@ public class OpcionUsuarioInvitado extends OpcionDeMenu {
 		System.out.print("Ingrese su motivo: ");
 		String motivo = entrada.next();
 		
-		GestorArchivos.personas.add(new Cliente(cedula, nombre, motivo));
+		Persona p = new Cliente(cedula, nombre, motivo);
+		
+		GestorArchivos.personas.add(p);
 	}
 
 	@Override

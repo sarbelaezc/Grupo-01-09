@@ -23,6 +23,22 @@ public class Funcionario extends Persona implements Serializable{
 		this.setCedula(cedula);
 		this.setSalario(salario);
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionRegistrarCliente());
+		menu.anadirOpcion(new OpcionAsignarRolCliente());
+		menu.anadirOpcion(new OpcionRegistrarInmueble());
+		menu.anadirOpcion(new OpcionAsignarRolInmueble());
+		menu.anadirOpcion(new OpcionRegistrarCompraVenta());
+		menu.anadirOpcion(new OpcionRegistrarArrendamiento());
+		menu.anadirOpcion(new OpcionBuscarCasaArriendo());
+		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
+		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
+		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
+		menu.anadirOpcion(new OpcionBuscarCasaEspeV());
+		menu.anadirOpcion(new OpcionBuscarAptoEspeV());
+		menu.anadirOpcion(new OpcionComisionArriendos());
+		menu.anadirOpcion(new OpcionComisionVentas());
+		menu.anadirOpcion(new OpcionSalarioNeto());
+		menu.anadirOpcion(new OpcionVerListaClientes());
 	}
 	
 	public long getCedula() {

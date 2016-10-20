@@ -13,13 +13,32 @@ public class OpcionesExistentes extends OpcionDeMenu {
 	
 	public OpcionesExistentes(){
 		
-		this.menu.anadirOpcion(new OpcionEliminarDeUsuario());
-		this.menu.anadirOpcion(new OpcionNuevaUsuario());
-		this.menu.anadirOpcion(new OpcionSalir());
-		this.menu.anadirOpcion(new OpcionUsuarioInvitado());
-		this.menu.anadirOpcion(new OpcionUsuarioRegistrado());
-		this.menu.anadirOpcion(new OpcionVerUsuario());	
-		this.menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
+		menu.anadirOpcion(new OpcionEliminarDeUsuario());
+		menu.anadirOpcion(new OpcionNuevaUsuario());
+		menu.anadirOpcion(new OpcionSalir());
+		menu.anadirOpcion(new OpcionUsuarioInvitado());
+		menu.anadirOpcion(new OpcionUsuarioRegistrado());
+		menu.anadirOpcion(new OpcionVerUsuario());	
+		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
+		menu.anadirOpcion(new OpcionRegistrarCliente());
+		menu.anadirOpcion(new OpcionAsignarRolCliente());
+		menu.anadirOpcion(new OpcionRegistrarInmueble());
+		menu.anadirOpcion(new OpcionAsignarRolInmueble());
+		menu.anadirOpcion(new OpcionRegistrarCompraVenta());
+		menu.anadirOpcion(new OpcionRegistrarArrendamiento());
+		menu.anadirOpcion(new OpcionBuscarCasaArriendo());
+		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
+		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
+		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
+		menu.anadirOpcion(new OpcionBuscarCasaEspeV());
+		menu.anadirOpcion(new OpcionBuscarAptoEspeV());
+		menu.anadirOpcion(new OpcionComisionArriendos());
+		menu.anadirOpcion(new OpcionComisionVentas());
+		menu.anadirOpcion(new OpcionSalarioNeto());
+		menu.anadirOpcion(new OpcionVerListaClientes());
+		menu.anadirOpcion(new OpcionFuncionariosACargo());
+		menu.anadirOpcion(new OpcionClientesDeFuncinario());
+		menu.anadirOpcion(new OpcionNuevoFuncionario());
 	}
 	
 	@Override
@@ -35,6 +54,25 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionUsuarioRegistrado());
 		menu.anadirOpcion(new OpcionVerUsuario());
 		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
+		menu.anadirOpcion(new OpcionRegistrarCliente());
+		menu.anadirOpcion(new OpcionAsignarRolCliente());
+		menu.anadirOpcion(new OpcionRegistrarInmueble());
+		menu.anadirOpcion(new OpcionAsignarRolInmueble());
+		menu.anadirOpcion(new OpcionRegistrarCompraVenta());
+		menu.anadirOpcion(new OpcionRegistrarArrendamiento());
+		menu.anadirOpcion(new OpcionBuscarCasaArriendo());
+		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
+		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
+		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
+		menu.anadirOpcion(new OpcionBuscarCasaEspeV());
+		menu.anadirOpcion(new OpcionBuscarAptoEspeV());
+		menu.anadirOpcion(new OpcionComisionArriendos());
+		menu.anadirOpcion(new OpcionComisionVentas());
+		menu.anadirOpcion(new OpcionSalarioNeto());
+		menu.anadirOpcion(new OpcionVerListaClientes());
+		menu.anadirOpcion(new OpcionFuncionariosACargo());
+		menu.anadirOpcion(new OpcionClientesDeFuncinario());
+		menu.anadirOpcion(new OpcionNuevoFuncionario());
 		
 		menu.lanzarMenu();
 	}

@@ -11,6 +11,9 @@ public class FuncionarioJefe extends Funcionario {
 	public FuncionarioJefe(String nombre, long cedula, long salario) {
 		super(nombre, cedula, salario);
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionFuncionariosACargo());
+		menu.anadirOpcion(new OpcionClientesDeFuncinario());
+		menu.anadirOpcion(new OpcionNuevoFuncionario());
 	}
 
 	public void registrarFuncionario(String nombre, long cedula, long salario){
