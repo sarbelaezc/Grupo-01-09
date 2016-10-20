@@ -2,12 +2,23 @@ package suPropiedadRaiz.usuarios;
 
 import uiMain.menuConsola.*;
 
+/**
+ * Esta clase representa el administrador del programa con todo lo que impica
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Administrador extends Persona {
 	
 	private static final long serialVersionUID = 6885455392745744589L;
 	String nombre;
 	long cedula;
 	
+	/**
+	 * Constructor para el administrador recibiendo los siguientes parametros y generandole un menu 
+	 * @param nombre
+	 * @param cedula
+	 */
 	public Administrador(String nombre, long cedula){
 		this.nombre = nombre;
 		this.cedula = cedula;
@@ -20,19 +31,37 @@ public class Administrador extends Persona {
 		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
 	}
 
+	/* 
+	 * Devuelve el numero de cedula del administrador
+	 * (non-Javadoc)
+	 * @see suPropiedadRaiz.usuarios.Persona#getCedula()
+	 */
 	@Override
 	public long getCedula() {
 		return this.cedula;
 	}
 	
+	/**
+	 * Cambia la cedula del administrador por el que se ingreso por parametro
+	 * @param cedula
+	 */
 	public void setCedula(long cedula){
 		this.cedula = cedula;
 	}
 
+	/* 
+	 * Devuelve el nombre del administrador
+	 * (non-Javadoc)
+	 * @see suPropiedadRaiz.usuarios.Persona#getNombre()
+	 */
 	public String getNombre() {
 		return this.nombre;
 	}
 	
+	/**
+	 * Cambia el nombre del administrador por el que ingresa por parametro
+	 * @param nombre
+	 */
 	public void setNombre(String nombre){
 		this.nombre = nombre;
 	}
