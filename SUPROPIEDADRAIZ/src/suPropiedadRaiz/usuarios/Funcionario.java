@@ -11,9 +11,9 @@ public class Funcionario extends Persona implements Serializable{
 	private static final long serialVersionUID = -1499008267571669186L;
 	long salario, clientes;
 	ArrayList<Cliente> clientesList = new ArrayList<Cliente>();
-	static ArrayList<Casa> casaList = new ArrayList<Casa>();
-	static ArrayList<Apartamento> apartamentoList = new ArrayList<Apartamento>();
-	static ArrayList<Arrendamiento> ArrendamientoList = new ArrayList<Arrendamiento>();
+	ArrayList<Casa> casaList = new ArrayList<Casa>();
+	ArrayList<Apartamento> apartamentoList = new ArrayList<Apartamento>();
+	ArrayList<Arrendamiento> ArrendamientoList = new ArrayList<Arrendamiento>();
 	ArrayList<CompraVenta> CompraVentaList = new ArrayList<CompraVenta>();
 	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
 	MenuDeConsola menu;
@@ -44,6 +44,13 @@ public class Funcionario extends Persona implements Serializable{
 	
 	public long getCedula() {
 		return cedula;
+	}
+	
+	public ArrayList getListaCasas() {
+		return casaList;
+	}
+	public ArrayList getListaAptos() {
+		return apartamentoList;
 	}
 
 	public void setCedula(long cedula) {
@@ -115,7 +122,7 @@ public class Funcionario extends Persona implements Serializable{
 		Arrendamiento Arren = new Arrendamiento();
 		Arren.setClienteOf(clienteOf);
 		Arren.setClienteDe(clienteDe);
-		Arren.inmueble = inm;
+		Arren.setInmueble(inm);
 		ArrendamientoList.add(Arren);
 	}
 	
@@ -123,7 +130,7 @@ public class Funcionario extends Persona implements Serializable{
 		CompraVenta CompraVe = new CompraVenta();
 		CompraVe.setClienteOf(clienteOf);
 		CompraVe.setClienteDe(clienteDe);
-		CompraVe.inmueble = inm;
+		CompraVe.setInmueble(inm);
 		CompraVentaList.add(CompraVe);
 	}
 	
@@ -134,7 +141,7 @@ public class Funcionario extends Persona implements Serializable{
 			if (casa.getaArrendar() == true){
 				int codigo = casa.getCodigo();
 				String direccion = casa.getDireccion();
-				String unidad = casa.getUnidad();
+				String unidad = casa.getUnidad().getNombre();
 				Casa casa1 = new Casa(codigo, direccion, unidad);
 				BuscasaList.add(casa1);
 			}
@@ -149,9 +156,9 @@ public class Funcionario extends Persona implements Serializable{
 			if (Apar.getaArrendar() == true){
 				int codigo = Apar.getCodigo();
 				String direccion = Apar.getDireccion();
-				String unidad = Apar.getUnidad();
-				int torre = Apar.getTorre();
-				Apartamento Apar1 = new Apartamento(codigo, direccion, unidad, torre);
+				String unidad = Apar.getUnidad().getNombre();
+				
+				Apartamento Apar1 = new Apartamento(codigo, direccion, unidad);
 				BusAparList.add(Apar1);
 				
 			}

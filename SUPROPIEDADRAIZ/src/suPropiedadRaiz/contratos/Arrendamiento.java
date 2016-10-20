@@ -53,4 +53,8 @@ public class Arrendamiento implements Serializable {
 	public void setTarifa(int tarifa) {
 		this.tarifa = tarifa;
 	}
+	public void setInmueble(Inmuebles inm) {
+		inmueble = inm;
+		
+	}
 }

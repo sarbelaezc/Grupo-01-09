@@ -47,5 +47,9 @@ public class CompraVenta implements Serializable{
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
+	public void setInmueble(Inmuebles inm) {
+		inmueble = inm;
+		
+	}
 	
 }
