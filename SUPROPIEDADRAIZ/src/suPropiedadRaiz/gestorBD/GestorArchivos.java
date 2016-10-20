@@ -46,22 +46,22 @@ public class GestorArchivos {
 	 * @throws IOException
 	 */
 	public static void crear() throws IOException{
-		 
-		File fichero = new File("Datos.obj");
+		
+		String nom = "Datos.obj";
+		File fichero = new File(nom);
 		
 		if (fichero.exists()){
-			
+			System.out.println("El fichero existe");
+			try {
+				GestorArchivos.leer();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
 		}else{
-			
-			personas.add(new Cliente(1037650446, "Santiago", "Venta", 2641578, "Mi Casa", "3102955586"));
-			//personas.add(new Cliente(1037650447, "Sebastian", "Venta", 4444444, "Su Casa"));
-		 	//personas.add(new Cliente(1045, "Santiago", "Arrendamiento"));
-		 	//personas.add(new Funcionario("Juan", 111112222, 360000));
-		 	//personas.add(new FuncionarioJefe("Jaime", 5556555, 5000000));
 		 	personas.add(new Administrador("Administrador", 1));
-			crearListaPersonas();
 			
 			System.out.println("Se ha creado Clientes.obj");
+			System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");	
 		}
 	 }
 	 
@@ -122,7 +122,7 @@ public class GestorArchivos {
 				}
 			}
 		}catch(IOException io){
-			System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");
+			System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");		
 		}finally{
 			entrada.close();
 		}
