@@ -46,10 +46,10 @@ public class Funcionario extends Persona implements Serializable{
 		return cedula;
 	}
 	
-	public ArrayList getListaCasas() {
+	public ArrayList<Casa> getListaCasas() {
 		return casaList;
 	}
-	public ArrayList getListaAptos() {
+	public ArrayList<Apartamento> getListaAptos() {
 		return apartamentoList;
 	}
 

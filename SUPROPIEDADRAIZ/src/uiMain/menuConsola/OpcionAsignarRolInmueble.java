@@ -1,5 +1,6 @@
 package uiMain.menuConsola;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
@@ -17,6 +18,7 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 	Casa casa;
 	Apartamento apto;
 	
+	
 	public void ejecutar() {
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Ingrese el código del inmueble:");
@@ -29,7 +31,7 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 				 if (fun.getListaCasas().size() != 0){
 				 for (int j=0; j <fun.getListaCasas().size(); j++){
 					  casa = (fun.getListaCasas()).get(j);
-					 if(  getCodigo() == codigo){
+					 if(  casa.getCodigo() == codigo){
 						
 					}
 				 	}
