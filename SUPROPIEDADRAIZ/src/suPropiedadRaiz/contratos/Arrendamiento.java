@@ -19,6 +19,12 @@ public class Arrendamiento implements Serializable {
 	public Cliente getClienteOf(){
 		return ClienteOf;
 	}
+	public Inmuebles getInmueble(){
+		return inmueble;
+	}
+	public int getCodigo(){
+		return codigo;
+	}
 	
 	public Cliente getClienteDe(){
 		return ClienteDe;

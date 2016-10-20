@@ -9,9 +9,9 @@ import uiMain.menuConsola.*;
 public class Cliente extends Persona implements Serializable {
 	
 	private static final long serialVersionUID = -8985406422251618852L;
-	long cedula, telefono;
+	private long cedula, telefono;
 	private String nombre;
-	String motivo, direccion, celular;
+	private String motivo, direccion, celular;
 	ArrayList<Casa> CaList = Funcionario.casaList;
 	ArrayList<Apartamento> ApList = Funcionario.apartamentoList;
 	ArrayList<Arrendamiento> ArrenList = Funcionario.ArrendamientoList;
@@ -104,11 +104,11 @@ public class Cliente extends Persona implements Serializable {
 		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
 		for(int i=0; i <ArrenList.size(); i++){
 			Arrendamiento A = ArrenList.get(i);
-			if (A.ClienteOf.cedula == clt.cedula){
-				Casa A1 = (Casa)A.inmueble;
+			if (A.getClienteOf().getCedula() == clt.getCedula()){
+				Casa A1 = (Casa)A.getInmueble();
 				int codigo = A1.getCodigo();
 				String direccion = A1.getDireccion();
-				String unidad = A1.getUnidad();
+				String unidad = A1.getUnidad().getNombre();
 				Casa A2 = new Casa(codigo, direccion, unidad);
 				BuscasaList.add(A2);
 			}
@@ -120,21 +120,21 @@ public class Cliente extends Persona implements Serializable {
 		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
 		for(int i=0; i <CaList.size(); i++){
 			Casa A = CaList.get(i);
-			if (A.dueno.cedula == clt.cedula && A.getaArrendar() == true){
+			if (A.getDueno().getCedula() == clt.cedula && A.getaArrendar() == true){
 				int codigo = A.getCodigo();
 				String direccion = A.getDireccion();
-				String unidad = A.getUnidad();
+				String unidad = A.getUnidad().getNombre();
 				Casa A2 = new Casa(codigo, direccion, unidad);
 				BuscasaList.add(A2);
 			}
 		}
 		for(int i=0; i <ApList.size(); i++){
 			Apartamento A = ApList.get(i);
-			if (A.dueno.cedula == clt.cedula && A.getaArrendar() == true){
+			if (A.getDueno().getCedula() == clt.cedula && A.getaArrendar() == true){
 				int codigo = A.getCodigo();
 				String direccion = A.getDireccion();
-				String unidad = A.getUnidad();
-				int torre = A.getTorre();
+				String unidad = A.getUnidad().getNombre();
+				int torre = A.getTorre().getNumeroDeTorre();
 				Apartamento A2 = new Apartamento(codigo, direccion, unidad, torre);
 				BuscasaList.add(A2);
 			}

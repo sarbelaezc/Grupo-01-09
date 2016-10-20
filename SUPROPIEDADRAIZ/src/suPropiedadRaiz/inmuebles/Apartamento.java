@@ -3,6 +3,8 @@ package suPropiedadRaiz.inmuebles;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import suPropiedadRaiz.usuarios.Cliente;
+
 public class Apartamento extends Inmuebles implements Serializable {
 	/**
 	 * 
@@ -15,6 +17,8 @@ public class Apartamento extends Inmuebles implements Serializable {
 	Balcon balcon;
 	ArrayList<Bano> Banos = new ArrayList<Bano>();
 	ArrayList<Pieza> Piezas = new ArrayList<Pieza>();
+	Cliente dueno;
+	Unidad unidad;
 	
 	
 	public void terraza(Terraza Terr){
@@ -93,5 +97,17 @@ public class Apartamento extends Inmuebles implements Serializable {
 	
 	public void agregarbano(){
 		Banos.add(new Bano());
+	}
+
+	public Cliente getDueno() {
+		return dueno;
+	}
+	public Unidad getUnidad() {
+		return unidad;
+	}
+
+	public Torre getTorre() {
+		
+		return torre;
 	}
 }
