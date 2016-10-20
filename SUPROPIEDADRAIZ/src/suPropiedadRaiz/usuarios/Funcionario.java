@@ -23,6 +23,7 @@ public class Funcionario extends Persona implements Serializable{
 		this.setCedula(cedula);
 		this.setSalario(salario);
 		menu = new MenuDeConsola();
+		menu.anadirOpcion(new OpcionSalir());
 		menu.anadirOpcion(new OpcionRegistrarCliente());
 		menu.anadirOpcion(new OpcionAsignarRolCliente());
 		menu.anadirOpcion(new OpcionRegistrarInmueble());
@@ -65,7 +66,15 @@ public class Funcionario extends Persona implements Serializable{
 		this.nombre = nombre;
 	}
 	
-//empiezan funciones de este usuario
+	public ArrayList<Cliente> getClientesList() {
+		return clientesList;
+	}
+
+	public void setClientesList(ArrayList<Cliente> clientesList) {
+		this.clientesList = clientesList;
+	}
+
+	//empiezan funciones de este usuario
 	public void registrarCliente(long cedula, String nombre, String motivo, long telefono, 
 									String direccion, String celular){
 		    Cliente Clt = new Cliente(cedula, nombre, motivo, telefono, direccion, celular);
