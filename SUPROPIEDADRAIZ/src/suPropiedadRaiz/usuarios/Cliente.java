@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import suPropiedadRaiz.inmuebles.*;
 import suPropiedadRaiz.contratos.*;
 import uiMain.menuConsola.*;
-
+import suPropiedadRaiz.gestorBD.*;
 /**
  * Esta clase representa tanto al cliente anonimo como al cliente registrado con las funciones respectivas
  * @author Santiago Arbeláez Cataño
@@ -18,9 +18,6 @@ public class Cliente extends Persona implements Serializable {
 	private long cedula, telefono;
 	private String nombre;
 	private String motivo, direccion, celular;
-	ArrayList<Casa> CaList = Funcionario.casaList;
-	ArrayList<Apartamento> ApList = Funcionario.apartamentoList;
-	ArrayList<Arrendamiento> ArrenList = Funcionario.ArrendamientoList;
 	ArrayList<Inmuebles> A = new ArrayList<Inmuebles>();
 	
 	/**
@@ -199,10 +196,11 @@ public class Cliente extends Persona implements Serializable {
 	 * @param clt
 	 * @return BuscasaList
 	 */
-	public ArrayList<Inmuebles> Dema_Arr(Cliente clt){
-		ArrayList<Inmuebles> BuscasaList = new ArrayList<Inmuebles>();
-		for(int i=0; i <ArrenList.size(); i++){
-			Arrendamiento A = ArrenList.get(i);
+	public ArrayList<Inmuebles> Dema_Arr(int cedulacliente, int codigofunc){
+		ArrayList<Inmuebles> Lista = new ArrayList<Inmuebles>();
+		Persona Func = GestorArchivos.buscar(codigofunc);
+		Lista = GestorArchivos.buscarListaInmuebles(cedulacliente);
+			
 			if (A.getClienteOf().getCedula() == clt.getCedula()){
 				Casa A1 = (Casa)A.getInmueble();
 				int codigo = A1.getCodigo();
@@ -211,7 +209,7 @@ public class Cliente extends Persona implements Serializable {
 				Casa A2 = new Casa(codigo, direccion, unidad);
 				BuscasaList.add(A2);
 			}
-		}
+		
 		return BuscasaList;
 	}
 	
