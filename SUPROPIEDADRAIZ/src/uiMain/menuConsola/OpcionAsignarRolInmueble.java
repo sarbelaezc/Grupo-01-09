@@ -1,5 +1,6 @@
 package uiMain.menuConsola;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
@@ -7,11 +8,11 @@ import suPropiedadRaiz.inmuebles.Apartamento;
 import suPropiedadRaiz.inmuebles.Casa;
 import suPropiedadRaiz.inmuebles.Inmuebles;
 import suPropiedadRaiz.usuarios.Funcionario;
-
+import suPropiedadRaiz.usuarios.Persona;
 /**
  * Representa la opcion del funcionario de asignarle un rol especifico a un inmuble
- * @author Santiago Arbelaez Cata駉
- * @author Sebastian Chavarr韆 G髆ez
+ * @author Santiago Arbelaez Cata帽o
+ * @author Sebastian Chavarr铆a G贸mez
  * @author Santiago Montoya Palacio
  */
 public class OpcionAsignarRolInmueble extends OpcionDeMenu {
@@ -23,51 +24,20 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 	Inmuebles inm;
 	
 	public void ejecutar() {
-		@SuppressWarnings("resource")
+		
 		Scanner entrada = new Scanner(System.in);
-		System.out.println("Ingrese el c骴igo del inmueble:");
+		System.out.println("Ingrese el c贸digo del inmueble:");
 		int codigo = entrada.nextInt();
 		
+		inm = GestorArchivos.buscarInmuebles(codigo);
 		
-		for (int i=0; i<GestorArchivos.personas.size(); i++){
-			 
-			if (GestorArchivos.personas.get(i) instanceof Funcionario){
-				 fun = (Funcionario) GestorArchivos.personas.get(i);
-				 
-				 if (fun.getListaCasas().size() != 0){
-				 
-					 for (int j=0; j <fun.getListaCasas().size(); j++){
-					 
-						 if(  fun.getListaCasas().get(j).getCodigo() == codigo){
-							 inm = fun.getListaCasas().get(j);
-							 j = fun.getListaCasas().size();
-							 i= GestorArchivos.personas.size();
-						 }
-				 	}
-				 }
-				 
-				 if (fun.getListaAptos().size() != 0){
-					 
-					 for (int j=0; j <fun.getListaAptos().size(); j++){
-					 
-						 if(  fun.getListaAptos().get(j).getCodigo() == codigo){
-							 inm = fun.getListaAptos().get(j);
-							 j = fun.getListaAptos().size();
-							 i = GestorArchivos.personas.size();
-						 }
-				 	}
-				 }
-				 
-				 
-			}
-		}
 		 ///if (fun.getListaAptos().size() != 0 && fun.getListaCasas().size() != 0){
-			// System.out.println("No se hallaron casas ni apartamentos registrados a鷑");
+			// System.out.println("No se hallaron casas ni apartamentos registrados a煤n");
 			// return;
 		 //}
 		 
 		if (inm == null){
-			System.out.println("No se hallaron casas ni apartamentos con ese c骴igo");
+			System.out.println("No se hallaron casas ni apartamentos con ese c贸digo");
 			return;
 		}
 		
@@ -86,7 +56,7 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 		n = entrada.nextInt();
 		
 		if(n < 1 && n > 3){
-			System.out.println("Opcion Inv醠ida");
+			System.out.println("Opcion Inv谩lida");
 			System.out.println("Ingrese de nuevo");
 		}
 		
@@ -118,7 +88,7 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 			}
 		}
 		
-		System.out.println("Rol Asignado al inmueble de c骴igo:"+ inm.getCodigo());
+		System.out.println("Rol Asignado al inmueble de c贸digo:"+ inm.getCodigo());
 	}
 
 	
