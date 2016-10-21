@@ -7,8 +7,8 @@ import suPropiedadRaiz.usuarios.Cliente;
 
 /**
  * Representa un inmueble de tipo apartamento con los atributos necesarios
- * @author Santiago Arbeláez Cataño
- * @author Sebastian Chavarría Gómez
+ * @author Santiago ArbelÃ¡ez CataÃ±o
+ * @author Sebastian ChavarrÃ­a GÃ³mez
  * @author Santiago Montoya Palacio
  */
 public class Apartamento extends Inmuebles implements Serializable {
@@ -106,7 +106,7 @@ public class Apartamento extends Inmuebles implements Serializable {
 	//////////////////////////////////get y agregar  Bano
 	public String getCantidadbanos(){
 		if(Banos.size() == 0){
-			return "Baños no agregados";
+			return "BaÃ±os no agregados";
 		}
 		else{
 			return Integer.toString(Banos.size());
@@ -115,6 +115,10 @@ public class Apartamento extends Inmuebles implements Serializable {
 	
 	public void agregarbano(){
 		Banos.add(new Bano());
+	}
+	
+	public void setDueno(Cliente clt){
+		this.dueno = clt;
 	}
 
 	public Cliente getDueno() {
