@@ -1,3 +1,2 @@
-cd SUPROPIEDADRAIZ\src
-javac SuPropiedadRaiz.java
-java SuPropiedadRaiz
+
+java -jar SuPropiedadRaiz.jar
