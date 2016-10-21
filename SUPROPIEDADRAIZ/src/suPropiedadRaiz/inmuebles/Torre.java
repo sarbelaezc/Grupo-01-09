@@ -3,6 +3,12 @@ package suPropiedadRaiz.inmuebles;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Representa un objeto que agrupa los apartamentos bajo una torre
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Torre implements Serializable{
 	/**
 	 * 

@@ -5,6 +5,12 @@ import java.util.ArrayList;
 
 import suPropiedadRaiz.usuarios.Cliente;
 
+/**
+ * Representa un inmueble de tipo casa con los atributos solicitados
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Casa extends Inmuebles implements Serializable {
 	/**
 	 * 

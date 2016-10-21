@@ -1,5 +1,11 @@
 package suPropiedadRaiz.inmuebles;
 
+/**
+ * Representa al capacidad de una casa de poseer terraza
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Terraza {
 	int area = 0;
 	

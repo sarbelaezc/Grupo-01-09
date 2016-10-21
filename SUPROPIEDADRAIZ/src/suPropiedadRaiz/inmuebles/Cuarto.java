@@ -2,6 +2,12 @@ package suPropiedadRaiz.inmuebles;
 
 import java.io.Serializable;
 
+/**
+ * Clase abstracta de la que heredan atributos y metodos la clase pieza y banio
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public abstract class Cuarto implements Serializable{
 	/**
 	 * 

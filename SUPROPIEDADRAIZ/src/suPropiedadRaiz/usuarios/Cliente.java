@@ -52,9 +52,7 @@ public class Cliente extends Persona implements Serializable {
 	 * @param direccion
 	 */
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion){
-		this.setCedula(cedula);
-		this.setNombre(nombre);
-		this.setMotivo(motivo);
+		this(cedula, nombre, motivo);
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
 		menu = new MenuDeConsola();
@@ -78,9 +76,7 @@ public class Cliente extends Persona implements Serializable {
 	 * @param celular
 	 */
 	public Cliente(long cedula, String nombre, String motivo, long telefono, String direccion, String celular){
-		this.setCedula(cedula);
-		this.setNombre(nombre);
-		this.setMotivo(motivo);
+		this(cedula, nombre, motivo);
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
 		this.setCelular(celular);

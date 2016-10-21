@@ -6,6 +6,12 @@ import suPropiedadRaiz.inmuebles.Inmuebles;
 import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Demandador;
 
+/**
+ * Guarda el cliente oferente y el demandador, hace explicita la relacion de quien vende con quien compra
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Arrendamiento implements Serializable {
 	
 	private static final long serialVersionUID = -7214924795934539004L;

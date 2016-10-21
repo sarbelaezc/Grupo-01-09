@@ -1,5 +1,11 @@
 package suPropiedadRaiz.inmuebles;
 
+/**
+ * Representa la capacidad de un inmueble de tener un balcon con un area
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Balcon {
 	int area;
 

@@ -2,6 +2,12 @@ package suPropiedadRaiz.inmuebles;
 
 import java.io.Serializable;
 
+/**
+ * Representa la capacidad de un inmueble de poseer un garaje
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Garaje implements Serializable {
 	/**
 	 * 

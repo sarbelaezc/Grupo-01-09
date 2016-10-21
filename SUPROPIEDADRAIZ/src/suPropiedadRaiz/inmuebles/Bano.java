@@ -1,5 +1,11 @@
 package suPropiedadRaiz.inmuebles;
 
+/**
+ * Representa la capacidad de un inmueble de tener uno o mas banios
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Bano extends Cuarto {
 	
 	private static final long serialVersionUID = 5211070822684513671L;

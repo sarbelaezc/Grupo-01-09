@@ -3,6 +3,12 @@ package suPropiedadRaiz.inmuebles;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * Esta clase agrupa casas y apartamentos bajo una unidad
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Unidad implements Serializable{
 	/**
 	 * 

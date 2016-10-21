@@ -5,6 +5,12 @@ import java.util.ArrayList;
 
 import suPropiedadRaiz.usuarios.Cliente;
 
+/**
+ * Representa un inmueble de tipo apartamento con los atributos necesarios
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Apartamento extends Inmuebles implements Serializable {
 	/**
 	 * 
