@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Representa la opcion de cliente de buscar los inmuebles que tiene arrendados
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionBuscarInmueblesArrendados extends OpcionDeMenu {
 

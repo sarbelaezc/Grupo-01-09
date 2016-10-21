@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Esta opcion representa la opcion de funcionario de buscar una casa especifica
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionBuscarCasaEspeA extends OpcionDeMenu {
 

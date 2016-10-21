@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Esta clase representa la opcion de funcionario de buscar apartamentos en arriendo
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionBuscarAptoArriendo extends OpcionDeMenu {
 

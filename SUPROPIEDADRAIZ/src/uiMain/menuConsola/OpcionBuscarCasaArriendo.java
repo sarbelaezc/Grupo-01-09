@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Esta clase representa la opcion del funcinario para buscar todas las casas en arriendo
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionBuscarCasaArriendo extends OpcionDeMenu {
 

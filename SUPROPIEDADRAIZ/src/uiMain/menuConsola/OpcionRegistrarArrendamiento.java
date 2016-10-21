@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Representa la capacidad de funcionario de registrar un apartamento para arrendamiento en el sistema
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionRegistrarArrendamiento extends OpcionDeMenu {
 

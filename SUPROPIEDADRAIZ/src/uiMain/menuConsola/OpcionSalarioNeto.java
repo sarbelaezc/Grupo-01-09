@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Esta representa la opcion del funcionario de mostrar cual es el salario neto que va a recibir
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionSalarioNeto extends OpcionDeMenu {
 

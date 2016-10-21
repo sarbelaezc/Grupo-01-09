@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Representa la capacidad del funcionario para ver cuanto sera su comision mensual por ventas
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionComisionVentas extends OpcionDeMenu {
 

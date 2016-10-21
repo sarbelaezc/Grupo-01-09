@@ -1,5 +1,11 @@
 package uiMain.menuConsola;
 
+/**
+ * Representa la opcion de cliente de ver que apartamentos ha puesto para arrendar 
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionConsignarInmuebleArrenda extends OpcionDeMenu {
 
