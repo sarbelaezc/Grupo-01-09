@@ -16,7 +16,7 @@ public class Apartamento extends Inmuebles implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 7251029397390616492L;
-	String direccion = "No_especificada";
+	String direccion = "No_especificada", estrato;
 	int areaT, cantidadBanos, codigo;
 	boolean patio = false, parqueaderoComunal= false, enVenta= false, aArrendar= false;
 	Terraza terraza;
@@ -30,9 +30,7 @@ public class Apartamento extends Inmuebles implements Serializable {
 	public Apartamento(int codigo2, String direccion2, String unidad2) {
 		codigo = codigo2;
 		direccion = direccion2;
-		unidad = new Unidad();
-		unidad.setNombre(unidad2);
-		
+				
 	}
 
 	public Apartamento() {
@@ -106,7 +104,7 @@ public class Apartamento extends Inmuebles implements Serializable {
 	//////////////////////////////////get y agregar  Bano
 	public String getCantidadbanos(){
 		if(Banos.size() == 0){
-			return "Baños no agregados";
+			return "Ba�os no agregados";
 		}
 		else{
 			return Integer.toString(Banos.size());
@@ -116,16 +114,17 @@ public class Apartamento extends Inmuebles implements Serializable {
 	public void agregarbano(){
 		Banos.add(new Bano());
 	}
-	
-	public void setDueno(Cliente clt){
-		this.dueno = clt;
-	}
 
 	public Cliente getDueno() {
 		return dueno;
 	}
 	public Unidad getUnidad() {
 		return unidad;
+	}
+
+	public String getEstrato() {
+		
+		return estrato;
 	}
 
 	

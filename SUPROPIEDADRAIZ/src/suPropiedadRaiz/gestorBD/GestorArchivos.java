@@ -87,39 +87,25 @@ public class GestorArchivos {
 					
 					personas.add((Cliente) obj);
 					
-					System.out.println("----------------C--------------");
-					System.out.println(((Cliente) obj).getNombre());
-					System.out.println(((Cliente) obj).getCedula());
-					System.out.println(((Cliente) obj).getMotivo());
-					System.out.println(((Cliente) obj).getTelefono());
-					System.out.println(((Cliente) obj).getDireccion());
-					System.out.println(((Cliente) obj).getCelular());
+					
 					
 				}else if(obj instanceof FuncionarioJefe){
 					
 					personas.add((FuncionarioJefe) obj);
 					
-					System.out.println("----------------FJ-------------");
-					System.out.println( ((FuncionarioJefe) obj).getNombre());
-					System.out.println( ((FuncionarioJefe) obj).getCedula());
-					System.out.println( ((FuncionarioJefe) obj).getSalario());
+					
 					
 				}else if(obj instanceof Funcionario){
 					
 					personas.add((Funcionario) obj);
 					
-					System.out.println("----------------F--------------");
-					System.out.println( ((Funcionario) obj).getNombre());
-					System.out.println( ((Funcionario) obj).getCedula());
-					System.out.println( ((Funcionario) obj).getSalario());
+					
 					
 				}else if(obj instanceof Administrador){
 					
 					personas.add((Administrador) obj);
 					
-					System.out.println("----------------A--------------");
-					System.out.println( ((Administrador) obj).getNombre());
-					System.out.println( ((Administrador) obj).getCedula());
+					
 				}
 			}
 		}catch(IOException io){
@@ -191,9 +177,8 @@ public class GestorArchivos {
 				}
 			}
 		}
-		
-		
-		
 		return inm;
 	}
+	
+	
 }
