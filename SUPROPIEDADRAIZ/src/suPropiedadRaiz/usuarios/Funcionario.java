@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
 /**
+ * Esta clase representa el empleado de planta de la empresa y se encarga de las funciones administrativas que tiene asignadas
  * @author Santiago Arbeláez Cataño
  * @author Sebastian Chavarría Gómez
  * @author Santiago Montoya Palacio

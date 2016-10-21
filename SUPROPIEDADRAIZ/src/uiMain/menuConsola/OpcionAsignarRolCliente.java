@@ -4,6 +4,12 @@ import java.util.Scanner;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.*;
 
+/**
+ * Esta opcion representa la capacidad de funcionario de cmabiarle el rol a un cliente seleccionado
+ * @author Santiago Arbelaez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class OpcionAsignarRolCliente extends OpcionDeMenu {
 
 	private static final long serialVersionUID = -3375878365254753626L;
