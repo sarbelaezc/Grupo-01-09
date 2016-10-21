@@ -33,8 +33,6 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
 		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
 		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
-		menu.anadirOpcion(new OpcionBuscarCasaEspeV());
-		menu.anadirOpcion(new OpcionBuscarAptoEspeV());
 		menu.anadirOpcion(new OpcionComisionArriendos());
 		menu.anadirOpcion(new OpcionComisionVentas());
 		menu.anadirOpcion(new OpcionSalarioNeto());
@@ -70,8 +68,6 @@ public class OpcionesExistentes extends OpcionDeMenu {
 		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
 		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
 		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
-		menu.anadirOpcion(new OpcionBuscarCasaEspeV());
-		menu.anadirOpcion(new OpcionBuscarAptoEspeV());
 		menu.anadirOpcion(new OpcionComisionArriendos());
 		menu.anadirOpcion(new OpcionComisionVentas());
 		menu.anadirOpcion(new OpcionSalarioNeto());
@@ -88,6 +84,6 @@ public class OpcionesExistentes extends OpcionDeMenu {
 
 	@Override
 	public String toString() {
-		return "Opciones Existentes <<<<<<<<<<<<<<<<<< NOT YET >>>>>>>>>>>>>>>>>>";
+		return "Opciones Existentes";
 	}
 }
