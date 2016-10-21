@@ -20,6 +20,7 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 	
 	public void ejecutar() {
 		Scanner entrada = new Scanner(System.in);
+		
 		System.out.println("Ingrese el código del inmueble:");
 		int codigo = entrada.nextInt();
 		

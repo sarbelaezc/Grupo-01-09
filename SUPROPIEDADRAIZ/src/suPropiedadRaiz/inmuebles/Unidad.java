@@ -17,6 +17,7 @@ public class Unidad implements Serializable{
 	ArrayList <Casa> Casas = new ArrayList<Casa>();
 	ArrayList <Torre> torres = new ArrayList<Torre>();
 	
+	
 	////////////////////////////////////
 	public void AgregarTorre(){
 		torres.add(new Torre());

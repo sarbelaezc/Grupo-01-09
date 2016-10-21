@@ -13,6 +13,7 @@ public class Torre implements Serializable{
 	boolean Ascensor;
 	ArrayList<Apartamento> Aptos = new ArrayList<Apartamento>();
 	int numeroDeTorre;
+	Unidad unidad;
 	
 	////////////////////////////////////////////////
 	public void AgregarApto(Apartamento apto){

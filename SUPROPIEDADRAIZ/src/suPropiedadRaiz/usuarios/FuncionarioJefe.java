@@ -51,5 +51,10 @@ public class FuncionarioJefe extends Funcionario {
 	     	FunciList.add(Func);
 	     }
 		 return FunciList;
-	  } 
+	  }
+
+	public ArrayList<Funcionario> getListaFuncionarios() {
+		
+		return FuncionariosList;
+	} 
 }

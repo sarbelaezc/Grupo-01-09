@@ -151,7 +151,49 @@ public class GestorArchivos {
 	}
 	
 	public static Inmuebles buscarInmuebles(int codigo){
+		FuncionarioJefe funJefe;
+		Funcionario fun;
+		Inmuebles inm = null;
 		
-		return null;
+		for(int i=0;i < GestorArchivos.personas.size();i++){
+			if (GestorArchivos.personas.get(i) instanceof FuncionarioJefe){
+				funJefe = (FuncionarioJefe) GestorArchivos.personas.get(i);
+				if (funJefe.getListaFuncionarios().size() != 0){
+					for(int j = 0; j < funJefe.getListaFuncionarios().size(); i++){
+						fun = (Funcionario) GestorArchivos.personas.get(i);
+						 
+						 if (fun.getListaCasas().size() != 0){
+						 
+							 for (int k=0; k <fun.getListaCasas().size(); k++){
+							 
+								 if(  fun.getListaCasas().get(j).getCodigo() == codigo){
+									 inm = fun.getListaCasas().get(j);
+									 k = fun.getListaCasas().size();
+									 j= GestorArchivos.personas.size();
+								 }
+						 	}
+						 }
+						 
+						 if (fun.getListaAptos().size() != 0){
+							 
+							 for (int k=0; k <fun.getListaAptos().size(); k++){
+							 
+								 if(  fun.getListaAptos().get(j).getCodigo() == codigo){
+									 inm = fun.getListaAptos().get(j);
+									 k = fun.getListaAptos().size();
+									 j = GestorArchivos.personas.size();
+								 }
+						 	}
+						 }
+					}
+				}else {
+					System.out.println("No se hallaron Funcionarios Registrados");
+				}
+			}
+		}
+		
+		
+		
+		return inm;
 	}
 }
