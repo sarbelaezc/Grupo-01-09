@@ -2,23 +2,49 @@ package uiMain.menuConsola;
 
 /**
  * Representa la opcion de funcionario que le permite buscar un apartamento especifico
- * @author Santiago Arbeláez Cataño
- * @author Sebastian Chavarría Gómez
+ * @author Santiago ArbelÃ¡ez CataÃ±o
+ * @author Sebastian ChavarrÃ­a GÃ³mez
  * @author Santiago Montoya Palacio
  */
+import java.util.Scanner;
+
+import suPropiedadRaiz.gestorBD.GestorArchivos;
+import suPropiedadRaiz.inmuebles.Apartamento;
+import suPropiedadRaiz.inmuebles.Inmuebles;
 @SuppressWarnings("serial")
 public class OpcionBuscarAptoEspeA extends OpcionDeMenu {
 
-	@Override
+	
 	public void ejecutar() {
-		// TODO Auto-generated method stub
+	Apartamento apto;
+	Scanner entrada  = new Scanner (System.in);
+	System.out.println("Ingrese el cï¿½digo de del Apartamento: ");
+	int codigo = entrada.nextInt();
+	apto = (Apartamento)GestorArchivos.buscarInmuebles(codigo);
+	
+	if (apto == null){
+		System.out.println(" no Encontrado");
+		return;
+	}
+	
+	System.out.println("Apartamento encontrado");
+	System.out.println("-------------------------------------------------------------------------");
+	System.out.println("Cï¿½digo: "+ apto.getCodigo());
+	System.out.println("Direccion: "+ apto.getDireccion());
+	System.out.println("Estrato: " + apto.getEstrato());
+	System.out.println("Area Total: " + apto.getAreatotal());
+	System.out.println("Cantidad de Baï¿½os:" + apto.getCantidadbanos());
+	System.out.println("Patio: " + apto.getpatio() + "  Parqueadero Comunal: " + apto.getparqueaderoComunal() );
+	System.out.println("En venta: " + apto.getenVenta() + "En Arrendamiento: " + apto.getaArrendar() );
+	System.out.println("");
+	System.out.println("Apartamento encontrado");	
 
 	}
 
-	@Override
+	
 	public String toString() {
-		// TODO Auto-generated method stub
-		return "Buscar apartamento especifico en arrendamiento";
+		
+		return "Buscar apartamento especifico en Arrendamiento o en Venta";
 	}
 
 }
