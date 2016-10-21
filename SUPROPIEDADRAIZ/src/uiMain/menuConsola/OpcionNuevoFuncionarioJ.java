@@ -7,6 +7,12 @@ import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.FuncionarioJefe;
 import suPropiedadRaiz.usuarios.Persona;
 
+/**
+ * Esta clase representa la capacidad del administrador para crear un funcionario jefe
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class OpcionNuevoFuncionarioJ extends OpcionDeMenu {
 
 	private static final long serialVersionUID = -8696187756254609865L;

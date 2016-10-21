@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Cliente;
+import suPropiedadRaiz.usuarios.Funcionario;
 import suPropiedadRaiz.usuarios.Persona;
 
 /**
@@ -15,6 +16,16 @@ import suPropiedadRaiz.usuarios.Persona;
 public class OpcionRegistrarCliente extends OpcionDeMenu {
 
 	private static final long serialVersionUID = 1L;
+	
+	Funcionario f;
+
+	public OpcionRegistrarCliente(Funcionario funcionario) {
+		// TODO Auto-generated constructor stub
+	}
+
+	public OpcionRegistrarCliente() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void ejecutar() {
@@ -39,6 +50,8 @@ public class OpcionRegistrarCliente extends OpcionDeMenu {
 		
 		System.out.print("Ingrese el celular: ");
 		String celular = entrada.next();
+		
+		f.registrarCliente(cedula, nombre, motivo, telefono, direccion, celular);
 		
 		Persona p = new Cliente(cedula, nombre, motivo, telefono, direccion, celular);
 		

@@ -11,6 +11,9 @@ public class OpcionesExistentes extends OpcionDeMenu {
 	private static final long serialVersionUID = 957442375590288316L;
 	MenuDeConsola menu = new MenuDeConsola();
 	
+	/**
+	 * Constructor que permite mostrar todas las opciones que se pueden agregar
+	 */
 	public OpcionesExistentes(){
 		
 		menu.anadirOpcion(new OpcionEliminarDeUsuario());

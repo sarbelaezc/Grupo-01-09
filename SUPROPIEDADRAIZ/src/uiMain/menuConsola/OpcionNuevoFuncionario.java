@@ -4,10 +4,27 @@ import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Funcionario;
+import suPropiedadRaiz.usuarios.FuncionarioJefe;
 import suPropiedadRaiz.usuarios.Persona;
 
+/**
+ * Esta clase representa la capacidad del funcionario jefe de registrar un nuevo funcionario en el sistema bajo su cargo
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionNuevoFuncionario extends OpcionDeMenu {
+
+	FuncionarioJefe fj;
+	
+	public OpcionNuevoFuncionario(FuncionarioJefe funcionarioJefe) {
+		fj = funcionarioJefe;
+	}
+
+	public OpcionNuevoFuncionario() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void ejecutar() {
@@ -25,6 +42,9 @@ public class OpcionNuevoFuncionario extends OpcionDeMenu {
 		long salario = entrada.nextLong();
 
 		Persona p = new Funcionario(nombre, cedula, salario);
+		
+		fj.registrarFuncionario(nombre, cedula, salario);
+		
 		GestorArchivos.personas.add(p);
 
 	}

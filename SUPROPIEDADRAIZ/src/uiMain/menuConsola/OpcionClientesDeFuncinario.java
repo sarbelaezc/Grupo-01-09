@@ -8,6 +8,12 @@ import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Funcionario;
 import suPropiedadRaiz.usuarios.FuncionarioJefe;
 
+/**
+ * Esta clase representa la capacidad de un funcionario jefe de ver que clientes tienen sus funcionarios
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionClientesDeFuncinario extends OpcionDeMenu {
 

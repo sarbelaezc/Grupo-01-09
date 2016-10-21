@@ -7,6 +7,12 @@ import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Funcionario;
 import suPropiedadRaiz.usuarios.FuncionarioJefe;
 
+/**
+ * Esta clase representa la capacidad del funcionario jefe de ver que funcionarios tiene bajo su cargo
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 @SuppressWarnings("serial")
 public class OpcionFuncionariosACargo extends OpcionDeMenu {
 

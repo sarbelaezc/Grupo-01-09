@@ -6,6 +6,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import uiMain.menuConsola.*;
 
+/**
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class Funcionario extends Persona implements Serializable{
 	
 	private static final long serialVersionUID = -1499008267571669186L;
@@ -24,7 +29,7 @@ public class Funcionario extends Persona implements Serializable{
 		this.setSalario(salario);
 		menu = new MenuDeConsola();
 		menu.anadirOpcion(new OpcionSalir());
-		menu.anadirOpcion(new OpcionRegistrarCliente());
+		menu.anadirOpcion(new OpcionRegistrarCliente(this));
 		menu.anadirOpcion(new OpcionAsignarRolCliente());
 		menu.anadirOpcion(new OpcionRegistrarInmueble());
 		menu.anadirOpcion(new OpcionAsignarRolInmueble());
