@@ -40,8 +40,6 @@ public class Funcionario extends Persona implements Serializable{
 		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
 		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
 		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
-		menu.anadirOpcion(new OpcionBuscarCasaEspeV());
-		menu.anadirOpcion(new OpcionBuscarAptoEspeV());
 		menu.anadirOpcion(new OpcionComisionArriendos());
 		menu.anadirOpcion(new OpcionComisionVentas());
 		menu.anadirOpcion(new OpcionSalarioNeto());
