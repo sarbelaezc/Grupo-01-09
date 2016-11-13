@@ -5,6 +5,7 @@ import java.io.IOException;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Persona;
+import uiMain.gui.GUIAnonimo;
 
 /**
  * Esta clase es la clase principal del programa
@@ -22,7 +23,8 @@ public class SuPropiedadRaiz {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-		
+
+		new GUIAnonimo();
 		GestorArchivos.crear();	
 		@SuppressWarnings("unused")
 		Persona p = new Cliente();
