@@ -56,14 +56,27 @@ public class GUIAnonimo extends JFrame {
 		JButton B3 = new JButton("Pedir una cita");
 		JButton B4 = new JButton("Salir");
 		
+		L1.addMouseListener(new OyenteRaton());
+		
+		L2.setVisible(false);
+		L3.setVisible(false);
+		L4.setVisible(false);
+		
 		L2.setHorizontalAlignment(JLabel.CENTER);
 		L3.setHorizontalAlignment(JLabel.CENTER);
 		L4.setHorizontalAlignment(JLabel.CENTER);
 		
-		L1.addMouseListener(new OyenteRaton());
-		
 		T1.setEditable(false);
 		T1.setText("Desarrollado por:\n	Santiago Arbelaez\n	Sebastian Chavarria\n	Santiago Montoya \nPara la asignatura: \n       Programacion Orientada a Objetos \nProfesor: Jaime Alberto Guzman Luna \n \nEste sistema se encarga de manejar el\nsistema de citas y de gestionar a los\nempleados, jefes, clientes e inmuebles\nque estan registrados por la empresa\nSu Propiedad Raiz");
+		
+		T2.setVisible(false);
+		T3.setVisible(false);
+		
+		B1.setActionCommand("Inmuebles");
+		B1.addActionListener(new OyenteBoton());
+		
+		B2.setActionCommand("Ingresar");
+		B2.addActionListener(new OyenteBoton(B2, L2, L3, L4, T2, T3));
 		
 		B4.setActionCommand("Salir");
 		B4.addActionListener(new OyenteBoton());

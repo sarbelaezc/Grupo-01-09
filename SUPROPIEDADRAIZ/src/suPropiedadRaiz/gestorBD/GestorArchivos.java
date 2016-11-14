@@ -32,7 +32,6 @@ public class GestorArchivos {
 	 * @throws ExceptionFileNotFoundException, IOException
 	 */
 	 public static ArrayList<Persona> crearListaPersonas() throws FileNotFoundException, IOException{
-		
 		 ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Datos.obj"));
 		
 		 for (int i=0; i<personas.size(); i++){
@@ -47,7 +46,6 @@ public class GestorArchivos {
 	 * @throws IOException
 	 */
 	public static void crear() throws IOException{
-		
 		String nom = "Datos.obj";
 		File fichero = new File(nom);
 		
@@ -71,40 +69,26 @@ public class GestorArchivos {
 	 * @throws ClassNotFoundException
 	 * @throws IOException
 	 */
-	public static void leer() throws ClassNotFoundException, IOException{
-				
+	public static void leer() throws ClassNotFoundException, IOException{	
 		ObjectInputStream entrada = null;
 		 
 		try{
-			
 			entrada = new ObjectInputStream(new FileInputStream("Datos.obj"));
-			
+	
 			while(true){
-				
 				Object obj = entrada.readObject();
 								
 				if(obj instanceof Cliente){
-					
 					personas.add((Cliente) obj);
-					
-					
-					
+						
 				}else if(obj instanceof FuncionarioJefe){
-					
 					personas.add((FuncionarioJefe) obj);
 					
-					
-					
 				}else if(obj instanceof Funcionario){
-					
 					personas.add((Funcionario) obj);
 					
-					
-					
-				}else if(obj instanceof Administrador){
-					
+				}else if(obj instanceof Administrador){				
 					personas.add((Administrador) obj);
-					
 					
 				}
 			}
