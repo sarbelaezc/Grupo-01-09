@@ -2,11 +2,38 @@ package uiMain.gui.oyentes;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+import excepciones.ExcepcionUsuario1;
+import suPropiedadRaiz.gestorBD.GestorArchivos;
+import suPropiedadRaiz.usuarios.Persona;
 
 public class OyenteBoton implements ActionListener {
+	
+	JButton B1;
+	JLabel L1, L2, L3;
+	JTextField T1, T2;
+	int count = 1;
+	
+	public OyenteBoton() {
+
+	}
+
+	public OyenteBoton(JButton B, JLabel L1, JLabel L2, JLabel L3, JTextField T1, JTextField T2) {
+		this.B1 = B;
+		this.L1 = L1;
+		this.L2 = L2;
+		this.L3 = L3;
+		this.T1 = T1;
+		this.T2 = T2;
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String actionCommand = e.getActionCommand();
@@ -20,6 +47,57 @@ public class OyenteBoton implements ActionListener {
 					System.exit(0);
 				}else if(resp == 1){
 					
+				}
+			}else if("Ingresar".equals(actionCommand)){
+				B1.setText("<html><p align='center'>Complete informacion y de nuevo clic</p></html>");
+				B1.setActionCommand("Continuar");
+				
+				L1.setVisible(true);
+				L2.setVisible(true);
+				L3.setVisible(true);
+				
+				T1.setVisible(true);
+				T2.setVisible(true);
+				
+			}else if("Continuar".equals(actionCommand)){
+				String usuario = T1.getText();
+				String clave = T2.getText();
+
+				if(usuario.equals("") || clave.equals("") ){
+					try {
+						throw new ExcepcionUsuario1("Los campos de nombre de usuario o contraseña \n no han sido diligenciados correctamente.");
+					} catch (ExcepcionUsuario1 e1) {
+						// TODO Auto-generated catch block
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+					}
+				}else{
+					//Acá va la confirmacion del login
+				}
+			}else if("Inmuebles".equals(actionCommand)){
+				ArrayList<Persona> personasRegistradas;
+				ArrayList<ImageIcon> imgInmuebles;
+				
+				try{
+					personasRegistradas = GestorArchivos.crearListaPersonas();					
+					imgInmuebles = new ArrayList<ImageIcon>();
+					imgInmuebles.add(new ImageIcon("./imagenes/Img1.PNG"));
+					imgInmuebles.add(new ImageIcon("./imagenes/Local.JPG"));
+					
+					for(int i = 1; i <= personasRegistradas.size(); i++){
+						//Acá va la captura y añadida de las imagenes de cada casa
+					}
+					if(count < imgInmuebles.size()){
+						JButton B2 = (JButton) e.getSource();
+						B2.setIcon(imgInmuebles.get(count));
+						count ++;
+					}else{
+						count = 0;
+						JButton B2 = (JButton) e.getSource();
+						B2.setIcon(imgInmuebles.get(count));
+						count ++;
+					}
+				}catch(Exception e1){
+					e1.printStackTrace();
 				}
 			}
 		}
