@@ -65,7 +65,7 @@ public class OyenteBoton implements ActionListener {
 
 				if(usuario.equals("") || clave.equals("") ){
 					try {
-						throw new ExcepcionUsuario1("Los campos de nombre de usuario o contraseña \n no han sido diligenciados correctamente.");
+						throw new ExcepcionUsuario1();
 					} catch (ExcepcionUsuario1 e1) {
 						// TODO Auto-generated catch block
 						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
