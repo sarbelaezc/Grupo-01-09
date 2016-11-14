@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Cliente;
-import suPropiedadRaiz.usuarios.Persona;
 import uiMain.gui.GUIAnonimo;
 
 /**
@@ -25,9 +24,8 @@ public class SuPropiedadRaiz {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 
 		new GUIAnonimo();
-		GestorArchivos.crear();	
-		@SuppressWarnings("unused")
-		Persona p = new Cliente();
+		GestorArchivos.crear();
+		new Cliente();
 		GestorArchivos.crearListaPersonas();
 	}
 }
