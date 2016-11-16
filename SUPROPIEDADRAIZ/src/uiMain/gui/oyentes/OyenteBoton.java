@@ -2,7 +2,9 @@ package uiMain.gui.oyentes;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -10,9 +12,14 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import excepciones.ExcepcionUsuario1;
+import suPropiedadRaiz.excepciones.ExcepcionUsuario1;
+import suPropiedadRaiz.excepciones.ExcepcionUsuario2;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
+import suPropiedadRaiz.usuarios.Administrador;
+import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Persona;
+import uiMain.gui.GUIAdministrador;
+import uiMain.gui.GUIUsuario;
 
 public class OyenteBoton implements ActionListener {
 	
@@ -71,7 +78,24 @@ public class OyenteBoton implements ActionListener {
 						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}else{
-					//Acá va la confirmacion del login
+						long user = Long.parseLong(usuario);
+						
+						try {
+							Persona p = GestorArchivos.buscar(user);
+
+							if(p == null){
+								throw new ExcepcionUsuario2();
+							}else if(p instanceof Administrador){
+								new GUIAdministrador();
+								
+							}else if(p instanceof Cliente){
+								new GUIUsuario();
+								
+							}
+						} catch (ClassNotFoundException | IOException | ExcepcionUsuario2 e1) {
+							JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						}
+						
 				}
 			}else if("Inmuebles".equals(actionCommand)){
 				ArrayList<Persona> personasRegistradas;
