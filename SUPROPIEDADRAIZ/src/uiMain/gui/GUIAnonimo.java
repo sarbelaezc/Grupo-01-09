@@ -2,6 +2,7 @@ package uiMain.gui;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import suPropiedadRaiz.gestorBD.GestorArchivos;
 import uiMain.gui.oyentes.OyenteBoton;
 import uiMain.gui.oyentes.OyenteRaton;
 
@@ -25,9 +27,11 @@ import uiMain.gui.oyentes.OyenteRaton;
 @SuppressWarnings("serial")
 public class GUIAnonimo extends JFrame {
 
-	public GUIAnonimo(){
+	public GUIAnonimo() throws IOException{
 		
 		super("Su Propiedad Raiz");
+		
+		GestorArchivos.crear();
 		
 		Container P0 = this.getContentPane();
 		JPanel P1 = new JPanel();
@@ -76,7 +80,7 @@ public class GUIAnonimo extends JFrame {
 		B1.addActionListener(new OyenteBoton());
 		
 		B2.setActionCommand("Ingresar");
-		B2.addActionListener(new OyenteBoton(B2, L2, L3, L4, T2, T3));
+		B2.addActionListener(new OyenteBoton(B2, L2, L3, L4, T2, T3, this));
 		
 		B4.setActionCommand("Salir");
 		B4.addActionListener(new OyenteBoton());
