@@ -12,11 +12,10 @@ import suPropiedadRaiz.gestorBD.*;
  * @author Sebastian Chavarría Gómez
  * @author Santiago Montoya Palacio
  */
+@SuppressWarnings("serial")
 public class Cliente extends Persona implements Serializable {
 	
-	private static final long serialVersionUID = -8985406422251618852L;
-	private long cedula, telefono;
-	private String nombre;
+	private long telefono;
 	private String motivo, direccion, celular;
 	ArrayList<Inmuebles> A = new ArrayList<Inmuebles>();
 	
