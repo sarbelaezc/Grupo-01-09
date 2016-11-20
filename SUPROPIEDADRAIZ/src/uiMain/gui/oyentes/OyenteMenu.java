@@ -69,7 +69,6 @@ public class OyenteMenu implements ActionListener {
 				try {
 					new GUIAnonimo();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}else if(resp == 1){

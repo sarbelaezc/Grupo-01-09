@@ -103,7 +103,6 @@ public class GUIAdministrador extends JFrame {
 		/*
 		 * Aca comienza la implementacion de la ventana de adminsitrador
 		 */
-		
 		P0.setLayout(new GridLayout(7,1));
 		
 		P0.add(P1);
