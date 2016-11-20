@@ -57,7 +57,7 @@ public class GestorArchivos {
 				e.printStackTrace();
 			}
 		}else{
-		 	personas.add(new Administrador("Administrador", 1));
+		 	personas.add(new Administrador("Administrador", 1, "admin"));
 			
 			System.out.println("Se ha creado Clientes.obj");
 			System.out.println("/-/-/-/-/-/-/-/-/-/-/Su Propiedad Raiz/-/-/-/-/-/-/-/-/-/-/");	
@@ -126,10 +126,15 @@ public class GestorArchivos {
 		Inmuebles inm = null;
 		
 		for(int i=0;i < GestorArchivos.personas.size();i++){
+			
 			if (GestorArchivos.personas.get(i) instanceof FuncionarioJefe){
+				
 				funJefe = (FuncionarioJefe) GestorArchivos.personas.get(i);
+				
 				if (funJefe.getListaFuncionarios().size() != 0){
+					
 					for(int j = 0; j < funJefe.getListaFuncionarios().size(); i++){
+					
 						fun = (Funcionario) GestorArchivos.personas.get(i);
 						 
 						 if (fun.getListaCasas().size() != 0){
