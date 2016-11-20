@@ -8,20 +8,18 @@ import uiMain.menuConsola.*;
  * @author Sebastian Chavarría Gómez
  * @author Santiago Montoya Palacio
  */
+@SuppressWarnings("serial")
 public class Administrador extends Persona {
-	
-	private static final long serialVersionUID = 6885455392745744589L;
-	String nombre;
-	long cedula;
-	
+		
 	/**
 	 * Constructor para el administrador recibiendo los siguientes parametros y generandole un menu 
 	 * @param nombre
 	 * @param cedula
 	 */
-	public Administrador(String nombre, long cedula){
+	public Administrador(String nombre, long cedula, String clave){
 		this.nombre = nombre;
 		this.cedula = cedula;
+		this.clave = clave;
 		menu = new MenuDeConsola();
 		menu.anadirOpcion(new OpcionSalir());
 		menu.anadirOpcion(new OpcionVerUsuario());
