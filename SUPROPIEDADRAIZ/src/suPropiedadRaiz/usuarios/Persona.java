@@ -13,9 +13,17 @@ public abstract class Persona implements Serializable {
 
 	private static final long serialVersionUID = 7543457343574046297L;
 	long cedula;
-	String nombre;
-	public MenuDeConsola menu;
+	String nombre, clave;
+	MenuDeConsola menu;
 	
+	public String getClave() {
+		return clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
 	public abstract long getCedula();
 
 	public abstract String getNombre();
