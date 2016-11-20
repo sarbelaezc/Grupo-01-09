@@ -1,0 +1,133 @@
+package uiMain.gui.oyentes;
+
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import suPropiedadRaiz.usuarios.Persona;
+import uiMain.gui.GUIAdministrador;
+import uiMain.gui.GUIAnonimo;
+
+public class OyenteMenu implements ActionListener {
+
+	Persona p;
+	GUIAdministrador V1;
+	Container P0;
+	JPanel P1,P2,P3,P4,P5;
+	JLabel L1,L2,L3,L4,L5;
+	JButton B1,B2,B3,B4;
+	
+	public OyenteMenu(){
+		
+	}
+	
+	public OyenteMenu(Persona p){
+		this.p = p;
+	}
+	
+	public OyenteMenu(GUIAdministrador V1) {
+		this.V1 = V1;
+	}
+
+	public OyenteMenu(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JLabel l1, JLabel l2, JLabel l3, JLabel l4, JLabel l5, JButton b1, JButton b2, JButton b3, JButton b4) {
+		this.P0 = p0;
+		this.P1 = p1;
+		this.P2 = p2;
+		this.P3 = p3;
+		this.P4 = p4;
+		this.P5 = p5;
+		this.L1 = l1;
+		this.L2 = l2;
+		this.L3 = l3;
+		this.L4 = l4;
+		this.L5 = l5;
+		this.B1 = b1;
+		this.B2 = b2;
+		this.B3 = b3;
+		this.B4 = b4;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		String actionCommand = e.getActionCommand();
+		
+		if ("Salir".equals(actionCommand)){
+			
+			int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea salir y volver a la ventana inicial?", "¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+			
+			if(resp == 0){	
+				V1.setVisible(false);
+				try {
+					new GUIAnonimo();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}else if(resp == 1){
+				
+			}
+		}else if("InfoA".equals(actionCommand)){
+			String informacion = "Nombre: " + p.getNombre() + "\n" + "Cedula: " + p.getCedula();
+			JOptionPane.showConfirmDialog(null, informacion, "Informacion", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
+		}else if("Acerca".equals(actionCommand)){
+			String informacion = "Nuestro nombre es Su Propiedad Raiz \n" + "Ubicados en: Cl. 80 #65223, Medellín, Antioquia, Colombia \n" + "Universidad Nacional de Colombia - Facultad de Minas";
+			JOptionPane.showConfirmDialog(null, informacion, "Su Propiedad Raiz", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
+		}else if("Ayuda".equals(actionCommand)){
+			String informacion = "Desarrollado por: Grupo-01-09\n" + "Integrantes: \n" + "         Santiago Arbelaaez Cataño \n" + 
+																						 "         Sebastian Chavarria Gomez \n" +
+																						 "         Santiago Montoya Palacio \n";
+			JOptionPane.showConfirmDialog(null, informacion, "Desarrolladores", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
+		}else if("Opciones".equals(actionCommand)){
+			P3.remove(L1);
+			
+			L1.setText("<HTML><FONT SIZE=5><p align='center'>Consultas Basicas</p></FONT></HTML>");
+			
+			P2.setLayout(new BorderLayout());
+			P3.setLayout(new BorderLayout());
+			P4.setLayout(new BorderLayout());
+			P5.setLayout(new BorderLayout());
+			
+			P1.setBorder(new EmptyBorder(10,15,10,10));
+			P2.setBorder(new EmptyBorder(10,15,10,10));
+			P3.setBorder(new EmptyBorder(10,15,10,10));
+			P4.setBorder(new EmptyBorder(10,15,10,10));
+			P5.setBorder(new EmptyBorder(10,15,10,10));
+			
+			L1.setBorder(new EmptyBorder(5,15,5,5));
+			L2.setBorder(new EmptyBorder(5,15,5,5));
+			L3.setBorder(new EmptyBorder(5,15,5,5));
+			L4.setBorder(new EmptyBorder(5,15,5,5));
+			L5.setBorder(new EmptyBorder(5,15,5,5));
+			
+			P1.add(L1);
+			
+			P2.add(B1, BorderLayout.WEST);
+			P2.add(L2, BorderLayout.CENTER);
+			
+			P3.add(B2, BorderLayout.WEST);
+			P3.add(L3, BorderLayout.CENTER);
+			
+			P4.add(B3, BorderLayout.WEST);
+			P4.add(L4, BorderLayout.CENTER);
+			
+			P5.add(B4, BorderLayout.WEST);
+			P5.add(L5, BorderLayout.CENTER);
+			
+			P1.updateUI();
+			P2.updateUI();
+			P3.updateUI();
+			P4.updateUI();
+			P5.updateUI();
+			
+		}
+	}
+}
