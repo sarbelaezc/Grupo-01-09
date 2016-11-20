@@ -1,6 +1,5 @@
 package uiMain.menuConsola;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
@@ -8,7 +7,6 @@ import suPropiedadRaiz.inmuebles.Apartamento;
 import suPropiedadRaiz.inmuebles.Casa;
 import suPropiedadRaiz.inmuebles.Inmuebles;
 import suPropiedadRaiz.usuarios.Funcionario;
-import suPropiedadRaiz.usuarios.Persona;
 /**
  * Representa la opcion del funcionario de asignarle un rol especifico a un inmuble
  * @author Santiago Arbelaez Cataño
@@ -25,6 +23,7 @@ public class OpcionAsignarRolInmueble extends OpcionDeMenu {
 	
 	public void ejecutar() {
 		
+		@SuppressWarnings("resource")
 		Scanner entrada = new Scanner(System.in);
 		System.out.println("Ingrese el código del inmueble:");
 		int codigo = entrada.nextInt();

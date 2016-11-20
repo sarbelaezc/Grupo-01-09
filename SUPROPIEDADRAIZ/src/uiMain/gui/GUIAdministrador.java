@@ -42,6 +42,10 @@ public class GUIAdministrador extends JFrame {
 	JLabel L4 = new JLabel("Adicionar una nueva opcion de menu");
 	JLabel L5 = new JLabel("Eliminar una opcion de menu");
 	
+	/**
+	 * Constructor que pasa como parametro una persona administrador
+	 * @param p
+	 */
 	public GUIAdministrador(Persona p){
 		
 		super("Administrador");

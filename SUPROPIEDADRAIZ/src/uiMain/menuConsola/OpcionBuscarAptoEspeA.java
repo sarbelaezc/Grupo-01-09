@@ -10,13 +10,13 @@ import java.util.Scanner;
 
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.inmuebles.Apartamento;
-import suPropiedadRaiz.inmuebles.Inmuebles;
 @SuppressWarnings("serial")
 public class OpcionBuscarAptoEspeA extends OpcionDeMenu {
 
 	
 	public void ejecutar() {
 	Apartamento apto;
+	@SuppressWarnings("resource")
 	Scanner entrada  = new Scanner (System.in);
 	System.out.println("Ingrese el c�digo de del Apartamento: ");
 	int codigo = entrada.nextInt();

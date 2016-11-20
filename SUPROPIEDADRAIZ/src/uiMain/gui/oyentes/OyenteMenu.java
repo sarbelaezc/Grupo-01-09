@@ -16,6 +16,12 @@ import suPropiedadRaiz.usuarios.Persona;
 import uiMain.gui.GUIAdministrador;
 import uiMain.gui.GUIAnonimo;
 
+/**
+ * Esta clase representa los oyentes de la barra de menu
+ * @author Santiago Arbeláez Cataño
+ * @author Sebastian Chavarría Gómez
+ * @author Santiago Montoya Palacio
+ */
 public class OyenteMenu implements ActionListener {
 
 	Persona p;
@@ -25,18 +31,47 @@ public class OyenteMenu implements ActionListener {
 	JLabel L1,L2,L3,L4,L5;
 	JButton B1,B2,B3,B4;
 	
+	/**
+	 * Constructor default
+	 */
 	public OyenteMenu(){
 		
 	}
 	
+	/**
+	 * constructor que recibe como parametro una persona
+	 * @param p
+	 */
 	public OyenteMenu(Persona p){
 		this.p = p;
 	}
 	
+	/**
+	 * Constructor que recibe una ventana
+	 * @param V1
+	 */
 	public OyenteMenu(GUIAdministrador V1) {
 		this.V1 = V1;
 	}
 
+	/**
+	 * Constructor que recibe muchos componenetes para cambiar la vision de la ventana
+	 * @param p0
+	 * @param p1
+	 * @param p2
+	 * @param p3
+	 * @param p4
+	 * @param p5
+	 * @param l1
+	 * @param l2
+	 * @param l3
+	 * @param l4
+	 * @param l5
+	 * @param b1
+	 * @param b2
+	 * @param b3
+	 * @param b4
+	 */
 	public OyenteMenu(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JLabel l1, JLabel l2, JLabel l3, JLabel l4, JLabel l5, JButton b1, JButton b2, JButton b3, JButton b4) {
 		this.P0 = p0;
 		this.P1 = p1;
@@ -55,6 +90,11 @@ public class OyenteMenu implements ActionListener {
 		this.B4 = b4;
 	}
 
+	/* 
+	 * Metodo para reaccionar a las acciones en la barra de menu
+	 * (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

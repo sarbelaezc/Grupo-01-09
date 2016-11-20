@@ -1,8 +1,6 @@
 package uiMain.menuConsola;
 
-import java.io.IOException;
 import java.util.Scanner;
-import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.inmuebles.Apartamento;
 import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Persona;
@@ -19,6 +17,7 @@ public class OpcionRegistrarInmueble extends OpcionDeMenu {
 	private static final long serialVersionUID = -2659895597544556300L;
 	Persona persona;
 	Cliente clt;
+	@SuppressWarnings("resource")
 	@Override
 	public void ejecutar() {
 		

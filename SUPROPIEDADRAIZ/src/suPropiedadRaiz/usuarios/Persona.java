@@ -9,12 +9,12 @@ import uiMain.menuConsola.MenuDeConsola;
  * @author Sebastian Chavarría Gómez
  * @author Santiago Montoya Palacio
  */
+@SuppressWarnings("serial")
 public abstract class Persona implements Serializable {
 
-	private static final long serialVersionUID = 7543457343574046297L;
 	long cedula;
 	String nombre, clave;
-	MenuDeConsola menu;
+	public MenuDeConsola menu;
 	
 	public String getClave() {
 		return clave;
