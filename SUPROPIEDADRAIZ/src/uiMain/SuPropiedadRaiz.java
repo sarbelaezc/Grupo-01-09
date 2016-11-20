@@ -2,7 +2,6 @@ package uiMain;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Cliente;
 import uiMain.gui.GUIAnonimo;
 
@@ -21,11 +20,8 @@ public class SuPropiedadRaiz {
 	 * @throws ClassNotFoundException
 	 * @throws IOException
 	 */
-	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
-
+	public static void main(String[] args) throws IOException {
 		new GUIAnonimo();
-		GestorArchivos.crear();
 		new Cliente();
-		GestorArchivos.crearListaPersonas();
 	}
 }
