@@ -28,10 +28,10 @@ public class OyenteMenu implements ActionListener {
 	Persona p;
 	GUIAdministrador V1;
 	Container P0;
-	JPanel P1,P2,P3,P4,P5;
-	JLabel L1,L2,L3,L4,L5;
-	JButton B1,B2,B3,B4;
-	
+	JPanel P1,P2,P3,P4,P5,P6;
+	JLabel L1,L2,L3,L4,L5,L6;
+	JButton B1,B2,B3,B4,B5;
+
 	/**
 	 * Constructor default
 	 */
@@ -63,33 +63,40 @@ public class OyenteMenu implements ActionListener {
 	 * @param p3
 	 * @param p4
 	 * @param p5
+	 * @param p6 
 	 * @param l1
 	 * @param l2
 	 * @param l3
 	 * @param l4
 	 * @param l5
+	 * @param l6 
 	 * @param b1
 	 * @param b2
 	 * @param b3
 	 * @param b4
+	 * @param b5 
 	 */
-	public OyenteMenu(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JLabel l1, JLabel l2, JLabel l3, JLabel l4, JLabel l5, JButton b1, JButton b2, JButton b3, JButton b4) {
+	public OyenteMenu(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JPanel p6, JLabel l1, JLabel l2, JLabel l3, JLabel l4, JLabel l5, JLabel l6, JButton b1, JButton b2, JButton b3, JButton b4, JButton b5) {
 		this.P0 = p0;
 		this.P1 = p1;
 		this.P2 = p2;
 		this.P3 = p3;
 		this.P4 = p4;
 		this.P5 = p5;
+		this.P6 = p6;
 		this.L1 = l1;
 		this.L2 = l2;
 		this.L3 = l3;
 		this.L4 = l4;
 		this.L5 = l5;
+		this.L6 = l6;
 		this.B1 = b1;
 		this.B2 = b2;
 		this.B3 = b3;
 		this.B4 = b4;
+		this.B5 = b5;
 	}
+
 
 	/* 
 	 * Metodo para reaccionar a las acciones en la barra de menu
@@ -131,23 +138,38 @@ public class OyenteMenu implements ActionListener {
 			
 			L1.setText("<HTML><FONT SIZE=5><p align='center'>Consultas Basicas</p></FONT></HTML>");
 			
+			B1.setActionCommand("Consulta1");
+			B2.setActionCommand("Consulta2");
+			B3.setActionCommand("Consulta3");
+			B4.setActionCommand("Consulta4");
+			B5.setActionCommand("Consulta5");
+			
+			B1.addActionListener(new OyenteBoton(P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
+			B2.addActionListener(new OyenteBoton());
+			B3.addActionListener(new OyenteBoton());
+			B4.addActionListener(new OyenteBoton());
+			B5.addActionListener(new OyenteBoton());
+			
 			P0.setLayout(new GridLayout(7,1));
 			P2.setLayout(new BorderLayout());
 			P3.setLayout(new BorderLayout());
 			P4.setLayout(new BorderLayout());
 			P5.setLayout(new BorderLayout());
+			P6.setLayout(new BorderLayout());
 			
 			P1.setBorder(new EmptyBorder(10,15,10,10));
 			P2.setBorder(new EmptyBorder(10,15,10,10));
 			P3.setBorder(new EmptyBorder(10,15,10,10));
 			P4.setBorder(new EmptyBorder(10,15,10,10));
 			P5.setBorder(new EmptyBorder(10,15,10,10));
+			P6.setBorder(new EmptyBorder(10,15,10,10));
 			
 			L1.setBorder(new EmptyBorder(5,15,5,5));
 			L2.setBorder(new EmptyBorder(5,15,5,5));
 			L3.setBorder(new EmptyBorder(5,15,5,5));
 			L4.setBorder(new EmptyBorder(5,15,5,5));
 			L5.setBorder(new EmptyBorder(5,15,5,5));
+			L6.setBorder(new EmptyBorder(5,15,5,5));
 			
 			P1.add(L1);
 			
@@ -163,12 +185,10 @@ public class OyenteMenu implements ActionListener {
 			P5.add(B4, BorderLayout.WEST);
 			P5.add(L5, BorderLayout.CENTER);
 			
-			P1.updateUI();
-			P2.updateUI();
-			P3.updateUI();
-			P4.updateUI();
-			P5.updateUI();
+			P6.add(B5, BorderLayout.WEST);
+			P6.add(L6, BorderLayout.CENTER);
 			
+			P0.validate();
 		}
 	}
 }
