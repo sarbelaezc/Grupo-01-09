@@ -1,6 +1,6 @@
 package suPropiedadRaiz.usuarios;
 
-import uiMain.menuConsola.*;
+import java.util.ArrayList;
 
 /**
  * Esta clase representa el administrador del programa con todo lo que impica
@@ -20,13 +20,11 @@ public class Administrador extends Persona {
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.clave = clave;
-		menu = new MenuDeConsola();
-		menu.anadirOpcion(new OpcionSalir());
-		menu.anadirOpcion(new OpcionVerUsuario());
-		menu.anadirOpcion(new OpcionesExistentes());
-		menu.anadirOpcion(new OpcionNuevaUsuario());
-		menu.anadirOpcion(new OpcionEliminarDeUsuario());
-		menu.anadirOpcion(new OpcionNuevoFuncionarioJ());
+		this.opciones.add("Listar opciones de menu de un usuario");
+		this.opciones.add("Listar opciones de menu existentes en el sistema");
+		this.opciones.add("Adicionar una nueva opcion de menu");
+		this.opciones.add("Eliminar una opcion de menu");
+		this.opciones.add("Registrar nuevo funcionario jefe");
 	}
 
 	/* 
@@ -62,5 +60,15 @@ public class Administrador extends Persona {
 	 */
 	public void setNombre(String nombre){
 		this.nombre = nombre;
+	}
+
+	/* 
+	 * Devuelve las opciones del adminsitrador
+	 * (non-Javadoc)
+	 * @see suPropiedadRaiz.usuarios.Persona#getOpciones()
+	 */
+	@Override
+	public ArrayList<String> getOpciones() {
+		return opciones;
 	}
 }
