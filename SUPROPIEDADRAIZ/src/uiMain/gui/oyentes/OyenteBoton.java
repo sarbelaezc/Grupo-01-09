@@ -40,8 +40,7 @@ public class OyenteBoton implements ActionListener {
 	 */
 	public OyenteBoton() {
 
-	}
-	
+	}	
 	/**
 	 * Constructor que permite cambiar interactuar con los parametros que se le estan pasando
 	 * @param B
@@ -61,7 +60,6 @@ public class OyenteBoton implements ActionListener {
 		this.T1 = T1;
 		this.T2 = T2;
 	}
-
 	/* 
 	 * Metodo por medio del cual se ejecutan los clics a los botones
 	 * (non-Javadoc)
@@ -167,6 +165,12 @@ public class OyenteBoton implements ActionListener {
 					Long cedula = Long.parseLong(fp.getValue("Cedula"));
 					String motivo = fp.getValue("Motivo");
 					GestorArchivos.personas.add(new Cliente(cedula,nombre,motivo));
+				}else if(resp == 1){
+					JTextField[] campos = fp.getCampos();
+					for(int i=0; i<campos.length; i++){
+						campos[i].setText("");
+					}
+					fp.mostrar(fp);
 				}
 			}
 		}
