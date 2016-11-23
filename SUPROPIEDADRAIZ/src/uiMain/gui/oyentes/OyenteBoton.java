@@ -16,6 +16,7 @@ import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Administrador;
 import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Persona;
+import uiMain.gui.FieldPanel;
 import uiMain.gui.GUIAdministrador;
 import uiMain.gui.GUIAnonimo;
 import uiMain.gui.GUIUsuario;
@@ -60,7 +61,7 @@ public class OyenteBoton implements ActionListener {
 		this.T1 = T1;
 		this.T2 = T2;
 	}
-	
+
 	/* 
 	 * Metodo por medio del cual se ejecutan los clics a los botones
 	 * (non-Javadoc)
@@ -156,6 +157,16 @@ public class OyenteBoton implements ActionListener {
 					}
 				}catch(Exception e1){
 					e1.printStackTrace();
+				}
+			}else if("Pedir".equals(actionCommand)){
+				String[] datos = new String[] {"Nombre","Cedula", "Motivo"};
+				FieldPanel fp = new FieldPanel("Datos",datos,null,null,null);
+				int resp = fp.mostrar(fp);
+				if(resp == 0){
+					String nombre = fp.getValue("Nombre");
+					Long cedula = Long.parseLong(fp.getValue("Cedula"));
+					String motivo = fp.getValue("Motivo");
+					GestorArchivos.personas.add(new Cliente(cedula,nombre,motivo));
 				}
 			}
 		}
