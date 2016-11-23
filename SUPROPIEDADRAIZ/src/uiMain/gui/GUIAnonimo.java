@@ -82,6 +82,9 @@ public class GUIAnonimo extends JFrame {
 		B2.setActionCommand("Ingresar");
 		B2.addActionListener(new OyenteBoton(B2, L2, L3, L4, T2, T3, this));
 		
+		B3.setActionCommand("Pedir");
+		B3.addActionListener(new OyenteBoton());
+		
 		B4.setActionCommand("Salir");
 		B4.addActionListener(new OyenteBoton());
 		B4.setToolTipText("Al dar clic a este botón se iniciara la confirmacion para la salida del programa");
