@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Esta clase represnta lso formularios que serán necesarios en el programa
@@ -47,6 +48,9 @@ public class FieldPanel extends JPanel{
 		tituloC.setFont(new Font("Dialog", Font.BOLD, 14));
 		tituloV.setFont(new Font("Dialog", Font.BOLD, 14));
 		
+		tituloC.setBorder(new EmptyBorder(2,2,2,2));
+		tituloV.setBorder(new EmptyBorder(2,2,2,2));
+		
 		this.setLayout(new GridLayout(n+1,2));
 		
 		this.add(tituloC);
@@ -58,10 +62,8 @@ public class FieldPanel extends JPanel{
 		for(int i=0; i<n; i++){
 			this.add(new JLabel(criterios[i]));
 			this.add(campos[i]);
-		}
-				
+		}		
 	}
-	
 	/**
 	 * Metodo que se le ingresa un parametro y devuelve el valor correspondiente a este
 	 * @param criterio
@@ -88,4 +90,13 @@ public class FieldPanel extends JPanel{
 		resp = JOptionPane.showOptionDialog(null,fp,null,JOptionPane.OK_CANCEL_OPTION,JOptionPane.INFORMATION_MESSAGE,null,botones,botones[0]);
 		return resp;
 	}
+
+	/**
+	 * Metodo que devuelve el arreglo de campos para llenar con informacion
+	 * @return JTextField[] campos
+	 */
+	public JTextField[] getCampos() {
+		return campos;
+	}
+
 }
