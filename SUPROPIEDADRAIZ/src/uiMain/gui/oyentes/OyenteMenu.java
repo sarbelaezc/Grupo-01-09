@@ -2,6 +2,7 @@ package uiMain.gui.oyentes;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -130,6 +131,7 @@ public class OyenteMenu implements ActionListener {
 			
 			L1.setText("<HTML><FONT SIZE=5><p align='center'>Consultas Basicas</p></FONT></HTML>");
 			
+			P0.setLayout(new GridLayout(7,1));
 			P2.setLayout(new BorderLayout());
 			P3.setLayout(new BorderLayout());
 			P4.setLayout(new BorderLayout());
