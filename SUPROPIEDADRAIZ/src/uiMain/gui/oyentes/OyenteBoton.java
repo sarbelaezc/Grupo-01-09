@@ -147,7 +147,7 @@ public class OyenteBoton implements ActionListener {
 							V1.setVisible(false);
 							
 						}else if(p instanceof Cliente){
-							new GUIUsuario();
+							new GUIUsuario(p);
 							V1.setVisible(false);
 							
 						}
