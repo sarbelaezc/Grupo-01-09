@@ -1,5 +1,7 @@
 package uiMain.gui.oyentes;
 
+import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -8,10 +10,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import suPropiedadRaiz.excepciones.ExcepcionUsuario1;
 import suPropiedadRaiz.excepciones.ExcepcionUsuario2;
+import suPropiedadRaiz.excepciones.ExcepcionUsuario3;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.usuarios.Administrador;
 import suPropiedadRaiz.usuarios.Cliente;
@@ -30,8 +35,10 @@ import uiMain.gui.GUIUsuario;
 public class OyenteBoton implements ActionListener {
 	
 	GUIAnonimo V1;
-	JButton B1;
-	JLabel L1, L2, L3;
+	Container P0;
+	JPanel P1,P2,P3,P4,P5,P6;
+	JButton B1, B2, B3, B4, B5;
+	JLabel L1, L2, L3, L4, L5, L6;
 	JTextField T1, T2;
 	int count = 1;
 	
@@ -59,6 +66,26 @@ public class OyenteBoton implements ActionListener {
 		this.L3 = L3;
 		this.T1 = T1;
 		this.T2 = T2;
+	}
+	public OyenteBoton(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JPanel p6, JButton b1, JButton b2, JButton b3, JButton b4, JButton b5, JLabel l1, JLabel l2, JLabel l3,JLabel l4, JLabel l5, JLabel l6) {
+		this.P0 = p0;
+		this.P1 = p1;
+		this.P2 = p2;
+		this.P3 = p3;
+		this.P4 = p4;
+		this.P5 = p5;
+		this.P6 = p6;
+		this.B1 = b1;
+		this.B2 = b2;
+		this.B3 = b3;
+		this.B4 = b4;
+		this.B5 = b5;
+		this.L1 = l1;
+		this.L2 = l2;
+		this.L3 = l3;
+		this.L4 = l4;
+		this.L5 = l5;
+		this.L6 = l6;
 	}
 	/* 
 	 * Metodo por medio del cual se ejecutan los clics a los botones
@@ -172,6 +199,71 @@ public class OyenteBoton implements ActionListener {
 					}
 					fp.mostrar(fp);
 				}
+			}else if("Consulta1".equals(actionCommand)){
+				String[] datos = new String[]{"Cedula del usuario: "};
+				FieldPanel fp = new FieldPanel(null,datos,null,null,null);
+				int resp = fp.mostrar(fp);
+				if(resp == 0){
+					Long cedula = Long.parseLong(fp.getValue("Cedula del usuario: "));
+					try {
+						Persona p = GestorArchivos.buscar(cedula);
+						
+						if(p == null){
+							throw new ExcepcionUsuario3();
+						}else{
+							
+							JTextArea opcionesListadas = new JTextArea();
+							JButton B6 = new JButton("Atras");
+							ArrayList<String> opciones = p.getOpciones();
+							
+							B6.setActionCommand("Salir");
+							B6.addActionListener();
+							
+							P0.remove(P1);
+							P0.remove(P2);
+							P0.remove(P3);
+							P0.remove(P4);
+							P0.remove(P5);
+							P0.remove(P6);
+							P1.remove(L1);
+							P2.remove(B1);
+							P2.remove(L2);
+							P3.remove(B2);
+							P3.remove(L3);
+							P4.remove(B3);
+							P4.remove(L4);					
+							P5.remove(B4);
+							P5.remove(L5);
+							P6.remove(B5);
+							P6.remove(L6);
+							
+							for(int i=0; i<opciones.size();i++){
+								opcionesListadas.setText(opcionesListadas.getText() + "\n" + opciones.get(i));
+							}
+							
+							P0.setLayout(new BorderLayout());
+							
+							P0.add(P3, BorderLayout.CENTER);
+							P0.add(P2, BorderLayout.SOUTH);
+							P3.add(opcionesListadas);
+							P2.add(B6);
+
+							P0.validate();
+						}
+					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+					}
+				}else if(resp == 1){
+					
+				}
+			}else if("Consulta2".equals(actionCommand)){
+				System.out.println("2");
+			}else if("Consulta3".equals(actionCommand)){
+				System.out.println("3");
+			}else if("Consulta4".equals(actionCommand)){
+				System.out.println("4");
+			}else if("Consulta5".equals(actionCommand)){
+				System.out.println("5");
 			}
 		}
 	}
