@@ -269,5 +269,14 @@ public class Cliente extends Persona implements Serializable {
 		}
 		return BuscasaList;
 	}
-	
+
+	/* 
+	 * Devuelve las opciones del adminsitrador
+	 * (non-Javadoc)
+	 * @see suPropiedadRaiz.usuarios.Persona#getOpciones()
+	 */
+	@Override
+	public ArrayList<String> getOpciones() {
+		return opciones;
+	}
 }
