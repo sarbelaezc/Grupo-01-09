@@ -21,8 +21,6 @@ public class Funcionario extends Persona implements Serializable{
 	ArrayList<Apartamento> apartamentoList = new ArrayList<Apartamento>();
 	ArrayList<Arrendamiento> ArrendamientoList = new ArrayList<Arrendamiento>();
 	ArrayList<CompraVenta> CompraVentaList = new ArrayList<CompraVenta>();
-	ArrayList<OpcionDeMenu> opciones = new ArrayList<OpcionDeMenu>();
-	MenuDeConsola menu;
 	
 	public Funcionario(String nombre, long cedula, long salario) {
 		this.setNombre(nombre);
@@ -216,5 +214,15 @@ public class Funcionario extends Persona implements Serializable{
 			}
 		}
 		return Apar1;
+	}
+
+	/* 
+	 * Devuelve las opciones del adminsitrador
+	 * (non-Javadoc)
+	 * @see suPropiedadRaiz.usuarios.Persona#getOpciones()
+	 */
+	@Override
+	public ArrayList<String> getOpciones() {
+		return opciones;
 	}
 }
