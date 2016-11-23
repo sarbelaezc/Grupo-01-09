@@ -1,6 +1,8 @@
 package suPropiedadRaiz.usuarios;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+
 import uiMain.menuConsola.MenuDeConsola;
 
 /**
@@ -15,6 +17,7 @@ public abstract class Persona implements Serializable {
 	long cedula;
 	String nombre, clave;
 	public MenuDeConsola menu;
+	ArrayList<String> opciones = new ArrayList<String>();
 	
 	public String getClave() {
 		return clave;
@@ -27,4 +30,6 @@ public abstract class Persona implements Serializable {
 	public abstract long getCedula();
 
 	public abstract String getNombre();
+	
+	public abstract ArrayList<String> getOpciones();
 }
