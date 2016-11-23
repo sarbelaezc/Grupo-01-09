@@ -38,6 +38,7 @@ public class Cliente extends Persona implements Serializable {
 		this.setCedula(cedula);
 		this.setNombre(nombre);
 		this.setMotivo(motivo);
+		this.clave = "user";
 		menu = new MenuDeConsola();
 		menu.anadirOpcion(new OpcionSalir());
 	}
