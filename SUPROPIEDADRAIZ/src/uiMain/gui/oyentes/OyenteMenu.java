@@ -50,7 +50,7 @@ public class OyenteMenu implements ActionListener {
 	}
 	
 	/**
-	 * Constructor que recibe una ventana
+	 * Constructor que recibe una ventana de administrador
 	 * @param V1
 	 */
 	public OyenteMenu(GUIAdministrador V1) {
@@ -109,6 +109,10 @@ public class OyenteMenu implements ActionListener {
 		this.V1 = V2;
 	}
 
+	/**
+	 * Recibe una ventana para poder cambair su visibilidad
+	 * @param V1
+	 */
 	public OyenteMenu(JFrame V1) {
 		this.V1 = V1;
 	}
@@ -160,7 +164,7 @@ public class OyenteMenu implements ActionListener {
 			B5.setActionCommand("Consulta5");
 			
 			B1.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
-			B2.addActionListener(new OyenteBoton());
+			B2.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
 			B3.addActionListener(new OyenteBoton());
 			B4.addActionListener(new OyenteBoton());
 			B5.addActionListener(new OyenteBoton());
