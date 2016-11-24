@@ -4,17 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -24,11 +20,7 @@ import suPropiedadRaiz.usuarios.Persona;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-
-import uiMain.gui.oyentes.OyenteBoton;
 import uiMain.gui.oyentes.OyenteMenu;
-import uiMain.gui.oyentes.OyenteRaton;
 
 @SuppressWarnings("serial")
 public class GUIUsuario extends JFrame{
@@ -126,6 +118,7 @@ public class GUIUsuario extends JFrame{
 	
 	class OyenteLista implements ListSelectionListener{
 
+		@SuppressWarnings("deprecation")
 		@Override
 		public void valueChanged(ListSelectionEvent arg0) {
 			LT2.setListData(LT1.getSelectedValues());
