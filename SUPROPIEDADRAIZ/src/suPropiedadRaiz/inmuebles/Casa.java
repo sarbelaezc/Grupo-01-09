@@ -17,21 +17,19 @@ public class Casa extends Inmuebles implements Serializable {
 	 */
 	private static final long serialVersionUID = -2573902269621370522L;
 	int codigo, estrato, AreaTotal, numPisos, cantidadBanos;
-	boolean enVenta, A_Arrendar;
-
-	Unidad unidad;
+	boolean enVenta= false, enArriendo = false,parqueaderoCom = false;
+	boolean Vendida = false; boolean Arrendada;
 	String direccion = "No_especificada";
 	ArrayList<Pieza> piezas = new ArrayList<Pieza>();
 	ArrayList<Bano> banos = new ArrayList<Bano>();
-	ArrayList<Garaje> garajes = new ArrayList<Garaje>();
+	Garaje garaje;
+	Unidad unidad;
 	Terraza terraza;
 	Balcon balcon;
 	Cliente dueno;
 	
-	public Cliente getDueno(){
-		return dueno;
-	}
 	
+	///// Contructores
 	public Casa(int codigo2, String direccion2, String unidad2) {
 		codigo = codigo2;
 		direccion = direccion2;
@@ -41,30 +39,49 @@ public class Casa extends Inmuebles implements Serializable {
 	public Casa() {
 		
 	}
-
+	
+	//////////////// Métodos 
+	public Cliente getDueno(){
+		return dueno;
+	}
+	
+	public String getCantidadbanos(){
+		if(banos.size() == 0){
+			return "Baños no agregados";
+		}
+		else{
+			return Integer.toString(banos.size());
+		}
+	}
+	
 	public void setenVenta(boolean b){
 		enVenta = b;
 	}
 	public void setArrendar(boolean b) {
-		A_Arrendar = b;
+		enArriendo = b;
 	}
 	
 	public boolean getaArrendar() {
-		return A_Arrendar;
+		return enArriendo;
 	}
 	
 	public int getCodigo(){
 		return codigo;
 	}
+	
 	public String getDireccion() {
 		return direccion;
 	}
+	
 	public Unidad getUnidad() {
 		return unidad;
 	}
 
 	public boolean getenVenta() {
-		
 		return enVenta;
+	}
+	
+	public boolean getParqueaderoCom(){
+		return parqueaderoCom;
 	}
 }

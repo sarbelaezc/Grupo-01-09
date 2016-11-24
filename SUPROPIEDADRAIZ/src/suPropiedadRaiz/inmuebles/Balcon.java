@@ -18,4 +18,12 @@ public class Balcon {
 	    return area;
 	}
 	
+	public String toString(){
+		if (this.area != 0){
+			return "Balcon de area:" + Integer.toString(getArea());
+		}
+		else {
+			return "No se ha especificado el área del Balcon";
+		}
+	}
 }

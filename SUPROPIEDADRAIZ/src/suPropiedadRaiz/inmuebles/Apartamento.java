@@ -25,7 +25,7 @@ public class Apartamento extends Inmuebles implements Serializable {
 	ArrayList<Pieza> Piezas = new ArrayList<Pieza>();
 	Cliente dueno;
 	Torre torre;
-	
+	Unidad unidad;
 	
 	public Apartamento(int codigo2, String direccion2, String unidad2) {
 		codigo = codigo2;

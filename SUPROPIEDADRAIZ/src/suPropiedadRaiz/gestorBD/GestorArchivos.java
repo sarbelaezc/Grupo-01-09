@@ -163,10 +163,52 @@ public class GestorArchivos {
 					}
 				}else {
 					System.out.println("No se hallaron Funcionarios Registrados");
+					return null;
 				}
 			}
 		}
 		return inm;
+	}
+	
+	public static ArrayList<Inmuebles> ListaInmuebles(){
+		FuncionarioJefe funJefe;
+		Funcionario fun;
+		
+		ArrayList<Inmuebles> ListaInm = new ArrayList<Inmuebles>();
+		
+		for(int i=0;i < GestorArchivos.personas.size();i++){
+			if (GestorArchivos.personas.get(i) instanceof FuncionarioJefe){
+				funJefe = (FuncionarioJefe) GestorArchivos.personas.get(i);
+				if (funJefe.getListaFuncionarios().size() != 0){
+					for(int j = 0; j < funJefe.getListaFuncionarios().size(); i++){
+						fun = (Funcionario) GestorArchivos.personas.get(i);
+						 
+						 if (fun.getListaCasas().size() != 0){
+						 
+							 for (int k=0; k <fun.getListaCasas().size(); k++){
+							 
+								ListaInm.add(fun.getListaCasas().get(j));
+								
+								 
+						 	}
+						 }
+						 
+						 if (fun.getListaAptos().size() != 0){
+							 
+							 for (int k=0; k <fun.getListaAptos().size(); k++){
+								 
+								 ListaInm.add(fun.getListaAptos().get(j));
+								 
+						 	}
+						 }
+					}
+				}else {
+					System.out.println("No se hallaron Funcionarios Registrados");
+					return null;
+				}
+			}
+		}
+		return  ListaInm;
 	}
 	
 	
