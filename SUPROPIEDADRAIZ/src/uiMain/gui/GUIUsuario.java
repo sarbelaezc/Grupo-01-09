@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import suPropiedadRaiz.usuarios.*;
 import suPropiedadRaiz.usuarios.Persona;
 
 import javax.swing.JMenu;
@@ -32,14 +33,21 @@ import uiMain.gui.oyentes.OyenteRaton;
 public class GUIUsuario extends JFrame{
 	Persona p ;
 	String user;
-	String Opciones[] = {"Registrar Clientes", "Asignar Rol a un cliente","Consultar sueldo","Lista de clientes"};
+	String Opciones[] = {"Registrar Clientes", "Asignar Rol a un cliente","Consultar sueldo",
+			"Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
 	JList LT1 = new JList(Opciones);
 	JScrollPane SP1 = new JScrollPane(LT1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	JList LT2 = new JList();
 	
 	public GUIUsuario(Persona p){
-		super("Funcionario");
-	
+		super("");
+		if(p instanceof Funcionario){
+			setTitle("Funcionario");
+		}else if(p instanceof FuncionarioJefe){
+			setTitle("Funcionario Jefe");
+		}else{
+			setTitle("Cliente");
+		}
 		this.p = p;
 		
 		Container P0 = this.getContentPane();
@@ -51,8 +59,6 @@ public class GUIUsuario extends JFrame{
 		JLabel L1 = new JLabel("PROCESOS Y CONSULTAS");
 		JLabel L2 = new JLabel("Descripcion del detalle del proceso y/o producto");
 		JLabel L3 = new JLabel("La opcion elegida es");
-		JLabel L4 = new JLabel();
-		
 	
 		JMenuBar M = new JMenuBar();
 		JMenu Archivo = new JMenu("Archivo");
@@ -71,7 +77,6 @@ public class GUIUsuario extends JFrame{
 		L1.setHorizontalAlignment(JLabel.CENTER);
 		L2.setHorizontalAlignment(JLabel.CENTER);
 		L3.setHorizontalAlignment(JLabel.CENTER);
-		L4.setHorizontalAlignment(JLabel.CENTER);
 		
 		P0.setLayout(new BorderLayout());
 		P1.setLayout(new GridLayout(2,1));
