@@ -2,7 +2,6 @@ package uiMain;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import suPropiedadRaiz.usuarios.Cliente;
 import uiMain.gui.GUIAnonimo;
 
 /**
@@ -22,6 +21,5 @@ public class SuPropiedadRaiz {
 	 */
 	public static void main(String[] args) throws IOException {
 		new GUIAnonimo();
-		new Cliente();
 	}
 }
