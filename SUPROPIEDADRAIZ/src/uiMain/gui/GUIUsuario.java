@@ -116,7 +116,7 @@ public class GUIUsuario extends JFrame{
 		Acerca_de.addActionListener(new OyenteMenu());
 		
 		Salir.setActionCommand("Salir");
-		Salir.addActionListener(new OyenteMenu());
+		Salir.addActionListener(new OyenteMenu(this));
 		
 		this.setSize(600,350);
 		this.setVisible(true);

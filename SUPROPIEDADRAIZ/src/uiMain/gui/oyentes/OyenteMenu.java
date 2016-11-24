@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -16,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 import suPropiedadRaiz.usuarios.Persona;
 import uiMain.gui.GUIAdministrador;
 import uiMain.gui.GUIAnonimo;
+import uiMain.gui.GUIUsuario;
 
 /**
  * Esta clase representa los oyentes de la barra de menu
@@ -26,7 +28,7 @@ import uiMain.gui.GUIAnonimo;
 public class OyenteMenu implements ActionListener {
 
 	Persona p;
-	GUIAdministrador V1;
+	JFrame V1;
 	Container P0;
 	JPanel P1,P2,P3,P4,P5,P6;
 	JLabel L1,L2,L3,L4,L5,L6;
@@ -58,6 +60,7 @@ public class OyenteMenu implements ActionListener {
 	/**
 	 * Constructor que recibe muchos componenetes para cambiar la vision de la ventana
 	 * @param p0
+	 * @param  
 	 * @param p1
 	 * @param p2
 	 * @param p3
@@ -76,7 +79,8 @@ public class OyenteMenu implements ActionListener {
 	 * @param b4
 	 * @param b5 
 	 */
-	public OyenteMenu(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JPanel p6, JLabel l1, JLabel l2, JLabel l3, JLabel l4, JLabel l5, JLabel l6, JButton b1, JButton b2, JButton b3, JButton b4, JButton b5) {
+	public OyenteMenu(JFrame V1, Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JPanel p6, JLabel l1, JLabel l2, JLabel l3, JLabel l4, JLabel l5, JLabel l6, JButton b1, JButton b2, JButton b3, JButton b4, JButton b5) {
+		this.V1 = V1;
 		this.P0 = p0;
 		this.P1 = p1;
 		this.P2 = p2;
@@ -97,6 +101,17 @@ public class OyenteMenu implements ActionListener {
 		this.B5 = b5;
 	}
 
+	/**
+	 * Recibe una ventana de usuario para poder cambair su visibilidad
+	 * @param V2
+	 */
+	public OyenteMenu(GUIUsuario V2) {
+		this.V1 = V2;
+	}
+
+	public OyenteMenu(JFrame V1) {
+		this.V1 = V1;
+	}
 
 	/* 
 	 * Metodo para reaccionar a las acciones en la barra de menu
@@ -144,7 +159,7 @@ public class OyenteMenu implements ActionListener {
 			B4.setActionCommand("Consulta4");
 			B5.setActionCommand("Consulta5");
 			
-			B1.addActionListener(new OyenteBoton(P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
+			B1.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
 			B2.addActionListener(new OyenteBoton());
 			B3.addActionListener(new OyenteBoton());
 			B4.addActionListener(new OyenteBoton());

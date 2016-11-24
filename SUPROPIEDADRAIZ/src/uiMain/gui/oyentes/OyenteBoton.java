@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -18,6 +19,7 @@ import suPropiedadRaiz.excepciones.ExcepcionUsuario1;
 import suPropiedadRaiz.excepciones.ExcepcionUsuario2;
 import suPropiedadRaiz.excepciones.ExcepcionUsuario3;
 import suPropiedadRaiz.gestorBD.GestorArchivos;
+import suPropiedadRaiz.inmuebles.Inmuebles;
 import suPropiedadRaiz.usuarios.Administrador;
 import suPropiedadRaiz.usuarios.Cliente;
 import suPropiedadRaiz.usuarios.Persona;
@@ -34,7 +36,7 @@ import uiMain.gui.GUIUsuario;
  */
 public class OyenteBoton implements ActionListener {
 	
-	GUIAnonimo V1;
+	JFrame V1;
 	Container P0;
 	JPanel P1,P2,P3,P4,P5,P6;
 	JButton B1, B2, B3, B4, B5;
@@ -67,7 +69,31 @@ public class OyenteBoton implements ActionListener {
 		this.T1 = T1;
 		this.T2 = T2;
 	}
-	public OyenteBoton(Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JPanel p6, JButton b1, JButton b2, JButton b3, JButton b4, JButton b5, JLabel l1, JLabel l2, JLabel l3,JLabel l4, JLabel l5, JLabel l6) {
+	
+	/**
+	 * Constructor todero
+	 * @param V1
+	 * @param p0
+	 * @param p1
+	 * @param p2
+	 * @param p3
+	 * @param p4
+	 * @param p5
+	 * @param p6
+	 * @param b1
+	 * @param b2
+	 * @param b3
+	 * @param b4
+	 * @param b5
+	 * @param l1
+	 * @param l2
+	 * @param l3
+	 * @param l4
+	 * @param l5
+	 * @param l6
+	 */
+	public OyenteBoton(JFrame V1, Container p0, JPanel p1, JPanel p2, JPanel p3, JPanel p4, JPanel p5, JPanel p6, JButton b1, JButton b2, JButton b3, JButton b4, JButton b5, JLabel l1, JLabel l2, JLabel l3,JLabel l4, JLabel l5, JLabel l6) {
+		this.V1 = V1;
 		this.P0 = p0;
 		this.P1 = p1;
 		this.P2 = p2;
@@ -86,6 +112,14 @@ public class OyenteBoton implements ActionListener {
 		this.L4 = l4;
 		this.L5 = l5;
 		this.L6 = l6;
+	}
+	
+	/**
+	 * Constructor para poder pasar por referencia ventanas
+	 * @param V1
+	 */
+	public OyenteBoton(JFrame V1) {
+		this.V1 = V1;
 	}
 	/* 
 	 * Metodo por medio del cual se ejecutan los clics a los botones
@@ -158,17 +192,18 @@ public class OyenteBoton implements ActionListener {
 					}
 				}
 			}else if("Inmuebles".equals(actionCommand)){
-				ArrayList<Persona> personasRegistradas;
+				ArrayList<Inmuebles> inmueblesRegistrados;
 				ArrayList<ImageIcon> imgInmuebles;
 				
 				try{
-					personasRegistradas = GestorArchivos.crearListaPersonas();					
+					inmueblesRegistrados = GestorArchivos.ListaInmuebles();					
 					imgInmuebles = new ArrayList<ImageIcon>();
 					imgInmuebles.add(new ImageIcon("./imagenes/Img1.PNG"));
 					imgInmuebles.add(new ImageIcon("./imagenes/Local.JPG"));
 					
-					for(int i = 1; i <= personasRegistradas.size(); i++){
-						//Acá va la captura y añadida de las imagenes de cada casa
+					for(int i = 1; i <= inmueblesRegistrados.size(); i++){
+						Inmuebles inmuebles = inmueblesRegistrados.get(i);
+						imgInmuebles.add(inmuebles.getImagen());
 					}
 					if(count < imgInmuebles.size()){
 						JButton B2 = (JButton) e.getSource();
@@ -216,8 +251,8 @@ public class OyenteBoton implements ActionListener {
 							JButton B6 = new JButton("Atras");
 							ArrayList<String> opciones = p.getOpciones();
 							
-							B6.setActionCommand("Atras");
-							B6.addActionListener(new OyenteBoton());
+							B6.setActionCommand("Salir");
+							B6.addActionListener(new OyenteMenu(V1));
 							
 							P0.remove(P1);
 							P0.remove(P2);

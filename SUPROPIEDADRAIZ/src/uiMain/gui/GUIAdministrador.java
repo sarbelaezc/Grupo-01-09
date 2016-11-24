@@ -24,6 +24,7 @@ import uiMain.gui.oyentes.OyenteMenu;
 public class GUIAdministrador extends JFrame {
 
 	Persona p;
+	JFrame V = this;
 	Container P0 = this.getContentPane();
 	JPanel P1 = new JPanel();
 	JPanel P2 = new JPanel();
@@ -82,7 +83,7 @@ public class GUIAdministrador extends JFrame {
 		salir.addActionListener(new OyenteMenu(this));
 		
 		opciones.setActionCommand("Opciones");
-		opciones.addActionListener(new OyenteMenu(P0,P1,P2,P3,P4,P5,P6,L1,L2,L3,L4,L5,L6,B1,B2,B3,B4,B5));
+		opciones.addActionListener(new OyenteMenu(V,P0,P1,P2,P3,P4,P5,P6,L1,L2,L3,L4,L5,L6,B1,B2,B3,B4,B5));
 		
 		info_empresa.setActionCommand("Acerca");
 		info_empresa.addActionListener(new OyenteMenu());
