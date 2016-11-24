@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -273,7 +274,7 @@ public class OyenteBoton implements ActionListener {
 							P6.remove(L6);
 							
 							for(int i=0; i<opciones.size();i++){
-								opcionesListadas.setText(opcionesListadas.getText() + "\n" + opciones.get(i));
+								opcionesListadas.setText(opcionesListadas.getText()  + opciones.get(i) + "\n");
 							}
 							
 							P0.setLayout(new BorderLayout());
@@ -292,7 +293,48 @@ public class OyenteBoton implements ActionListener {
 					
 				}
 			}else if("Consulta2".equals(actionCommand)){
-				System.out.println("2");
+				String AllOpc[] = {"Eliminar Opcion de Usuario","Agregar Opcion al Usuario","Registrar Usuario","Ver Usuario","Registrar Funcionario Jefe","Registrar Cliente","Asignar Rol a un Cliente",
+						"Registrar un Inmueble","Asignar Rol a un inmueble" ,"Registrar un contrato de Compraventa","Registrar un  Contrato de Arrendamiento","Buscar Casas en Arriendo","Buscar Apartamentos en Arriendo"
+						,"Buscar Casa especifico","Buscar Apartamento Especifico","Ver Comision por Arriendos","Ver Comision por Ventas","Ver Salario Neto","Ver Lista de Clientes","Ver Funcionario a Cargo",
+						" Ver Cliente de un Funcionario", "Buscar Inmuebles Arrendados"};
+				JTextArea opcionesListadas = new JTextArea();
+				JScrollPane sp = new JScrollPane(opcionesListadas,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+				JButton B6 = new JButton("Atras");
+								
+				B6.setActionCommand("Salir");
+				B6.addActionListener(new OyenteMenu(V1));
+				
+				P0.remove(P1);
+				P0.remove(P2);
+				P0.remove(P3);
+				P0.remove(P4);
+				P0.remove(P5);
+				P0.remove(P6);
+				P1.remove(L1);
+				P2.remove(B1);
+				P2.remove(L2);
+				P3.remove(B2);
+				P3.remove(L3);
+				P4.remove(B3);
+				P4.remove(L4);					
+				P5.remove(B4);
+				P5.remove(L5);
+				P6.remove(B5);
+				P6.remove(L6);
+				
+				for(int i=0; i<AllOpc.length;i++){
+					opcionesListadas.setText(opcionesListadas.getText()  + AllOpc[i] + "\n");
+				}
+				
+				P0.setLayout(new BorderLayout());
+				
+				P0.add(P3, BorderLayout.CENTER);
+				P0.add(P2, BorderLayout.SOUTH);
+				P3.add(sp);
+				P2.add(B6);
+
+				P0.validate();
+				
 			}else if("Consulta3".equals(actionCommand)){
 				System.out.println("3");
 			}else if("Consulta4".equals(actionCommand)){
