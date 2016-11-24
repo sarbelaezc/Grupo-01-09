@@ -18,15 +18,6 @@ public class Cliente extends Persona implements Serializable {
 	private long telefono;
 	private String motivo, direccion, celular;
 	ArrayList<Inmuebles> A = new ArrayList<Inmuebles>();
-	
-	/**
-	 * Constructor para iniciar el sistema
-	 */
-	public Cliente(){
-		menu = new MenuDeConsola();
-		menu.logIn();
-		menu.anadirOpcion(new OpcionSalir());
-	}
 
 	/**
 	 * Constructor para cliente anonimo
