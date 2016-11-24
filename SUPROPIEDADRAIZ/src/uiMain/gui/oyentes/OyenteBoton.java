@@ -216,8 +216,8 @@ public class OyenteBoton implements ActionListener {
 							JButton B6 = new JButton("Atras");
 							ArrayList<String> opciones = p.getOpciones();
 							
-							B6.setActionCommand("Salir");
-							B6.addActionListener();
+							B6.setActionCommand("Atras");
+							B6.addActionListener(new OyenteBoton());
 							
 							P0.remove(P1);
 							P0.remove(P2);

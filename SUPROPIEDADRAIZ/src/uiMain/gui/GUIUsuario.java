@@ -1,4 +1,5 @@
 package uiMain.gui;
+
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -35,9 +36,10 @@ public class GUIUsuario extends JFrame{
 	String user;
 	String Opciones[] = {"Registrar Clientes", "Asignar Rol a un cliente","Consultar sueldo",
 			"Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
-	JList LT1 = new JList(Opciones);
+
+	JList<Object> LT1 = new JList<Object>(Opciones);
 	JScrollPane SP1 = new JScrollPane(LT1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-	JList LT2 = new JList();
+	JList<Object> LT2 = new JList<Object>();
 	
 	public GUIUsuario(Persona p){
 		super("");
