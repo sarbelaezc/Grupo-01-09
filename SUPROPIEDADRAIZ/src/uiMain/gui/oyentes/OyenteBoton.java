@@ -2,6 +2,7 @@ package uiMain.gui.oyentes;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -345,7 +346,6 @@ public class OyenteBoton implements ActionListener {
 				
 				if(resp == 0){
 					Long cedula = Long.parseLong(fp.getValue("Cedula del usuario a modificar: "));
-					
 					try {
 						Persona p = GestorArchivos.buscar(cedula);
 						
@@ -372,12 +372,18 @@ public class OyenteBoton implements ActionListener {
 							
 							L1.setText("Modificar Menu Usuario " + p.getClass().getName());
 							
+							B1.setText("Atras");
+							
 							P0.setLayout(new BorderLayout());
+							P2.setLayout(new GridLayout(1,2));
 							
 							//Realizar toda la distribucion de la ventana
 							
-							P0.add(P1,BorderLayout.NORTH);
+							P0.add(P1, BorderLayout.NORTH);
+							P0.add(P2, BorderLayout.CENTER);
+							P0.add(P3, BorderLayout.SOUTH);
 							P1.add(L1);
+							P3.add(B1);							
 							
 							P0.validate();
 						}
