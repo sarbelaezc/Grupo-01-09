@@ -339,7 +339,52 @@ public class OyenteBoton implements ActionListener {
 				P0.validate();
 				
 			}else if("Consulta3".equals(actionCommand)){
-				System.out.println("3");
+				String[] datos = new String[]{"Cedula del usuario a modificar: "};
+				FieldPanel fp = new FieldPanel(null,datos,null,null,null);
+				int resp = fp.mostrar(fp);
+				
+				if(resp == 0){
+					Long cedula = Long.parseLong(fp.getValue("Cedula del usuario a modificar: "));
+					
+					try {
+						Persona p = GestorArchivos.buscar(cedula);
+						
+						if(p == null){
+							throw new ExcepcionUsuario3();
+						}else{
+							P0.remove(P1);
+							P0.remove(P2);
+							P0.remove(P3);
+							P0.remove(P4);
+							P0.remove(P5);
+							P0.remove(P6);
+							P1.remove(L1);
+							P2.remove(B1);
+							P2.remove(L2);
+							P3.remove(B2);
+							P3.remove(L3);
+							P4.remove(B3);
+							P4.remove(L4);					
+							P5.remove(B4);
+							P5.remove(L5);
+							P6.remove(B5);
+							P6.remove(L6);
+							
+							L1.setText("Modificar Menu Usuario " + p.getClass().getName());
+							
+							P0.setLayout(new BorderLayout());
+							
+							//Realizar toda la distribucion de la ventana
+							
+							P0.add(P1,BorderLayout.NORTH);
+							P1.add(L1);
+							
+							P0.validate();
+						}
+					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+					}
+				}
 			}else if("Consulta4".equals(actionCommand)){
 				System.out.println("4");
 			}else if("Consulta5".equals(actionCommand)){
