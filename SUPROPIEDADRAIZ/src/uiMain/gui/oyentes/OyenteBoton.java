@@ -247,10 +247,11 @@ public class OyenteBoton implements ActionListener {
 						if(p == null){
 							throw new ExcepcionUsuario3();
 						}else{
-							
 							JTextArea opcionesListadas = new JTextArea();
 							JButton B6 = new JButton("Atras");
 							ArrayList<String> opciones = p.getOpciones();
+							
+							opcionesListadas.setEditable(false);
 							
 							B6.setActionCommand("Salir");
 							B6.addActionListener(new OyenteMenu(V1));
@@ -300,7 +301,9 @@ public class OyenteBoton implements ActionListener {
 				JTextArea opcionesListadas = new JTextArea();
 				JScrollPane sp = new JScrollPane(opcionesListadas,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 				JButton B6 = new JButton("Atras");
-								
+				
+				opcionesListadas.setEditable(false);
+				
 				B6.setActionCommand("Salir");
 				B6.addActionListener(new OyenteMenu(V1));
 				
