@@ -442,7 +442,84 @@ public class OyenteBoton implements ActionListener {
 					}
 				}
 			}else if("Consulta4".equals(actionCommand)){
-				System.out.println("4");
+				String[] datos = new String[]{"Cedula del usuario a modificar: "};
+				FieldPanel fp = new FieldPanel(null,datos,null,null,null);
+				int resp = fp.mostrar(fp);
+		
+				if(resp == 0){
+					Long cedula = Long.parseLong(fp.getValue("Cedula del usuario a modificar: "));
+					try {
+						Persona p = GestorArchivos.buscar(cedula);
+						
+						if(p == null){
+							throw new ExcepcionUsuario3();
+						}else{
+							this.listaDisponibles = new JList<String>(AllOpc);
+							ArrayList<String> opciones = p.getOpciones();
+							String[] opcionesActuales = new String[opciones.size()];
+							for(int i = 0; i<opciones.size();i++){
+								opcionesActuales[i]=(opciones.get(i));
+							}
+							listaActuales = new JList<String>(opcionesActuales);
+							JScrollPane sp1 = new JScrollPane(listaDisponibles,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+							JScrollPane sp2 = new JScrollPane(listaActuales,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+							
+							P0.remove(P1);
+							P0.remove(P2);
+							P0.remove(P3);
+							P0.remove(P4);
+							P0.remove(P5);
+							P0.remove(P6);
+							P1.remove(L1);
+							P2.remove(B1);
+							P2.remove(L2);
+							P3.remove(B2);
+							P3.remove(L3);
+							P4.remove(B3);
+							P4.remove(L4);					
+							P5.remove(B4);
+							P5.remove(L5);
+							P6.remove(B5);
+							P6.remove(L6);
+							
+							if(p instanceof Cliente){
+								L1.setText("Modificar menu usuario comun (Cliente)");
+							}else if(p instanceof Administrador){
+								L1.setText("Modificar menu usuario comun (Administrador)");
+							}else if(p instanceof FuncionarioJefe){
+								L1.setText("Modificar menu usuario comun (FuncionarioJefe)");
+							}else if(p instanceof Funcionario){
+								L1.setText("Modificar menu usuario comun (Funcionario)");
+							}
+							B1.setText("AceptarQ");
+							B1.setActionCommand("AceptarQ");
+							B1.addActionListener(new OyenteBoton(P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6,listaDisponibles,listaActuales,opciones));
+							
+							P0.setLayout(new BorderLayout());
+							P2.setLayout(new GridLayout(1,2));
+							
+							P1.setBorder(new EmptyBorder(10,15,10,10));
+							P2.setBorder(new EmptyBorder(10,15,10,10));
+							P3.setBorder(new EmptyBorder(10,15,10,10));
+							P4.setBorder(new EmptyBorder(10,15,10,10));
+							P5.setBorder(new EmptyBorder(10,15,10,10));
+							
+							P0.add(P1, BorderLayout.NORTH);
+							P0.add(P2, BorderLayout.CENTER);
+							P0.add(P3, BorderLayout.SOUTH);
+							P1.add(L1);
+							P2.add(P4);
+							P2.add(P5);
+							P3.add(B1);
+							P4.add(sp1);
+							P5.add(sp2);
+							
+							P0.validate();
+						}
+					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+					}
+				}
 			}else if("Consulta5".equals(actionCommand)){
 				String[] datos= new String[]{"Nombre : ", "Cedula : ", "Salario : "};
 				FieldPanel fp = new FieldPanel("Datos",datos,null,null,null);
@@ -461,6 +538,21 @@ public class OyenteBoton implements ActionListener {
 						}
 					fp.mostrar(fp);
 				}
+			}else if("Aceptar".equals(actionCommand)){
+				try{
+					String[] actuales = new String[AllOpc.length];		
+					int j=0;
+					for(j=0;j<ArrActuales.size();j++){
+						actuales[j] = ArrActuales.get(j);
+					}
+					String opcion = listaDisponibles.getSelectedValue();
+					ArrActuales.add(opcion);
+					actuales[ArrActuales.size() + 1] = opcion;
+					listaActuales.setListData(actuales);
+				}catch(NullPointerException e1){
+							
+				}									
+				P0.validate();
 			}
 		}
 	}
