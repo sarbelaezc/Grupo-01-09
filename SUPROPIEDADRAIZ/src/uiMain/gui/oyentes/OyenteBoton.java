@@ -169,7 +169,7 @@ public class OyenteBoton implements ActionListener {
 			
 			if("Salir".equals(actionCommand)){
 				
-				int resp = JOptionPane.showConfirmDialog(null, "ï¿½Esta seguro que desea salir?", "ï¿½Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+				int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea salir?", "¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
 				
 				if(resp == 0){	
 					try {
@@ -201,7 +201,7 @@ public class OyenteBoton implements ActionListener {
 					try {
 						throw new ExcepcionUsuario1();
 					} catch (ExcepcionUsuario1 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "ï¿½ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}else{										
 					try {
@@ -221,9 +221,9 @@ public class OyenteBoton implements ActionListener {
 							
 						}
 					} catch (ClassNotFoundException | IOException | ExcepcionUsuario2 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "ï¿½ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}catch (NumberFormatException e1){
-						JOptionPane.showConfirmDialog(null, "El nombre de usuario debe ser su cedula", "ï¿½ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, "El nombre de usuario debe ser su cedula", "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}else if("Inmuebles".equals(actionCommand)){
@@ -322,7 +322,7 @@ public class OyenteBoton implements ActionListener {
 							P0.validate();
 						}
 					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "ï¿½ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}else if(resp == 1){
 					
@@ -438,7 +438,7 @@ public class OyenteBoton implements ActionListener {
 							P0.validate();
 						}
 					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "ï¿½ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}else if("Consulta4".equals(actionCommand)){
