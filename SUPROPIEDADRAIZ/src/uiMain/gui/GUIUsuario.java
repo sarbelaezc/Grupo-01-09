@@ -39,7 +39,6 @@ public class GUIUsuario extends JFrame{
 		if(p instanceof Funcionario){
 			setTitle("Funcionario");
 		}else if(p instanceof FuncionarioJefe){
-		if(p instanceof FuncionarioJefe){
 			setTitle("Funcionario Jefe");
 			LT1.setListData(OpcionesFJ);
 		}else if(p instanceof Funcionario){
@@ -135,9 +134,6 @@ public class GUIUsuario extends JFrame{
 		@Override
 		public void valueChanged(ListSelectionEvent arg0) {
 			LT2.setListData(LT1.getSelectedValues());
-			
-		}
-		
+		}	
 	}
-	
 }
