@@ -51,9 +51,9 @@ public class OyenteBoton implements ActionListener {
 	JList<String> listaDisponibles,listaActuales;
 	ArrayList<String> ArrActuales;
 	String AllOpc[] = {"Eliminar Opcion de Usuario","Agregar Opcion al Usuario","Registrar Usuario","Ver Usuario","Registrar Funcionario Jefe","Registrar Cliente","Asignar Rol a un Cliente",
-			"Registrar un Inmueble","Asignar Rol a un inmueble" ,"Registrar un contrato de Compraventa","Registrar un  Contrato de Arrendamiento","Buscar Casas en Arriendo","Buscar Apartamentos en Arriendo"
-			,"Buscar Casa especifico","Buscar Apartamento Especifico","Ver Comision por Arriendos","Ver Comision por Ventas","Ver Salario Neto","Ver Lista de Clientes","Ver Funcionario a Cargo",
-			" Ver Cliente de un Funcionario", "Buscar Inmuebles Arrendados"};
+			"Registrar un Inmueble","Asignar Rol a un inmueble" ,"Registrar un contrato de Compraventa","Registrar un  Contrato de Arrendamiento","Buscar Casas en Arriendo",
+			"Buscar Apartamentos en Arriendo","Buscar Casa especifico","Buscar Apartamento Especifico","Ver Comision por Arriendos","Ver Comision por Ventas","Ver Salario Neto",
+			"Ver Lista de Clientes","Ver Funcionario a Cargo","Ver Cliente de un Funcionario", "Buscar Inmuebles Arrendados"};
 	int count = 1;
 	
 	/**
@@ -243,6 +243,8 @@ public class OyenteBoton implements ActionListener {
 					imgInmuebles = new ArrayList<ImageIcon>();
 					imgInmuebles.add(new ImageIcon("./imagenes/Img1.PNG"));
 					imgInmuebles.add(new ImageIcon("./imagenes/Local.JPG"));
+					imgInmuebles.add(new ImageIcon("./imagenes/Apto1.jpg"));
+					imgInmuebles.add(new ImageIcon("./imagenes/Casa1.jpg"));
 					
 					for(int i = 1; i <= inmueblesRegistrados.size(); i++){
 						Inmuebles inmuebles = inmueblesRegistrados.get(i);

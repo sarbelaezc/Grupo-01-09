@@ -25,6 +25,21 @@ public class Funcionario extends Persona implements Serializable{
 		this.setNombre(nombre);
 		this.setCedula(cedula);
 		this.setSalario(salario);
+		this.clave = "fun";
+		this.opciones.add("Registrar un nuevo cliente");
+		this.opciones.add("Asignar un rol a un cliente");
+		this.opciones.add("Registrar Inmueble");
+		this.opciones.add("Asignar rol al inmueble");
+		this.opciones.add("Registrar una compra-venta");
+		this.opciones.add("Registrar un arrendamiento");
+		this.opciones.add("Buscar casas en arriendo");
+		this.opciones.add("Buscar apartamentos en arriendo");
+		this.opciones.add("Consulta de la información específica de una casa en arriendo");
+		this.opciones.add("Consulta de la información específica de un apartamento en arriendo");
+		this.opciones.add("Consulta de la información específica de una casa en venta");
+		this.opciones.add("consulta de la información específica de un apartamento en venta");
+		this.opciones.add("Generar el valor de la comisión por concepto de arriendos");
+		this.opciones.add("Generar el valor de la comisión por concepto de venta");
 	}
 	
 	public long getCedula() {

@@ -30,6 +30,9 @@ public class Cliente extends Persona implements Serializable {
 		this.setNombre(nombre);
 		this.setMotivo(motivo);
 		this.clave = "user";
+		this.opciones.add("Inmuebles consignados para venta");
+		this.opciones.add("Inmuebles consignados para arrendar");
+		this.opciones.add("Inmuebles que posee en arrendamiento");
 	}
 	
 	/**
@@ -44,6 +47,10 @@ public class Cliente extends Persona implements Serializable {
 		this(cedula, nombre, motivo);
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
+		this.clave = "user";
+		this.opciones.add("Inmuebles consignados para venta");
+		this.opciones.add("Inmuebles consignados para arrendar");
+		this.opciones.add("Inmuebles que posee en arrendamiento");
 	}
 	
 	/**
@@ -60,6 +67,10 @@ public class Cliente extends Persona implements Serializable {
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
 		this.setCelular(celular);
+		this.clave = "user";
+		this.opciones.add("Inmuebles consignados para venta");
+		this.opciones.add("Inmuebles consignados para arrendar");
+		this.opciones.add("Inmuebles que posee en arrendamiento");
 	}
 
 	/* Devuelve el nombre del cliente

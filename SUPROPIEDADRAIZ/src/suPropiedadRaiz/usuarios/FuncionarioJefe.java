@@ -8,9 +8,9 @@ import java.util.ArrayList;
  * @author Sebastian Chavarría Gómez
  * @author Santiago Montoya Palacio
  */
+@SuppressWarnings("serial")
 public class FuncionarioJefe extends Funcionario {
 	
-	private static final long serialVersionUID = 7210150202792519097L;
 	ArrayList <Funcionario> FuncionariosList = new ArrayList<Funcionario>();
 	
 	/**
@@ -22,6 +22,11 @@ public class FuncionarioJefe extends Funcionario {
 	public FuncionarioJefe(String nombre, long cedula, long salario) {
 		super(nombre, cedula, salario);
 		this.clave = "fj";
+		this.opciones.add("Registrar nuevo funcionario");
+		this.opciones.add("Consultar sueldo");
+		this.opciones.add("Listar todos los clientes");
+		this.opciones.add("Listas los funcionarios que tiene");
+		this.opciones.add("Listar sueldos de funcionario");
 	}
 
 	/**

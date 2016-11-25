@@ -171,6 +171,7 @@ public class GestorArchivos {
 	}
 	
 	public static ArrayList<Inmuebles> ListaInmuebles(){
+		
 		FuncionarioJefe funJefe;
 		Funcionario fun;
 		
