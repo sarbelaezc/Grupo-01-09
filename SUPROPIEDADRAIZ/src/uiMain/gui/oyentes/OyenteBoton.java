@@ -581,6 +581,24 @@ public class OyenteBoton implements ActionListener {
 							
 				}									
 				P0.validate();
+			}else if("Registrar nuevo funcionario".equals(actionCommand)){
+				String[] datos= new String[]{"Nombre : ", "Cedula : ", "Salario : "};
+				FieldPanel fp = new FieldPanel("Datos",datos,null,null,null);
+				int resp = fp.mostrar(fp);
+				
+				if(resp == 0){								
+					String nombre = fp.getValue("Nombre : ");
+					Long cedula = Long.parseLong(fp.getValue("Cedula : "));
+					Long salario = Long.parseLong(fp.getValue("Salario : "));
+					GestorArchivos.personas.add(new Funcionario(nombre,cedula,salario));
+							
+				}else if(resp == 1){
+					JTextField[] campos = fp.getCampos();
+						for(int i=0; i<campos.length; i++){
+							campos[i].setText("");
+						}
+					fp.mostrar(fp);
+				}
 			}
 		}
 	}
