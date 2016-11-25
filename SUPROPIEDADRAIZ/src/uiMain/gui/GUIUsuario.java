@@ -30,10 +30,13 @@ public class GUIUsuario extends JFrame{
 	String OpcionesF[]={"Registrar un nuevo cliente","Asignar un rol a un cliente","Registrar Inmueble","Asignar rol al inmueble","Registrar una compra-venta",
 			"Registrar un arrendamiento","Buscar casas en arriendo","Buscar apartamentos en arriendo","",""};
 	String OpcionesFJ[] = {"Registrar nuevo funcionario", "Consultar sueldo", "Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
+	@SuppressWarnings("rawtypes")
 	JList LT1 = new JList ();
 	JScrollPane SP1 = new JScrollPane(LT1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+	@SuppressWarnings("rawtypes")
 	JList LT2 = new JList();
 	
+	@SuppressWarnings("unchecked")
 	public GUIUsuario(Persona p){
 		super("");
 		if(p instanceof Funcionario){
@@ -130,7 +133,7 @@ public class GUIUsuario extends JFrame{
 	
 	class OyenteLista implements ListSelectionListener{
 
-		@SuppressWarnings("deprecation")
+		@SuppressWarnings({ "deprecation", "unchecked" })
 		@Override
 		public void valueChanged(ListSelectionEvent arg0) {
 			LT2.setListData(LT1.getSelectedValues());
