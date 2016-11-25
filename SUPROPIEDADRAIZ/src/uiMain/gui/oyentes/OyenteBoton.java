@@ -11,11 +11,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import suPropiedadRaiz.excepciones.ExcepcionUsuario1;
 import suPropiedadRaiz.excepciones.ExcepcionUsuario2;
@@ -24,6 +26,7 @@ import suPropiedadRaiz.gestorBD.GestorArchivos;
 import suPropiedadRaiz.inmuebles.Inmuebles;
 import suPropiedadRaiz.usuarios.Administrador;
 import suPropiedadRaiz.usuarios.Cliente;
+import suPropiedadRaiz.usuarios.Funcionario;
 import suPropiedadRaiz.usuarios.FuncionarioJefe;
 import suPropiedadRaiz.usuarios.Persona;
 import uiMain.gui.FieldPanel;
@@ -33,8 +36,8 @@ import uiMain.gui.GUIUsuario;
 
 /**
  * Esta clase representa todos los oyentes de los botones del programa
- * @author Santiago Arbeláez Cataño
- * @author Sebastian Chavarría Gómez
+ * @author Santiago Arbel�ez Cata�o
+ * @author Sebastian Chavarr�a G�mez
  * @author Santiago Montoya Palacio
  */
 public class OyenteBoton implements ActionListener {
@@ -45,6 +48,12 @@ public class OyenteBoton implements ActionListener {
 	JButton B1, B2, B3, B4, B5;
 	JLabel L1, L2, L3, L4, L5, L6;
 	JTextField T1, T2;
+	JList<String> listaDisponibles,listaActuales;
+	ArrayList<String> ArrActuales;
+	String AllOpc[] = {"Eliminar Opcion de Usuario","Agregar Opcion al Usuario","Registrar Usuario","Ver Usuario","Registrar Funcionario Jefe","Registrar Cliente","Asignar Rol a un Cliente",
+			"Registrar un Inmueble","Asignar Rol a un inmueble" ,"Registrar un contrato de Compraventa","Registrar un  Contrato de Arrendamiento","Buscar Casas en Arriendo","Buscar Apartamentos en Arriendo"
+			,"Buscar Casa especifico","Buscar Apartamento Especifico","Ver Comision por Arriendos","Ver Comision por Ventas","Ver Salario Neto","Ver Lista de Clientes","Ver Funcionario a Cargo",
+			" Ver Cliente de un Funcionario", "Buscar Inmuebles Arrendados"};
 	int count = 1;
 	
 	/**
@@ -72,7 +81,6 @@ public class OyenteBoton implements ActionListener {
 		this.T1 = T1;
 		this.T2 = T2;
 	}
-	
 	/**
 	 * Constructor todero
 	 * @param V1
@@ -115,14 +123,38 @@ public class OyenteBoton implements ActionListener {
 		this.L4 = l4;
 		this.L5 = l5;
 		this.L6 = l6;
-	}
-	
+	}	
 	/**
 	 * Constructor para poder pasar por referencia ventanas
 	 * @param V1
 	 */
 	public OyenteBoton(JFrame V1) {
 		this.V1 = V1;
+	}
+	public OyenteBoton(Container p0,JPanel p1,JPanel p2,JPanel p3,JPanel p4,JPanel p5,JPanel p6,JButton b1,
+					   JButton b2,JButton b3,JButton b4,JButton b5,JLabel l1,JLabel l2,JLabel l3,JLabel l4,
+					   JLabel l5,JLabel l6,JList<String> listaDisponibles,JList<String> listaActuales, ArrayList<String> opciones) {
+		this.P0 = p0;
+		this.P1 = p1;
+		this.P2 = p2;
+		this.P3 = p3;
+		this.P4 = p4;
+		this.P5 = p5;
+		this.P6 = p6;
+		this.B1 = b1;
+		this.B2 = b2;
+		this.B3 = b3;
+		this.B4 = b4;
+		this.B5 = b5;
+		this.L1 = l1;
+		this.L2 = l2;
+		this.L3 = l3;
+		this.L4 = l4;
+		this.L5 = l5;
+		this.L6 = l6;
+		this.ArrActuales = opciones;
+		this.listaDisponibles = listaDisponibles;
+		this.listaActuales = listaActuales;
 	}
 	/* 
 	 * Metodo por medio del cual se ejecutan los clics a los botones
@@ -137,7 +169,7 @@ public class OyenteBoton implements ActionListener {
 			
 			if("Salir".equals(actionCommand)){
 				
-				int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea salir?", "¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+				int resp = JOptionPane.showConfirmDialog(null, "�Esta seguro que desea salir?", "�Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
 				
 				if(resp == 0){	
 					try {
@@ -169,7 +201,7 @@ public class OyenteBoton implements ActionListener {
 					try {
 						throw new ExcepcionUsuario1();
 					} catch (ExcepcionUsuario1 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "�ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}else{										
 					try {
@@ -189,9 +221,9 @@ public class OyenteBoton implements ActionListener {
 							
 						}
 					} catch (ClassNotFoundException | IOException | ExcepcionUsuario2 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "�ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}catch (NumberFormatException e1){
-						JOptionPane.showConfirmDialog(null, "El nombre de usuario debe ser su cedula", "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, "El nombre de usuario debe ser su cedula", "�ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}
 			}else if("Inmuebles".equals(actionCommand)){
@@ -290,21 +322,15 @@ public class OyenteBoton implements ActionListener {
 							P0.validate();
 						}
 					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
+						JOptionPane.showConfirmDialog(null, e1.getMessage(), "�ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}else if(resp == 1){
 					
 				}
 			}else if("Consulta2".equals(actionCommand)){
-				String AllOpc[] = {"Eliminar Opcion de Usuario","Agregar Opcion al Usuario","Registrar Usuario","Ver Usuario","Registrar Funcionario Jefe","Registrar Cliente","Asignar Rol a un Cliente",
-						"Registrar un Inmueble","Asignar Rol a un inmueble" ,"Registrar un contrato de Compraventa","Registrar un  Contrato de Arrendamiento","Buscar Casas en Arriendo","Buscar Apartamentos en Arriendo"
-						,"Buscar Casa especifico","Buscar Apartamento Especifico","Ver Comision por Arriendos","Ver Comision por Ventas","Ver Salario Neto","Ver Lista de Clientes","Ver Funcionario a Cargo",
-						" Ver Cliente de un Funcionario", "Buscar Inmuebles Arrendados"};
-				JTextArea opcionesListadas = new JTextArea();
+				JList<String> opcionesListadas = new JList<String>(AllOpc);
 				JScrollPane sp = new JScrollPane(opcionesListadas,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 				JButton B6 = new JButton("Atras");
-				
-				opcionesListadas.setEditable(false);
 				
 				B6.setActionCommand("Salir");
 				B6.addActionListener(new OyenteMenu(V1));
@@ -326,10 +352,6 @@ public class OyenteBoton implements ActionListener {
 				P5.remove(L5);
 				P6.remove(B5);
 				P6.remove(L6);
-				
-				for(int i=0; i<AllOpc.length;i++){
-					opcionesListadas.setText(opcionesListadas.getText()  + AllOpc[i] + "\n");
-				}
 				
 				P0.setLayout(new BorderLayout());
 				
@@ -353,6 +375,16 @@ public class OyenteBoton implements ActionListener {
 						if(p == null){
 							throw new ExcepcionUsuario3();
 						}else{
+							this.listaDisponibles = new JList<String>(AllOpc);
+							ArrayList<String> opciones = p.getOpciones();
+							String[] opcionesActuales = new String[opciones.size()];
+							for(int i = 0; i<opciones.size();i++){
+								opcionesActuales[i]=(opciones.get(i));
+							}
+							listaActuales = new JList<String>(opcionesActuales);
+							JScrollPane sp1 = new JScrollPane(listaDisponibles,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+							JScrollPane sp2 = new JScrollPane(listaActuales,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+							
 							P0.remove(P1);
 							P0.remove(P2);
 							P0.remove(P3);
@@ -371,68 +403,37 @@ public class OyenteBoton implements ActionListener {
 							P6.remove(B5);
 							P6.remove(L6);
 							
-							L1.setText("Modificar Menu Usuario " + p.getClass().getName());
-							
-							B1.setText("Atras");
+							if(p instanceof Cliente){
+								L1.setText("Modificar menu usuario comun (Cliente)");
+							}else if(p instanceof Administrador){
+								L1.setText("Modificar menu usuario comun (Administrador)");
+							}else if(p instanceof FuncionarioJefe){
+								L1.setText("Modificar menu usuario comun (FuncionarioJefe)");
+							}else if(p instanceof Funcionario){
+								L1.setText("Modificar menu usuario comun (Funcionario)");
+							}
+							B1.setText("Aceptar");
+							B1.setActionCommand("Aceptar");
+							B1.addActionListener(new OyenteBoton(P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6,listaDisponibles,listaActuales,opciones));
 							
 							P0.setLayout(new BorderLayout());
 							P2.setLayout(new GridLayout(1,2));
 							
-							//Realizar toda la distribucion de la ventana
+							P1.setBorder(new EmptyBorder(10,15,10,10));
+							P2.setBorder(new EmptyBorder(10,15,10,10));
+							P3.setBorder(new EmptyBorder(10,15,10,10));
+							P4.setBorder(new EmptyBorder(10,15,10,10));
+							P5.setBorder(new EmptyBorder(10,15,10,10));
 							
 							P0.add(P1, BorderLayout.NORTH);
 							P0.add(P2, BorderLayout.CENTER);
 							P0.add(P3, BorderLayout.SOUTH);
 							P1.add(L1);
-							P3.add(B1);							
-							
-							P0.validate();
-						}
-					} catch (ClassNotFoundException | IOException | ExcepcionUsuario3 e1) {
-						JOptionPane.showConfirmDialog(null, e1.getMessage(), "¡ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
-					}
-				}
-			}else if("Consulta4".equals(actionCommand)){
-				System.out.println("4");
-				String[] datos = new String[]{"Cedula del usuario a modificar: "};
-				FieldPanel fp = new FieldPanel(null,datos,null,null,null);
-				int resp = fp.mostrar(fp);
-				
-				if(resp == 0){
-					Long cedula = Long.parseLong(fp.getValue("Cedula del usuario a modificar: "));
-					
-					try {
-						Persona p = GestorArchivos.buscar(cedula);
-						
-						if(p == null){
-							throw new ExcepcionUsuario3();
-						}else{
-							P0.remove(P1);
-							P0.remove(P2);
-							P0.remove(P3);
-							P0.remove(P4);
-							P0.remove(P5);
-							P0.remove(P6);
-							P1.remove(L1);
-							P2.remove(B1);
-							P2.remove(L2);
-							P3.remove(B2);
-							P3.remove(L3);
-							P4.remove(B3);
-							P4.remove(L4);					
-							P5.remove(B4);
-							P5.remove(L5);
-							P6.remove(B5);
-							P6.remove(L6);
-							
-							L1.setText("Modificar Menu Usuario " + p.getClass().getName());
-							
-							P0.setLayout(new BorderLayout());
-							
-							//Realizar toda la distribucion de la ventana
-							
-							P0.add(P1,BorderLayout.NORTH);
-							P1.add(L1);
+							P2.add(P4);
+							P2.add(P5);
+							P3.add(B1);
+							P4.add(sp1);
+							P5.add(sp2);
 							
 							P0.validate();
 						}
@@ -440,6 +441,8 @@ public class OyenteBoton implements ActionListener {
 						JOptionPane.showConfirmDialog(null, e1.getMessage(), "�ERROR!", JOptionPane.PLAIN_MESSAGE, JOptionPane.ERROR_MESSAGE);
 					}
 				}
+			}else if("Consulta4".equals(actionCommand)){
+				System.out.println("4");
 			}else if("Consulta5".equals(actionCommand)){
 				String[] datos= new String[]{"Nombre : ", "Cedula : ", "Salario : "};
 				FieldPanel fp = new FieldPanel("Datos",datos,null,null,null);
