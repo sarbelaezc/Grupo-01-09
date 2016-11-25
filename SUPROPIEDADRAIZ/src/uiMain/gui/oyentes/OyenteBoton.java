@@ -448,46 +448,18 @@ public class OyenteBoton implements ActionListener {
 				FieldPanel fp = new FieldPanel("Datos",datos,null,null,null);
 				int resp = fp.mostrar(fp);
 				
-				if(resp == 0){
-					
-							P0.remove(P1);
-							P0.remove(P2);
-							P0.remove(P3);
-							P0.remove(P4);
-							P0.remove(P5);
-							P0.remove(P6);
-							P1.remove(L1);
-							P2.remove(B1);
-							P2.remove(L2);
-							P3.remove(B2);
-							P3.remove(L3);
-							P4.remove(B3);
-							P4.remove(L4);					
-							P5.remove(B4);
-							P5.remove(L5);
-							P6.remove(B5);
-							P6.remove(L6);
-							
-							P0.setLayout(new BorderLayout());
-							
-							//Realizar toda la distribucion de la ventana
-							
-							P0.add(P1,BorderLayout.NORTH);
-							P1.add(L1);
-							
-							P0.validate();
-							
-							String nombre = fp.getValue("Nombre : ");
-							Long cedula = Long.parseLong(fp.getValue("Cedula : "));
-							Long salario = Long.parseLong(fp.getValue("Salario : "));
-							GestorArchivos.personas.add(new FuncionarioJefe(nombre,cedula,salario));
+				if(resp == 0){								
+					String nombre = fp.getValue("Nombre : ");
+					Long cedula = Long.parseLong(fp.getValue("Cedula : "));
+					Long salario = Long.parseLong(fp.getValue("Salario : "));
+					GestorArchivos.personas.add(new FuncionarioJefe(nombre,cedula,salario));
 							
 				}else if(resp == 1){
-								JTextField[] campos = fp.getCampos();
-								for(int i=0; i<campos.length; i++){
-									campos[i].setText("");
-								}
-								fp.mostrar(fp);
+					JTextField[] campos = fp.getCampos();
+						for(int i=0; i<campos.length; i++){
+							campos[i].setText("");
+						}
+					fp.mostrar(fp);
 				}
 			}
 		}
