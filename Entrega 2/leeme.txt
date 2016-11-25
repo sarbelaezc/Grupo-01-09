@@ -1,4 +1,4 @@
-----------------------------------------------------SRC------------------------------------------------------------
+--------------------------------------------------------------------SRC----------------------------------------------------------------------------
 1. Arrendamiento.java: Guarda el cliente oferenete y el demandador, los relaciona como un contrato de arrendamiento.
 2. Compraventan.java: Guarda el cliente oferente y el demandador, hace explicita la relacion de quien vende con quien compra.
 3. GestorArchivos.java: Se encarga de almacenar, buscar y leer los datos del sistema en un archivo "Datos.obj".
@@ -28,7 +28,15 @@
 27. OyenteBoton.java: Esta clase representa todos los oyentes de los botones del programa.
 28. OyenteMenu.java: Esta clase representa los oyentes de la barra de menu.
 29. OyenteLista.java: Es utilizada para hacer la seleccion de un opcion guardada en una lista y hacer que se vizualice en otra parte de la ventana.
-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 30. UML.jpg : Esta imagene es el diagrama de clases del proyecto para facilitar la lectura que no se pueda ver bien en el word.
-------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 31. Memoria-escrita-2-POO: Articulo a 1 columna con detalles sobre la forma de resolver el trabajo encargado.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+32. Casos de uso POO entrega 2.txt: Casos de uso detallados con los que se puede evaluar la funcionalidad del programa.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+33. Datos.obj: Base de datos del programa, ahi se almacena toda la informacion al salir por el boton de salir en la ventana principal.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+34. start.bat: archivo .bat de ejecucion del programa, muestra consola.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+35. SuPropiedadRaiz.jar: Archivo .jar de ejecucion, solamente es grafico.
