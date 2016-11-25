@@ -21,8 +21,8 @@ import uiMain.gui.GUIUsuario;
 
 /**
  * Esta clase representa los oyentes de la barra de menu
- * @author Santiago Arbeláez Cataño
- * @author Sebastian Chavarría Gómez
+ * @author Santiago ArbelÃ¡ez CataÃ±o
+ * @author Sebastian ChavarrÃ­a GÃ³mez
  * @author Santiago Montoya Palacio
  */
 public class OyenteMenu implements ActionListener {
@@ -116,7 +116,12 @@ public class OyenteMenu implements ActionListener {
 	public OyenteMenu(JFrame V1) {
 		this.V1 = V1;
 	}
-
+	
+	public OyenteMenu(JPanel P3, JButton B1) {
+		this.P3 = P3;
+		this.B1 = B1;
+	}
+	
 	/* 
 	 * Metodo para reaccionar a las acciones en la barra de menu
 	 * (non-Javadoc)
@@ -129,7 +134,7 @@ public class OyenteMenu implements ActionListener {
 		
 		if ("Salir".equals(actionCommand)){
 			
-			int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea salir y volver a la ventana inicial?", "¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+			int resp = JOptionPane.showConfirmDialog(null, "Â¿Esta seguro que desea salir y volver a la ventana inicial?", "Â¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
 			
 			if(resp == 0){	
 				V1.setVisible(false);
@@ -145,10 +150,10 @@ public class OyenteMenu implements ActionListener {
 			String informacion = "Nombre: " + p.getNombre() + "\n" + "Cedula: " + p.getCedula();
 			JOptionPane.showConfirmDialog(null, informacion, "Informacion", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
 		}else if("Acerca".equals(actionCommand)){
-			String informacion = "Nuestro nombre es Su Propiedad Raiz \n" + "Ubicados en: Cl. 80 #65223, Medellín, Antioquia, Colombia \n" + "Universidad Nacional de Colombia - Facultad de Minas";
+			String informacion = "Nuestro nombre es Su Propiedad Raiz \n" + "Ubicados en: Cl. 80 #65223, MedellÃ­n, Antioquia, Colombia \n" + "Universidad Nacional de Colombia - Facultad de Minas";
 			JOptionPane.showConfirmDialog(null, informacion, "Su Propiedad Raiz", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
 		}else if("Ayuda".equals(actionCommand)){
-			String informacion = "Desarrollado por: Grupo-01-09\n" + "Integrantes: \n" + "         Santiago Arbelaaez Cataño \n" + 
+			String informacion = "Desarrollado por: Grupo-01-09\n" + "Integrantes: \n" + "         Santiago Arbelaaez CataÃ±o \n" + 
 																						 "         Sebastian Chavarria Gomez \n" +
 																						 "         Santiago Montoya Palacio \n";
 			JOptionPane.showConfirmDialog(null, informacion, "Desarrolladores", JOptionPane.PLAIN_MESSAGE, JOptionPane.INFORMATION_MESSAGE);
@@ -208,6 +213,10 @@ public class OyenteMenu implements ActionListener {
 			P6.add(L6, BorderLayout.CENTER);
 			
 			P0.validate();
-		}
+		}else if("PyC".equals(actionCommand)){
+		P3.setVisible(true);
+		P3.setBorder(new EmptyBorder(10,10,10,10));}
+		
+		
 	}
 }
