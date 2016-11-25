@@ -1,7 +1,6 @@
 package suPropiedadRaiz.usuarios;
 
 import java.util.ArrayList;
-import uiMain.menuConsola.*;
 
 /**
  * Esta clase representa el funcionario jefe y todas sus funciones

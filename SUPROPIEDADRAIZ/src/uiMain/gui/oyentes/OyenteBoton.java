@@ -499,7 +499,7 @@ public class OyenteBoton implements ActionListener {
 							}else if(p instanceof Funcionario){
 								L1.setText("Modificar menu usuario comun (Funcionario)");
 							}
-							B1.setText("AceptarQ");
+							B1.setText("Aceptar");
 							B1.setActionCommand("AceptarQ");
 							B1.addActionListener(new OyenteBoton(P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6,listaDisponibles,listaActuales,opciones));
 							
@@ -556,6 +556,24 @@ public class OyenteBoton implements ActionListener {
 					String opcion = listaDisponibles.getSelectedValue();
 					ArrActuales.add(opcion);
 					actuales[ArrActuales.size() + 1] = opcion;
+					listaActuales.setListData(actuales);
+				}catch(NullPointerException e1){
+							
+				}									
+				P0.validate();
+			}else if("AceptarQ".equals(actionCommand)){
+				try{
+					String[] actuales = new String[AllOpc.length];
+					String opcion = listaDisponibles.getSelectedValue();
+					for(int i=0; i<ArrActuales.size();i++){
+						if(opcion.equals(ArrActuales.get(i))){
+							ArrActuales.remove(i);
+						}
+					}
+					int j=0;
+					for(j=0;j<ArrActuales.size();j++){
+						actuales[j] = ArrActuales.get(j);
+					}
 					listaActuales.setListData(actuales);
 				}catch(NullPointerException e1){
 							

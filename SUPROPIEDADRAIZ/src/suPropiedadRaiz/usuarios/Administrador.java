@@ -20,11 +20,11 @@ public class Administrador extends Persona {
 		this.nombre = nombre;
 		this.cedula = cedula;
 		this.clave = clave;
-		this.opciones.add("Listar opciones de menu de un usuario");
+		this.opciones.add("Ver Usuario");
 		this.opciones.add("Listar opciones de menu existentes en el sistema");
-		this.opciones.add("Adicionar una nueva opcion de menu");
-		this.opciones.add("Eliminar una opcion de menu");
-		this.opciones.add("Registrar nuevo funcionario jefe");
+		this.opciones.add("Agregar Opcion al Usuario");
+		this.opciones.add("Eliminar Opcion de Usuario");
+		this.opciones.add("Registrar Funcionario Jefe");
 	}
 
 	/* 

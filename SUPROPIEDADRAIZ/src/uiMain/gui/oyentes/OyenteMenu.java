@@ -171,7 +171,7 @@ public class OyenteMenu implements ActionListener {
 			B1.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
 			B2.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
 			B3.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
-			B4.addActionListener(new OyenteBoton());
+			B4.addActionListener(new OyenteBoton(V1,P0,P1,P2,P3,P4,P5,P6,B1,B2,B3,B4,B5,L1,L2,L3,L4,L5,L6));
 			B5.addActionListener(new OyenteBoton());
 			
 			P0.setLayout(new GridLayout(7,1));

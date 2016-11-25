@@ -3,8 +3,6 @@ package suPropiedadRaiz.usuarios;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import uiMain.menuConsola.MenuDeConsola;
-
 /**
  * Clase abstracta padre de todos los usuarios
  * @author Santiago Arbeláez Cataño
@@ -16,7 +14,6 @@ public abstract class Persona implements Serializable {
 
 	long cedula;
 	String nombre, clave;
-	public MenuDeConsola menu;
 	ArrayList<String> opciones = new ArrayList<String>();
 	
 	public String getClave() {

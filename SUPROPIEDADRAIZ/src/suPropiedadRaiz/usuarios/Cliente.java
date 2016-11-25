@@ -30,8 +30,6 @@ public class Cliente extends Persona implements Serializable {
 		this.setNombre(nombre);
 		this.setMotivo(motivo);
 		this.clave = "user";
-		menu = new MenuDeConsola();
-		menu.anadirOpcion(new OpcionSalir());
 	}
 	
 	/**
@@ -46,15 +44,6 @@ public class Cliente extends Persona implements Serializable {
 		this(cedula, nombre, motivo);
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
-		menu = new MenuDeConsola();
-		menu.anadirOpcion(new OpcionSalir());
-		
-		if((this.getMotivo() == "Demandador")){
-			menu.anadirOpcion(new OpcionBuscarInmueblesArrendados());
-		}else if(this.getMotivo() == "Oferente"){
-			menu.anadirOpcion(new OpcionConsignarInmuebleArrenda());
-			menu.anadirOpcion(new OpcionConsignarInmuebleVenta());
-		}
 	}
 	
 	/**
@@ -71,15 +60,6 @@ public class Cliente extends Persona implements Serializable {
 		this.setTelefono(telefono);
 		this.setDireccion(direccion);
 		this.setCelular(celular);
-		menu = new MenuDeConsola();
-		menu.anadirOpcion(new OpcionSalir());
-		
-		if((this.getMotivo() == "Demandador")){
-			menu.anadirOpcion(new OpcionBuscarInmueblesArrendados());
-		}else if(this.getMotivo() == "Oferente"){
-			menu.anadirOpcion(new OpcionConsignarInmuebleArrenda());
-			menu.anadirOpcion(new OpcionConsignarInmuebleVenta());
-		}
 	}
 
 	/* Devuelve el nombre del cliente

@@ -4,7 +4,6 @@ import suPropiedadRaiz.contratos.*;
 import suPropiedadRaiz.inmuebles.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import uiMain.menuConsola.*;
 
 /**
  * Esta clase representa el empleado de planta de la empresa y se encarga de las funciones administrativas que tiene asignadas
@@ -12,9 +11,9 @@ import uiMain.menuConsola.*;
  * @author Sebastian Chavarría Gómez
  * @author Santiago Montoya Palacio
  */
+@SuppressWarnings("serial")
 public class Funcionario extends Persona implements Serializable{
 	
-	private static final long serialVersionUID = -1499008267571669186L;
 	long salario, clientes;
 	ArrayList<Cliente> clientesList = new ArrayList<Cliente>();
 	ArrayList<Casa> casaList = new ArrayList<Casa>();
@@ -26,22 +25,6 @@ public class Funcionario extends Persona implements Serializable{
 		this.setNombre(nombre);
 		this.setCedula(cedula);
 		this.setSalario(salario);
-		menu = new MenuDeConsola();
-		menu.anadirOpcion(new OpcionSalir());
-		menu.anadirOpcion(new OpcionRegistrarCliente(this));
-		menu.anadirOpcion(new OpcionAsignarRolCliente());
-		menu.anadirOpcion(new OpcionRegistrarInmueble());
-		menu.anadirOpcion(new OpcionAsignarRolInmueble());
-		menu.anadirOpcion(new OpcionRegistrarCompraVenta());
-		menu.anadirOpcion(new OpcionRegistrarArrendamiento());
-		menu.anadirOpcion(new OpcionBuscarCasaArriendo());
-		menu.anadirOpcion(new OpcionBuscarAptoArriendo());
-		menu.anadirOpcion(new OpcionBuscarCasaEspeA());
-		menu.anadirOpcion(new OpcionBuscarAptoEspeA());
-		menu.anadirOpcion(new OpcionComisionArriendos());
-		menu.anadirOpcion(new OpcionComisionVentas());
-		menu.anadirOpcion(new OpcionSalarioNeto());
-		menu.anadirOpcion(new OpcionVerListaClientes(this));
 	}
 	
 	public long getCedula() {
