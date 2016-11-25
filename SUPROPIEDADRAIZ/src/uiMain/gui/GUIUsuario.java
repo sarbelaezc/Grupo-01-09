@@ -37,7 +37,6 @@ public class GUIUsuario extends JFrame{
 	@SuppressWarnings("rawtypes")
 	JList LT2 = new JList();
 	
-	@SuppressWarnings("unchecked")
 	public GUIUsuario(Persona p){
 		super("");
 	

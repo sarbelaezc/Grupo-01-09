@@ -239,17 +239,18 @@ public class OyenteBoton implements ActionListener {
 				ArrayList<ImageIcon> imgInmuebles;
 				
 				try{
-					inmueblesRegistrados = GestorArchivos.ListaInmuebles();					
+					//inmueblesRegistrados = GestorArchivos.ListaInmuebles();
 					imgInmuebles = new ArrayList<ImageIcon>();
 					imgInmuebles.add(new ImageIcon("./imagenes/Img1.PNG"));
 					imgInmuebles.add(new ImageIcon("./imagenes/Local.JPG"));
 					imgInmuebles.add(new ImageIcon("./imagenes/Apto1.jpg"));
 					imgInmuebles.add(new ImageIcon("./imagenes/Casa1.jpg"));
-					
-					for(int i = 1; i <= inmueblesRegistrados.size(); i++){
+					/**
+					for(int i = 0; i <= inmueblesRegistrados.size(); i++){
 						Inmuebles inmuebles = inmueblesRegistrados.get(i);
 						imgInmuebles.add(inmuebles.getImagen());
 					}
+					*/
 					if(count < imgInmuebles.size()){
 						JButton B2 = (JButton) e.getSource();
 						B2.setIcon(imgInmuebles.get(count));
@@ -262,7 +263,7 @@ public class OyenteBoton implements ActionListener {
 					}
 				}catch(Exception e1){
 					e1.printStackTrace();
-				}
+				}			
 			}else if("Pedir".equals(actionCommand)){
 				String[] datos = new String[] {"Nombre","Cedula", "Motivo"};
 				FieldPanel fp = new FieldPanel("Datos",datos,null,null,null);
