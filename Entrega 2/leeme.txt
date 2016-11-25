@@ -1,0 +1,34 @@
+----------------------------------------------------SRC------------------------------------------------------------
+1. Arrendamiento.java: Guarda el cliente oferenete y el demandador, los relaciona como un contrato de arrendamiento.
+2. Compraventan.java: Guarda el cliente oferente y el demandador, hace explicita la relacion de quien vende con quien compra.
+3. GestorArchivos.java: Se encarga de almacenar, buscar y leer los datos del sistema en un archivo "Datos.obj".
+4. Apartamento.java: Representa un inmueble de tipo apartamento.
+5. Balcon.java: Representa la capacidad de un inmueble de tener un balcon con un area.
+6. Bano.java: Representa la capacidad de un inmueble de tener uno o mas baños.
+7. Casa.java: Representa un inmueble de tipo casa con los atributos solicitados.
+8. Cuarto.java: Clase abstracta de la que heredan atributos y metodos la clase pieza y baño.
+9. Garaje.java: Representa la capacidad de un inmueble de poseer un garaje.
+10. Inmuebles.java: Clase que permite agrupar apartamento y casa bajo el mismo tipo de objeto.
+11. Pieza.java: Representa la capacidad de un inmueble de tener un cuarto con cualquier tipo de uso.
+12. ServiciosAdicionales.java: Representa la capacidad de una unidad de poseer diferente tipo de servicios.
+13. Terraza.java: Representa al capacidad de una casa de poseer terraza.
+14. Torre.java: Representa un objeto que agrupa los apartamentos bajo una torre.
+15. Unidad.java: Esta clase agrupa casas y apartamentos bajo una unidad.
+16. Administrador.java: Esta clase representa el administrador del programa con todo lo que impica.
+17. Cliente.java: Esta clase representa tanto al cliente anonimo como al cliente registrado con las funciones respectivas.
+18. Demandador.java: Esta clase representa la facultad de un cliente de ser demandador con todos los atributos que trae.
+19. Funcionario.java: Esta clase representa el empleado de planta de la empresa y se encarga de las funciones administrativas que tiene asignadas.
+20. Funcionariojefe.java: Esta clase representa el funcionario jefe y todas sus funciones.
+21. Persona.java: Clase abstracta padre de todos los usuarios.
+22. SuPropiedadRaiz.java: Esta clase es la clase principal del programa.
+23. GUIAnonimo.java: Esta clase representa la ventana inicial y su interfaz inicial.
+24. GUIAdministrador.java: Esta clase representa la ventana de usuario administrador con todas sus opciones.
+25. GUIUsuario.java: Es la clase encargada y en la que se implementa la ventana para el usuario comun(Cliente, Funcionario y Funcionario Jefe).
+26. OyenteRaton.java: Esta clase representa las acciones que se generan al ingresar el puntero del mouse en un lugar de la ventana especifico.
+27. OyenteBoton.java: Esta clase representa todos los oyentes de los botones del programa.
+28. OyenteMenu.java: Esta clase representa los oyentes de la barra de menu.
+29. OyenteLista.java: Es utilizada para hacer la seleccion de un opcion guardada en una lista y hacer que se vizualice en otra parte de la ventana.
+------------------------------------------------------------------------------------------------------------------------------------
+30. UML.jpg : Esta imagene es el diagrama de clases del proyecto para facilitar la lectura que no se pueda ver bien en el word.
+------------------------------------------------------------------------------------------------------------------------------------
+31. Memoria-escrita-2-POO: Articulo a 1 columna con detalles sobre la forma de resolver el trabajo encargado.
