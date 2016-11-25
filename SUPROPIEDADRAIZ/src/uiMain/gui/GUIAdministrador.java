@@ -16,8 +16,8 @@ import uiMain.gui.oyentes.OyenteMenu;
 
 /**
  * Esta clase representa la ventana de usuario administrador
- * @author Santiago Arbel·ez CataÒo
- * @author Sebastian ChavarrÌa GÛmez
+ * @author Santiago Arbel√°ez Cata√±o
+ * @author Sebastian Chavarr√≠a G√≥mez
  * @author Santiago Montoya Palacio
  */
 @SuppressWarnings("serial")
@@ -69,7 +69,7 @@ public class GUIAdministrador extends JFrame {
 		JMenu suPropiedadRaiz = new JMenu("SuPropiedadRaiz");
 		JMenu ayuda = new JMenu("Ayuda");
 		
-		JMenuItem info_usuario = new JMenuItem("Iformacion usuario");
+		JMenuItem info_usuario = new JMenuItem("Informacion usuario");
 		JMenuItem salir = new JMenuItem("Salir");
 		JMenuItem opciones = new JMenuItem("Opciones Administrador");
 		JMenuItem noAplica = new JMenuItem("No aplica");
