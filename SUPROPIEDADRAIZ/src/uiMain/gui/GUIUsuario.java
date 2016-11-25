@@ -26,21 +26,29 @@ import uiMain.gui.oyentes.OyenteMenu;
 public class GUIUsuario extends JFrame{
 	Persona p ;
 	String user;
-	String Opciones[] = {"Registrar Clientes", "Asignar Rol a un cliente","Consultar sueldo",
-			"Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
-
-	JList<Object> LT1 = new JList<Object>(Opciones);
+		String OpcionesClt[]={"Inmuebles consignados para venta","Inmuebles consignados para arrendar","Inmuebles que posee en arrendamiento"};
+	String OpcionesF[]={"Registrar un nuevo cliente","Asignar un rol a un cliente","Registrar Inmueble","Asignar rol al inmueble","Registrar una compra-venta",
+			"Registrar un arrendamiento","Buscar casas en arriendo","Buscar apartamentos en arriendo","",""};
+	String OpcionesFJ[] = {"Registrar nuevo funcionario", "Consultar sueldo", "Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
+	JList LT1 = new JList ();
+	JList LT1 = new JList (Opciones);
 	JScrollPane SP1 = new JScrollPane(LT1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-	JList<Object> LT2 = new JList<Object>();
+	JList LT2 = new JList();
 	
 	public GUIUsuario(Persona p){
 		super("");
 		if(p instanceof Funcionario){
 			setTitle("Funcionario");
 		}else if(p instanceof FuncionarioJefe){
+		if(p instanceof FuncionarioJefe){
 			setTitle("Funcionario Jefe");
+			LT1.setListData(OpcionesFJ);
+		}else if(p instanceof Funcionario){
+			setTitle("Funcionario");
+			LT1.setListData(OpcionesF);
 		}else{
 			setTitle("Cliente");
+			LT1.setListData(OpcionesClt);
 		}
 		this.p = p;
 		
@@ -62,7 +70,8 @@ public class GUIUsuario extends JFrame{
 		JMenuItem Salir = new JMenuItem("Salir");
 		//JMenuItem M6 = new JMenuItem(); Reservado para Procesos y consulta
 		JMenuItem Acerca_de = new JMenuItem("Acerca de");
-		
+		JMenuItem PyC1 = new JMenuItem("Procesos y consulta");
+			
 		JButton B1 = new JButton("Aceptar");
 		
 		LT1.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
@@ -100,7 +109,12 @@ public class GUIUsuario extends JFrame{
 		Archivo.add(Salir);
 		//M2.add(M6); Reservado para procesos y consulta
 		Ayuda.add(Acerca_de);
+		PyC.add(PyC1);
 		
+		P3.setVisible(false);
+		PyC1.setActionCommand("PyC");
+		PyC1.addActionListener(new OyenteMenu(P3, B1));
+			
 		info_usuario.setActionCommand("InfoA");
 		info_usuario.addActionListener(new OyenteMenu(p));
 		
