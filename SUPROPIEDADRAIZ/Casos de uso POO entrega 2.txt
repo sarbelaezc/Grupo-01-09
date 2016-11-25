@@ -1,7 +1,13 @@
 Casos de uso POO entrega 2
 
-Administrador: Usuario: 1 (La cedula)
+Administrador: Usuario: 1
 	       Contraseña: admin
 
 Cliente: Usuario: 1037650445
 	 Contraseña: user
+
+Funcionario: Usuario: 
+	     Contraseña: fun
+
+Funcionario Jefe: Usuario: 2
+	     	  Contraseña: fj
