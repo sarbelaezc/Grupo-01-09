@@ -39,9 +39,8 @@ public class GUIUsuario extends JFrame{
 	@SuppressWarnings("unchecked")
 	public GUIUsuario(Persona p){
 		super("");
-		if(p instanceof Funcionario){
-			setTitle("Funcionario");
-		}else if(p instanceof FuncionarioJefe){
+	
+		if(p instanceof FuncionarioJefe){
 			setTitle("Funcionario Jefe");
 			LT1.setListData(OpcionesFJ);
 		}else if(p instanceof Funcionario){

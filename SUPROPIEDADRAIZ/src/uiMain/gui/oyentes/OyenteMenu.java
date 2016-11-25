@@ -134,7 +134,7 @@ public class OyenteMenu implements ActionListener {
 		
 		if ("Salir".equals(actionCommand)){
 			
-			int resp = JOptionPane.showConfirmDialog(null, "Â¿Esta seguro que desea salir y volver a la ventana inicial?", "Â¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+			int resp = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea salir y volver a la ventana inicial?", "¡Saliendo!", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
 			
 			if(resp == 0){	
 				V1.setVisible(false);

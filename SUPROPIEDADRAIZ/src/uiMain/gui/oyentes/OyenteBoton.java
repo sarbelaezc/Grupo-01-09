@@ -214,8 +214,16 @@ public class OyenteBoton implements ActionListener {
 						}else if(p instanceof Administrador){
 							new GUIAdministrador(p);
 							V1.setVisible(false);
-							
+					
 						}else if(p instanceof Cliente){
+							new GUIUsuario(p);
+							V1.setVisible(false);
+							
+						}else if(p instanceof FuncionarioJefe){
+							new GUIUsuario(p);
+							V1.setVisible(false);
+							
+						}else if(p instanceof Funcionario){
 							new GUIUsuario(p);
 							V1.setVisible(false);
 							
