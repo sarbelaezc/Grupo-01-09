@@ -11,7 +11,7 @@ import uiMain.gui.GUIAnonimo;
  * @author Santiago Montoya Palacio
  */
 public class SuPropiedadRaiz {
-
+	
 	/**
 	 * Metodo main con el cual se comienza a correr el programa
 	 * @param args
