@@ -20,6 +20,8 @@ import suPropiedadRaiz.usuarios.Persona;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+
+import uiMain.gui.oyentes.OyenteBoton;
 import uiMain.gui.oyentes.OyenteMenu;
 
 @SuppressWarnings("serial")
@@ -30,8 +32,7 @@ public class GUIUsuario extends JFrame{
 	String OpcionesF[]={"Registrar un nuevo cliente","Asignar un rol a un cliente","Registrar Inmueble","Asignar rol al inmueble","Registrar una compra-venta",
 			"Registrar un arrendamiento","Buscar casas en arriendo","Buscar apartamentos en arriendo","",""};
 	String OpcionesFJ[] = {"Registrar nuevo funcionario", "Consultar sueldo", "Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
-	@SuppressWarnings("rawtypes")
-	JList LT1 = new JList ();
+	JList<String> LT1 = new JList<String> ();
 	JScrollPane SP1 = new JScrollPane(LT1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	@SuppressWarnings("rawtypes")
 	JList LT2 = new JList();
@@ -73,6 +74,9 @@ public class GUIUsuario extends JFrame{
 		JMenuItem PyC1 = new JMenuItem("Procesos y consulta");
 			
 		JButton B1 = new JButton("Aceptar");
+		
+		B1.setActionCommand("Registrar nuevo funcionario");
+		B1.addActionListener(new OyenteBoton());
 		
 		LT1.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		LT1.addListSelectionListener(new OyenteLista());
