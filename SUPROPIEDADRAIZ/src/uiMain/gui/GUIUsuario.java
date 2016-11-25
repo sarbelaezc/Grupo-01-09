@@ -31,7 +31,6 @@ public class GUIUsuario extends JFrame{
 			"Registrar un arrendamiento","Buscar casas en arriendo","Buscar apartamentos en arriendo","",""};
 	String OpcionesFJ[] = {"Registrar nuevo funcionario", "Consultar sueldo", "Listar todos los clientes", "Listas los funcionarios que tiene","Listar sueldos de funcionario"};
 	JList LT1 = new JList ();
-	JList LT1 = new JList (Opciones);
 	JScrollPane SP1 = new JScrollPane(LT1, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	JList LT2 = new JList();
 	
