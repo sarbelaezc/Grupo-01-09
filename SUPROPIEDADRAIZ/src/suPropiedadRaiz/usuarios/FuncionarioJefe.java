@@ -5,8 +5,8 @@ import uiMain.menuConsola.*;
 
 /**
  * Esta clase representa el funcionario jefe y todas sus funciones
- * @author Santiago Arbel·ez CataÒo
- * @author Sebastian ChavarrÌa GÛmez
+ * @author Santiago Arbel√°ez Cata√±o
+ * @author Sebastian Chavarr√≠a G√≥mez
  * @author Santiago Montoya Palacio
  */
 public class FuncionarioJefe extends Funcionario {
@@ -22,11 +22,7 @@ public class FuncionarioJefe extends Funcionario {
 	 */
 	public FuncionarioJefe(String nombre, long cedula, long salario) {
 		super(nombre, cedula, salario);
-		menu = new MenuDeConsola();
-		menu.anadirOpcion(new OpcionSalir());
-		menu.anadirOpcion(new OpcionFuncionariosACargo(this.cedula));
-		menu.anadirOpcion(new OpcionClientesDeFuncinario(this.cedula));
-		menu.anadirOpcion(new OpcionNuevoFuncionario(this));
+		this.clave = "fj";
 	}
 
 	/**
